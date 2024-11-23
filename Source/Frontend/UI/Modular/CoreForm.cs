@@ -147,7 +147,6 @@ This message only appears once.";
                 }
 
                 S.GET<IntroForm>().DisplayRtcvDisclaimer(disclaimer.Replace("[ver]", RtcCore.RtcVersion));
-                //MessageBox.Show(disclaimer.Replace("[ver]", CorruptCore.RtcCore.RtcVersion), "RTC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Params.SetParam("DISCLAIMER_READ");
 

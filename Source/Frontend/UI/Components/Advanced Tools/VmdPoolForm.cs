@@ -279,7 +279,7 @@ namespace RTCV.UI
             string vmdName = lbLoadedVmdList.SelectedItem.ToString();
             VirtualMemoryDomain vmd = MemoryDomains.VmdPool[vmdName];
 
-            string unfixedName = vmdName.Trim().Replace("[V]", "") + ".vmd";
+            string unfixedName = vmdName.Replace("[V]", "").Trim() + ".vmd";
             string fixedName = MakeFileNameValid(unfixedName);
             if (unfixedName != fixedName && DialogResult.No == MessageBox.Show(
                     $"This VMD's name contains some invalid characters which will be replaced with look-alikes for the file's name. Do you wish to save {fixedName}?",
@@ -386,10 +386,10 @@ namespace RTCV.UI
                 string vmdName = lbLoadedVmdList.SelectedItem.ToString();
                 VirtualMemoryDomain vmd = MemoryDomains.VmdPool[vmdName];
 
-                string value = lbLoadedVmdList.SelectedItem.ToString().Trim().Replace("[V]", "");
+                string value = lbLoadedVmdList.SelectedItem.ToString().Replace("[V]", "").Trim();
                 if (Forms.InputBox.ShowDialog("Add to My VMDs", "Confirm VMD name:", ref value) == DialogResult.OK)
                 {
-                    if (string.IsNullOrWhiteSpace(value.Trim()))
+                    if (string.IsNullOrWhiteSpace(value))
                     {
                         MessageBox.Show("Invalid name");
                         return;
@@ -407,7 +407,7 @@ namespace RTCV.UI
                             "Save file?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                         return;
                     
-                    string targetPath = Path.Combine(RtcCore.VmdsDir, cleanValue.Trim() + ".vmd");
+                    string targetPath = Path.Combine(RtcCore.VmdsDir, cleanValue + ".vmd");
 
                     if (File.Exists(targetPath))
                     {
@@ -434,16 +434,16 @@ namespace RTCV.UI
                     string vmdName = item.ToString();
                     VirtualMemoryDomain vmd = MemoryDomains.VmdPool[vmdName];
 
-                    string itemValue = item.ToString().Trim().Replace("[V]", "");
+                    string itemValue = item.ToString().Replace("[V]", "").Trim();
 
                     string cleanValue = MakeFileNameValid(itemValue);
                     if (itemValue != cleanValue && DialogResult.No == MessageBox.Show(
-                            $"VMD {itemValue}'s name contains some invalid characters which will be replaced with look-alikes for the file's name. Do you wish to save {cleanValue}.vmd?",
+                            $"VMD \"{itemValue}\"'s name contains some invalid characters which will be replaced with look-alikes for the file's name. Do you wish to save {cleanValue}.vmd?",
                             "Save file?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                         return;
                     //string targetPath = Path.Combine(RtcCore.vmdsDir, value.Trim() + ".vmd");
 
-                    string itemTargetPath = Path.Combine(RtcCore.VmdsDir, itemValue.Trim() + ".vmd");
+                    string itemTargetPath = Path.Combine(RtcCore.VmdsDir, cleanValue + ".vmd");
 
                     if (File.Exists(itemTargetPath))
                     {
