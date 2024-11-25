@@ -779,7 +779,16 @@ namespace RTCV.CorruptCore
             //If there is only one thread, only generate a single BlastLayer.
             if (cpus == 1 || AllSpec.VanguardSpec[VSPEC.SUPPORTS_MULTITHREAD] == null)
             {
-                return GenerateBlastLayer(domains);
+                BlastLayer layer = GenerateBlastLayer(domains);
+                if (layer is null)
+                    return null;
+                
+                for (int i = 0; i < layer.Layer.Count; i++)
+                for (int j = i + 1; j < layer.Layer.Count; j++)
+                    if (layer.Layer[i].Address == layer.Layer[j].Address && layer.Layer[i].Domain == layer.Layer[j].Domain)
+                        layer.Layer.RemoveAt(j--);
+                
+                return layer;
             }
 
             //if emulator supports multithreaded access of the domains, disregard the emulation thread and just span threads...
@@ -808,6 +817,11 @@ namespace RTCV.CorruptCore
                     bl.Layer.AddRange(tasks[i].Result.Layer);
                 }
             }
+            
+            for (int i = 0; i < bl.Layer.Count; i++)
+            for (int j = i + 1; j < bl.Layer.Count; j++)
+                if (bl.Layer[i].Address == bl.Layer[j].Address && bl.Layer[i].Domain == bl.Layer[j].Domain)
+                    bl.Layer.RemoveAt(j--);
 
             if (bl.Layer.Count == 0)
             {
