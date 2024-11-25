@@ -596,7 +596,6 @@ namespace RTCV.UI.Components.Controls
             var newSk = (StashKey)sk.Clone();
 
             newSk.Key = newSk.ParentKey;
-            newSk.ParentKey = null;
             newSk.BlastLayer = new BlastLayer();
 
             string prevWorkingPath = sk.GetSavestateFullPath();
