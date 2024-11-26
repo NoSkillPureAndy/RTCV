@@ -48,7 +48,7 @@ namespace RTCV.UI.Modular
             {
                 if (_engineConfig == null)
                 {
-                    var ecGrid = new CanvasGrid(15, 12, "Engine Config");
+                    var ecGrid = new CanvasGrid(15, 13, "Engine Config");
 
                     Form gpForm = S.GET<GeneralParametersForm>();
                     Form mdForm = S.GET<MemoryDomainsForm>();
@@ -56,10 +56,10 @@ namespace RTCV.UI.Modular
 
                     //UICore.mtForm = DefaultTools;
 
-                    ecGrid.SetTileForm(gpForm, 0, 0, 5, 5, true);
-                    ecGrid.SetTileForm(ceForm, 5, 0, 10, 5, true);
-                    ecGrid.SetTileForm(mdForm, 0, 5, 5, 7, true);
-                    ecGrid.SetTileForm(UICore.mtForm, 5, 5, 10, 7, true);
+                    ecGrid.SetTileForm(gpForm, 0, 0, 5, 6, true);
+                    ecGrid.SetTileForm(ceForm, 5, 0, 10, 6, true);
+                    ecGrid.SetTileForm(mdForm, 0, 6, 5, 7, true);
+                    ecGrid.SetTileForm(UICore.mtForm, 5, 6, 10, 7, true);
 
                     _engineConfig = ecGrid;
                 }

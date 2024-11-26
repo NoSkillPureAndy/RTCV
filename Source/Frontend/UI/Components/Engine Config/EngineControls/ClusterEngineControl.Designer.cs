@@ -52,6 +52,8 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             this.engineGroupBox.Controls.Add(this.pnClusterLimiterList);
             this.engineGroupBox.Controls.Add(this.label22);
+            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label22, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.pnClusterLimiterList, 0);
@@ -71,9 +73,9 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.pnClusterLimiterList.Controls.Add(this.clusterChunkSize);
             this.pnClusterLimiterList.Controls.Add(this.cbClusterLimiterList);
             this.pnClusterLimiterList.Controls.Add(this.label12);
-            this.pnClusterLimiterList.Location = new System.Drawing.Point(5, 36);
+            this.pnClusterLimiterList.Location = new System.Drawing.Point(6, 33);
             this.pnClusterLimiterList.Name = "pnClusterLimiterList";
-            this.pnClusterLimiterList.Size = new System.Drawing.Size(408, 104);
+            this.pnClusterLimiterList.Size = new System.Drawing.Size(416, 151);
             this.pnClusterLimiterList.TabIndex = 149;
             this.pnClusterLimiterList.Tag = "color:dark2";
             // 
@@ -95,7 +97,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(293, 52);
+            this.label29.Location = new System.Drawing.Point(6, 105);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(96, 13);
             this.label29.TabIndex = 150;
@@ -111,10 +113,10 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.clusterDirection.ForeColor = System.Drawing.Color.White;
             this.clusterDirection.FormattingEnabled = true;
             this.clusterDirection.IntegralHeight = false;
-            this.clusterDirection.Location = new System.Drawing.Point(296, 68);
+            this.clusterDirection.Location = new System.Drawing.Point(9, 121);
             this.clusterDirection.MaxDropDownItems = 15;
             this.clusterDirection.Name = "clusterDirection";
-            this.clusterDirection.Size = new System.Drawing.Size(106, 21);
+            this.clusterDirection.Size = new System.Drawing.Size(153, 21);
             this.clusterDirection.TabIndex = 149;
             this.clusterDirection.Tag = "color:normal";
             this.clusterDirection.ValueMember = "Value";
@@ -129,7 +131,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.clusterSplitUnits.ForeColor = System.Drawing.Color.White;
             this.clusterSplitUnits.Location = new System.Drawing.Point(296, 4);
             this.clusterSplitUnits.Name = "clusterSplitUnits";
-            this.clusterSplitUnits.Size = new System.Drawing.Size(106, 17);
+            this.clusterSplitUnits.Size = new System.Drawing.Size(107, 17);
             this.clusterSplitUnits.TabIndex = 144;
             this.clusterSplitUnits.Text = "Split Blast Units";
             this.clusterSplitUnits.UseVisualStyleBackColor = true;
@@ -140,7 +142,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(175, 52);
+            this.label28.Location = new System.Drawing.Point(175, 53);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(88, 13);
             this.label28.TabIndex = 148;
@@ -152,7 +154,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.clusterChunkModifier.Enabled = false;
             this.clusterChunkModifier.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.clusterChunkModifier.ForeColor = System.Drawing.Color.White;
-            this.clusterChunkModifier.Location = new System.Drawing.Point(178, 67);
+            this.clusterChunkModifier.Location = new System.Drawing.Point(178, 69);
             this.clusterChunkModifier.Maximum = new decimal(new int[] {
             65536,
             0,
@@ -179,7 +181,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(6, 52);
+            this.label25.Location = new System.Drawing.Point(6, 54);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(51, 13);
             this.label25.TabIndex = 146;
@@ -195,7 +197,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.cbClusterMethod.ForeColor = System.Drawing.Color.White;
             this.cbClusterMethod.FormattingEnabled = true;
             this.cbClusterMethod.IntegralHeight = false;
-            this.cbClusterMethod.Location = new System.Drawing.Point(9, 68);
+            this.cbClusterMethod.Location = new System.Drawing.Point(9, 70);
             this.cbClusterMethod.MaxDropDownItems = 15;
             this.cbClusterMethod.Name = "cbClusterMethod";
             this.cbClusterMethod.Size = new System.Drawing.Size(152, 21);
@@ -209,7 +211,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(176, 3);
+            this.label11.Location = new System.Drawing.Point(175, 3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 13);
             this.label11.TabIndex = 142;
@@ -252,7 +254,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.cbClusterLimiterList.ForeColor = System.Drawing.Color.White;
             this.cbClusterLimiterList.FormattingEnabled = true;
             this.cbClusterLimiterList.IntegralHeight = false;
-            this.cbClusterLimiterList.Location = new System.Drawing.Point(8, 19);
+            this.cbClusterLimiterList.Location = new System.Drawing.Point(9, 19);
             this.cbClusterLimiterList.MaxDropDownItems = 15;
             this.cbClusterLimiterList.Name = "cbClusterLimiterList";
             this.cbClusterLimiterList.Size = new System.Drawing.Size(152, 21);
@@ -266,7 +268,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(6, 4);
+            this.label12.Location = new System.Drawing.Point(6, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 13);
             this.label12.TabIndex = 79;
@@ -288,6 +290,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ClusterEngineControl";
+            this.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.pnClusterLimiterList.ResumeLayout(false);

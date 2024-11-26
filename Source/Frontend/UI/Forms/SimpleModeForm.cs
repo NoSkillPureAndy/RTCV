@@ -175,24 +175,21 @@ namespace RTCV.UI
 
             string originalText = lbEngineDescription.Text;
 
-            Random RND = new Random((int)DateTime.Now.Ticks);
-            int engineSelect = RND.Next(1, 5);
+            Random RND = new Random();
+            int engineSelect = RND.Next(4);
 
             switch (engineSelect)
             {
-                case 1:
+                case 0:
                     SelectNightmareEngine();
                     break;
-                case 2:
-                    SelectHellgenieEngine();
-                    break;
-                case 3:
+                case 1:
                     SelectFreezeEngine();
                     break;
-                case 4:
+                case 2:
                     SelectDistortionEngine();
                     break;
-                case 5:
+                case 3:
                     SelectPipeEngine();
                     break;
             }
@@ -274,18 +271,6 @@ namespace RTCV.UI
                                        $"This engine is made for corrupting 2d games.\n" +
                                        $"It generates garbage data and writes it \n" +
                                        $"to the game's memory.";
-        }
-
-        public void SelectHellgenieEngine()
-        {
-            ResetSession();
-            SelectEngineByName("Hellgenie Engine");
-            SetInfiniteUnitVisibility(true);
-
-            lbEngineDescription.Text = $"Auto-Selected Engine: Hellgenie Engine\n" +
-                                      $"\n" +
-                                      $"This engine generates garbage data and then\n" +
-                                      $"continuously writes it to the game's memory.";
         }
 
         public void SelectFreezeEngine()

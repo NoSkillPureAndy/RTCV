@@ -14,9 +14,10 @@ namespace RTCV.UI
 
             var handler = new EventHandler<Components.Controls.ValueUpdateEventArgs<decimal>>(UpdateMaxInfiniteStepUnits);
             nmMaxInfiniteStepUnits.ValueChanged += handler;
-            nmMaxInfiniteStepUnits.registerSlave(S.GET<CorruptionEngineForm>().HellgenieEngineControl.updownMaxCheats, handler);
-            nmMaxInfiniteStepUnits.registerSlave(S.GET<CorruptionEngineForm>().FreezeEngineControl.updownMaxFreeze, handler);
-            nmMaxInfiniteStepUnits.registerSlave(S.GET<CorruptionEngineForm>().PipeEngineControl.updownMaxPipes, handler);
+            var ceForm = S.GET<CorruptionEngineForm>();
+            nmMaxInfiniteStepUnits.registerSlave(ceForm.FreezeEngineControl.updownMaxFreeze, handler);
+            nmMaxInfiniteStepUnits.registerSlave(ceForm.PipeEngineControl.updownMaxPipes, handler);
+            nmMaxInfiniteStepUnits.registerSlave(S.GET<GeneralParametersForm>().updownMaxFreeze, handler);
             nmMaxInfiniteStepUnits.registerSlave(S.GET<CustomEngineConfigForm>().updownMaxInfiniteUnits, handler);
             nmMaxInfiniteStepUnits.registerSlave(S.GET<SimpleModeForm>().updownMaxInfiniteUnits, handler);
 

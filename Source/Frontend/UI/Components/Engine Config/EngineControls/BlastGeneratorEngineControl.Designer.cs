@@ -40,6 +40,8 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label10);
             this.engineGroupBox.Controls.Add(this.label21);
             this.engineGroupBox.Controls.Add(this.btnOpenBlastGenerator);
+            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.btnOpenBlastGenerator, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label21, 0);
@@ -75,7 +77,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.btnOpenBlastGenerator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenBlastGenerator.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenBlastGenerator.ForeColor = System.Drawing.Color.White;
-            this.btnOpenBlastGenerator.Location = new System.Drawing.Point(5, 116);
+            this.btnOpenBlastGenerator.Location = new System.Drawing.Point(6, 160);
             this.btnOpenBlastGenerator.Name = "btnOpenBlastGenerator";
             this.btnOpenBlastGenerator.Size = new System.Drawing.Size(159, 24);
             this.btnOpenBlastGenerator.TabIndex = 148;
@@ -85,11 +87,12 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.btnOpenBlastGenerator.UseVisualStyleBackColor = false;
             this.btnOpenBlastGenerator.Click += new System.EventHandler(this.OpenBlastGenerator);
             // 
-            // BlastGeneratorEngine
+            // BlastGeneratorEngineControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "BlastGeneratorEngine";
+            this.Name = "BlastGeneratorEngineControl";
+            this.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

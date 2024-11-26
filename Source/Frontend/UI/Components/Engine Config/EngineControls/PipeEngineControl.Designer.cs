@@ -45,6 +45,8 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.cbClearPipesOnRewind);
             this.engineGroupBox.Controls.Add(this.cbLockPipes);
             this.engineGroupBox.Controls.Add(this.btnClearPipes);
+            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.btnClearPipes, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.cbLockPipes, 0);
@@ -134,7 +136,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.btnClearPipes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearPipes.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnClearPipes.ForeColor = System.Drawing.Color.White;
-            this.btnClearPipes.Location = new System.Drawing.Point(5, 116);
+            this.btnClearPipes.Location = new System.Drawing.Point(6, 160);
             this.btnClearPipes.Name = "btnClearPipes";
             this.btnClearPipes.Size = new System.Drawing.Size(159, 24);
             this.btnClearPipes.TabIndex = 148;
@@ -149,6 +151,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "PipeEngineControl";
+            this.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

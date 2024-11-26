@@ -367,14 +367,12 @@ namespace RTCV.CorruptCore
         public static void InitTemplates()
         {
             var nightmare = InitializeNightmareEngineTemplate();
-            var hellgenie = InitializeHellgenieEngineTemplate();
             var freeze = InitializeFreezeEngineTemplate();
             var distortion = InitializeDistortionEngineTemplate();
             var pipe = InitializePipeEngineTemplate();
             var vector = InitializeVectorEngineTemplate();
 
             Name2TemplateDico[nightmare[RTCSPEC.CUSTOM_NAME].ToString()] = nightmare;
-            Name2TemplateDico[hellgenie[RTCSPEC.CUSTOM_NAME].ToString()] = hellgenie;
             Name2TemplateDico[freeze[RTCSPEC.CUSTOM_NAME].ToString()] = freeze;
             Name2TemplateDico[distortion[RTCSPEC.CUSTOM_NAME].ToString()] = distortion;
             Name2TemplateDico[pipe[RTCSPEC.CUSTOM_NAME].ToString()] = pipe;
@@ -422,44 +420,6 @@ namespace RTCV.CorruptCore
 
             pSpec[RTCSPEC.CUSTOM_DELAY] = 0;
             pSpec[RTCSPEC.CUSTOM_LIFETIME] = 1;
-            pSpec[RTCSPEC.CUSTOM_LOOP] = false;
-
-            pSpec[RTCSPEC.CUSTOM_TILTVALUE] = new BigInteger(0);
-
-            pSpec[RTCSPEC.CUSTOM_LIMITERTIME] = LimiterTime.NONE;
-            pSpec[RTCSPEC.CUSTOM_STORELIMITERMODE] = StoreLimiterSource.ADDRESS;
-            pSpec[RTCSPEC.CUSTOM_LIMITERINVERTED] = false;
-
-            pSpec[RTCSPEC.CUSTOM_MINVALUE8BIT] = 0UL;
-            pSpec[RTCSPEC.CUSTOM_MINVALUE16BIT] = 0UL;
-            pSpec[RTCSPEC.CUSTOM_MINVALUE32BIT] = 0UL;
-            pSpec[RTCSPEC.CUSTOM_MINVALUE64BIT] = 0UL;
-            pSpec[RTCSPEC.CUSTOM_MAXVALUE8BIT] = 0xFFUL;
-            pSpec[RTCSPEC.CUSTOM_MAXVALUE16BIT] = 0xFFFFUL;
-            pSpec[RTCSPEC.CUSTOM_MAXVALUE32BIT] = 0xFFFFFFFFUL;
-            pSpec[RTCSPEC.CUSTOM_MAXVALUE64BIT] = 0xFFFFFFFFFFFFFFFFUL;
-
-            pSpec[RTCSPEC.CUSTOM_VALUESOURCE] = CustomValueSource.RANDOM;
-
-            pSpec[RTCSPEC.CUSTOM_SOURCE] = BlastUnitSource.VALUE;
-
-            pSpec[RTCSPEC.CUSTOM_STOREADDRESS] = CustomStoreAddress.RANDOM;
-            pSpec[RTCSPEC.CUSTOM_STORETIME] = StoreTime.IMMEDIATE;
-            pSpec[RTCSPEC.CUSTOM_STORETYPE] = StoreType.ONCE;
-            return pSpec;
-        }
-
-        public static PartialSpec InitializeHellgenieEngineTemplate()
-        {
-            PartialSpec pSpec = new PartialSpec(AllSpec.CorruptCoreSpec.name);
-            pSpec[RTCSPEC.CUSTOM_NAME] = "Hellgenie Engine";
-
-            pSpec[RTCSPEC.CORE_CURRENTPRECISION] = 1;
-            pSpec[RTCSPEC.CORE_CURRENTALIGNMENT] = 0;
-            pSpec[RTCSPEC.CORE_USEALIGNMENT] = true;
-
-            pSpec[RTCSPEC.CUSTOM_DELAY] = 0;
-            pSpec[RTCSPEC.CUSTOM_LIFETIME] = 0;
             pSpec[RTCSPEC.CUSTOM_LOOP] = false;
 
             pSpec[RTCSPEC.CUSTOM_TILTVALUE] = new BigInteger(0);

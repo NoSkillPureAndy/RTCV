@@ -490,7 +490,6 @@ namespace RTCV.UI
             switch (cbSelectedTemplate.SelectedItem.ToString())
             {
                 case "Nightmare Engine":
-                case "Hellgenie Engine":
                 case "Distortion Engine":
                 case "Freeze Engine":
                 case "Pipe Engine":

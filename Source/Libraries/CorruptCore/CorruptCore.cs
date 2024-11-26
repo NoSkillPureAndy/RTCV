@@ -177,6 +177,12 @@ namespace RTCV.CorruptCore
             set => AllSpec.CorruptCoreSpec.Update(RTCSPEC.CORE_RADIUS, value);
         }
 
+        public static bool CreateInfiniteUnits
+        {
+            get => (bool)AllSpec.CorruptCoreSpec[RTCSPEC.CORE_CREATEINFINITEUNITS];
+            set => AllSpec.CorruptCoreSpec.Update(RTCSPEC.CORE_CREATEINFINITEUNITS, value);
+        }
+
         public static bool AutoCorrupt
         {
             get => (bool)(AllSpec.CorruptCoreSpec?[RTCSPEC.CORE_AUTOCORRUPT] ?? false);
@@ -392,7 +398,6 @@ namespace RTCV.CorruptCore
                 //Engine Settings
                 rtcSpecTemplate.Insert(getDefaultPartial());
                 rtcSpecTemplate.Insert(NightmareEngine.getDefaultPartial());
-                rtcSpecTemplate.Insert(HellgenieEngine.getDefaultPartial());
                 rtcSpecTemplate.Insert(DistortionEngine.getDefaultPartial());
 
                 //Custom Engine Config with Nightmare Engine
@@ -707,9 +712,6 @@ namespace RTCV.CorruptCore
                     case CorruptionEngine.NIGHTMARE:
                         bu = NightmareEngine.GenerateUnit(domain, address, precision, alignment, useAlignment);
                         break;
-                    case CorruptionEngine.HELLGENIE:
-                        bu = HellgenieEngine.GenerateUnit(domain, address, precision, alignment, useAlignment);
-                        break;
                     case CorruptionEngine.DISTORTION:
                         bu = DistortionEngine.GenerateUnit(domain, address, precision, alignment, useAlignment);
                         break;
@@ -841,7 +843,7 @@ namespace RTCV.CorruptCore
             }
 
             // Capping intensity at engine-specific maximums
-            if ((SelectedEngine == CorruptionEngine.HELLGENIE ||
+            if ((CreateInfiniteUnits ||
                 SelectedEngine == CorruptionEngine.FREEZE ||
                 SelectedEngine == CorruptionEngine.PIPE ||
                 (SelectedEngine == CorruptionEngine.CUSTOM && CustomEngine.Lifetime == 0)) &&

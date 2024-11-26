@@ -196,9 +196,9 @@
                     value = replacementValue;
                 }
 
-                return new BlastUnit(value, domain, safeAddress, precision, mi.BigEndian, 0, 1);
+                return new BlastUnit(value, domain, safeAddress, precision, mi.BigEndian, 0, RtcCore.CreateInfiniteUnits ? 0 : 1);
             }
-            BlastUnit bu = new BlastUnit(StoreType.ONCE, StoreTime.PREEXECUTE, domain, safeAddress, domain, safeAddress, precision, mi.BigEndian);
+            BlastUnit bu = new BlastUnit(StoreType.ONCE, StoreTime.PREEXECUTE, domain, safeAddress, domain, safeAddress, precision, mi.BigEndian, 0, RtcCore.CreateInfiniteUnits ? 0 : 1);
             switch (type)
             {
                 case NightmareType.ADD:

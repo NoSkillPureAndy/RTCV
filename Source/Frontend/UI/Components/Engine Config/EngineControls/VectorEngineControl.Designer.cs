@@ -62,9 +62,9 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.panel2.Controls.Add(this.lbVectorEngineValueText1);
             this.panel2.Controls.Add(this.cbVectorValueList);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Location = new System.Drawing.Point(5, 98);
+            this.panel2.Location = new System.Drawing.Point(6, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(408, 47);
+            this.panel2.Size = new System.Drawing.Size(416, 72);
             this.panel2.TabIndex = 147;
             this.panel2.Tag = "color:dark2";
             // 
@@ -73,7 +73,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.lbVectorEngineValueText1.AutoSize = true;
             this.lbVectorEngineValueText1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbVectorEngineValueText1.ForeColor = System.Drawing.Color.White;
-            this.lbVectorEngineValueText1.Location = new System.Drawing.Point(165, 25);
+            this.lbVectorEngineValueText1.Location = new System.Drawing.Point(166, 34);
             this.lbVectorEngineValueText1.Name = "lbVectorEngineValueText1";
             this.lbVectorEngineValueText1.Size = new System.Drawing.Size(108, 13);
             this.lbVectorEngineValueText1.TabIndex = 138;
@@ -90,7 +90,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.cbVectorValueList.ForeColor = System.Drawing.Color.White;
             this.cbVectorValueList.FormattingEnabled = true;
             this.cbVectorValueList.IntegralHeight = false;
-            this.cbVectorValueList.Location = new System.Drawing.Point(8, 19);
+            this.cbVectorValueList.Location = new System.Drawing.Point(8, 31);
             this.cbVectorValueList.MaxDropDownItems = 15;
             this.cbVectorValueList.Name = "cbVectorValueList";
             this.cbVectorValueList.Size = new System.Drawing.Size(152, 21);
@@ -115,9 +115,9 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.pnLimiterList.Controls.Add(this.lbVectorEngineLimiterText1);
             this.pnLimiterList.Controls.Add(this.cbVectorLimiterList);
             this.pnLimiterList.Controls.Add(this.label13);
-            this.pnLimiterList.Location = new System.Drawing.Point(5, 47);
+            this.pnLimiterList.Location = new System.Drawing.Point(6, 33);
             this.pnLimiterList.Name = "pnLimiterList";
-            this.pnLimiterList.Size = new System.Drawing.Size(408, 47);
+            this.pnLimiterList.Size = new System.Drawing.Size(416, 73);
             this.pnLimiterList.TabIndex = 146;
             this.pnLimiterList.Tag = "color:dark2";
             // 
@@ -126,7 +126,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.lbVectorEngineLimiterText1.AutoSize = true;
             this.lbVectorEngineLimiterText1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbVectorEngineLimiterText1.ForeColor = System.Drawing.Color.White;
-            this.lbVectorEngineLimiterText1.Location = new System.Drawing.Point(165, 24);
+            this.lbVectorEngineLimiterText1.Location = new System.Drawing.Point(167, 34);
             this.lbVectorEngineLimiterText1.Name = "lbVectorEngineLimiterText1";
             this.lbVectorEngineLimiterText1.Size = new System.Drawing.Size(104, 13);
             this.lbVectorEngineLimiterText1.TabIndex = 141;
@@ -143,7 +143,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.cbVectorLimiterList.ForeColor = System.Drawing.Color.White;
             this.cbVectorLimiterList.FormattingEnabled = true;
             this.cbVectorLimiterList.IntegralHeight = false;
-            this.cbVectorLimiterList.Location = new System.Drawing.Point(8, 19);
+            this.cbVectorLimiterList.Location = new System.Drawing.Point(9, 31);
             this.cbVectorLimiterList.MaxDropDownItems = 15;
             this.cbVectorLimiterList.Name = "cbVectorLimiterList";
             this.cbVectorLimiterList.Size = new System.Drawing.Size(152, 21);
@@ -169,7 +169,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(169, 15);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(161, 13);
+            this.label19.Size = new System.Drawing.Size(180, 13);
             this.label19.TabIndex = 145;
             this.label19.Text = "Corrupts using limiter and value lists";
             // 

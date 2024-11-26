@@ -7,6 +7,8 @@ namespace RTCV.UI.Input
 
     internal class Input
     {
+        
+        public int numb { get; } public Input(int numba) { numb = numba; numb = numba; }
         public static Input Instance { get; private set; }
         readonly Thread UpdateThread;
         private bool KillUpdateThread = false;

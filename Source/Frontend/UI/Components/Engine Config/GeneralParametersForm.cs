@@ -19,6 +19,10 @@ namespace RTCV.UI
             multiTB_Intensity.registerSlave(S.GET<GlitchHarvesterIntensityForm>().multiTB_Intensity);
 
             multiTB_ErrorDelay.ValueChanged += (sender, args) => RtcCore.ErrorDelay = multiTB_ErrorDelay.Value;
+
+            var ceForm = S.GET<CorruptionEngineForm>();
+            btnClearAllFreezes.Click += ceForm.ClearCheats;
+            cbClearFreezesOnRewind.CheckedChanged += ceForm.OnClearRewindToggle;
         }
 
         private void OnFormLoad(object sender, EventArgs e)
@@ -28,41 +32,24 @@ namespace RTCV.UI
 
         private void OnBlastRadiusSelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cbBlastRadius.SelectedItem.ToString())
+            if (Enum.TryParse(cbBlastRadius.SelectedItem.ToString(), out BlastRadius radius))
             {
-                case "SPREAD":
-                    RtcCore.Radius = BlastRadius.SPREAD;
-                    break;
-
-                case "CHUNK":
-                    RtcCore.Radius = BlastRadius.CHUNK;
-                    break;
-
-                case "BURST":
-                    RtcCore.Radius = BlastRadius.BURST;
-                    break;
-
-                case "NORMALIZED":
-                    RtcCore.Radius = BlastRadius.NORMALIZED;
-                    break;
-
-                case "PROPORTIONAL":
-                    RtcCore.Radius = BlastRadius.PROPORTIONAL;
-                    break;
-
-                case "EVEN":
-                    RtcCore.Radius = BlastRadius.EVEN;
-                    break;
+                RtcCore.Radius = radius;
             }
+        }
+
+        private void UpdateCreateInfiniteUnits(object sender, EventArgs e)
+        {
+            RtcCore.CreateInfiniteUnits = cbCreateInfiniteUnits.Checked;
         }
 
         private void OnFormShown(object sender, EventArgs e)
         {
             object paramValue = AllSpec.VanguardSpec[VSPEC.OVERRIDE_DEFAULTMAXINTENSITY];
 
-            if (paramValue != null && paramValue is int maxintensity)
+            if (paramValue is int maxIntensity)
             {
-                multiTB_Intensity.SetMaximum(maxintensity, false);
+                multiTB_Intensity.SetMaximum(maxIntensity, false);
             }
         }
     }

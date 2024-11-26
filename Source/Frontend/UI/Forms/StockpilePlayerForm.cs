@@ -169,7 +169,7 @@ namespace RTCV.UI
                 (columnsMenu.Items.Add("Show Note", null, new EventHandler((ob, ev) => { dgvStockpile.Columns["Note"].Visible ^= true; })) as ToolStripMenuItem).Checked = dgvStockpile.Columns["Note"].Visible;
                 columnsMenu.Items.Add(stripSeparator);
                 (columnsMenu.Items.Add("Load on Select", null, new EventHandler((ob, ev) => { S.GET<GlitchHarvesterBlastForm>().LoadOnSelect ^= true; })) as ToolStripMenuItem).Checked = S.GET<GlitchHarvesterBlastForm>().LoadOnSelect;
-                (columnsMenu.Items.Add("Clear Infinite Units on Rewind", null, new EventHandler((ob, ev) => { S.GET<CorruptionEngineForm>().HellgenieEngineControl.cbClearCheatsOnRewind.Checked ^= true; })) as ToolStripMenuItem).Checked = S.GET<CorruptionEngineForm>().HellgenieEngineControl.cbClearCheatsOnRewind.Checked;
+                (columnsMenu.Items.Add("Clear Infinite Units on Rewind", null, new EventHandler((ob, ev) => { S.GET<GeneralParametersForm>().cbClearFreezesOnRewind.Checked ^= true; })) as ToolStripMenuItem).Checked = S.GET<GeneralParametersForm>().cbClearFreezesOnRewind.Checked;
 
                 columnsMenu.Items.Add(stripSeparator);
 

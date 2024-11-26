@@ -36,7 +36,7 @@
                 safeAddress = mi.Size - (2 * precision) + alignment; //If we're out of range, hit the last aligned address
             }
 
-            return new BlastUnit(StoreType.ONCE, StoreTime.IMMEDIATE, domain, safeAddress, domain, safeAddress, precision, mi.BigEndian, Delay, 1);
+            return new BlastUnit(StoreType.ONCE, StoreTime.IMMEDIATE, domain, safeAddress, domain, safeAddress, precision, mi.BigEndian, Delay, RtcCore.CreateInfiniteUnits ? 0 : 1);
         }
     }
 }

@@ -513,7 +513,6 @@ namespace RTCV.UI
                 S.GET<GlitchHarvesterBlastForm>().btnSendRaw.Enabled = false;
                 S.GET<GlitchHarvesterBlastForm>().btnBlastToggle.Enabled = false;
 
-                S.GET<CorruptionEngineForm>().cbSelectedEngine.Items.Remove("Hellgenie Engine");
                 S.GET<CorruptionEngineForm>().cbSelectedEngine.Items.Remove("Distortion Engine");
                 S.GET<CorruptionEngineForm>().cbSelectedEngine.Items.Remove("Pipe Engine");
                 S.GET<CorruptionEngineForm>().cbSelectedEngine.Items.Remove("Freeze Engine");

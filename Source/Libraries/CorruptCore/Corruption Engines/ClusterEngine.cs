@@ -232,7 +232,7 @@ namespace RTCV.CorruptCore
                 for (int j = 0; j < chunkSize; j++)
                 {
                     //do not swap endianess
-                    ret[j] = new BlastUnit(byteArr[j], domain, safeAddress + (j * precision), precision, false, 0, 1, null, true, false, true);
+                    ret[j] = new BlastUnit(byteArr[j], domain, safeAddress + (j * precision), precision, false, 0, RtcCore.CreateInfiniteUnits ? 0 : 1, null, true, false, true);
                 }
 
                 return ret;
@@ -245,7 +245,7 @@ namespace RTCV.CorruptCore
                     btsOut.AddRange(byteArr[j]);
                 }
                 //do not swap endianess
-                return new BlastUnit[] { new BlastUnit(btsOut.ToArray(), domain, safeAddress, (precision * chunkSize), false, 0, 1, null, true, false, true) };
+                return new BlastUnit[] { new BlastUnit(btsOut.ToArray(), domain, safeAddress, (precision * chunkSize), false, 0, RtcCore.CreateInfiniteUnits ? 0 : 1, null, true, false, true) };
             }
         }
     }

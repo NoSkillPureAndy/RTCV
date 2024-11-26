@@ -43,6 +43,8 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label20);
             this.engineGroupBox.Controls.Add(this.cbClearFreezesOnRewind);
             this.engineGroupBox.Controls.Add(this.btnClearAllFreezes);
+            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.Controls.SetChildIndex(this.btnClearAllFreezes, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.cbClearFreezesOnRewind, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label20, 0);
@@ -118,7 +120,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.btnClearAllFreezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearAllFreezes.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnClearAllFreezes.ForeColor = System.Drawing.Color.White;
-            this.btnClearAllFreezes.Location = new System.Drawing.Point(7, 117);
+            this.btnClearAllFreezes.Location = new System.Drawing.Point(6, 160);
             this.btnClearAllFreezes.Name = "btnClearAllFreezes";
             this.btnClearAllFreezes.Size = new System.Drawing.Size(159, 24);
             this.btnClearAllFreezes.TabIndex = 144;
@@ -127,11 +129,12 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.btnClearAllFreezes.Text = "Clear all freezes";
             this.btnClearAllFreezes.UseVisualStyleBackColor = false;
             // 
-            // FreezeEngine
+            // FreezeEngineControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "FreezeEngine";
+            this.Name = "FreezeEngineControl";
+            this.Size = new System.Drawing.Size(428, 190);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

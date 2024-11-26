@@ -81,7 +81,7 @@ namespace RTCV.CorruptCore
             if (matchBytes != null)
             {
                 return new BlastUnit(Filtering.GetRandomConstant(ValueListHash, precision, matchBytes), domain, safeAddress, precision,
-                    mi.BigEndian, 0, 1, null, true, false, true);
+                    mi.BigEndian, 0, RtcCore.CreateInfiniteUnits ? 0 : 1, null, true, false, true);
             }
 
             return null;
