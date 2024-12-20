@@ -158,7 +158,7 @@ namespace RTCV.UI
                                 formGridAnchor = (AnchorStyles)Convert.ToInt32(subData[5].Trim());
                             }
 
-                            Form tileForm = null;
+                            Form tileForm;
 
                             if (formName == "MemoryTools")
                             {
@@ -184,7 +184,6 @@ namespace RTCV.UI
                                     catch (Exception ex)
                                     {
                                         _ = ex;
-                                        continue;
                                     }
                                 }
 
@@ -205,12 +204,15 @@ namespace RTCV.UI
                         }
                     case "LoadTo":
                         {
+                            var coreForm = S.GET<CoreForm>();
                             if (data == "Main")
                             {
+                                coreForm.SetDefaultGrid(cuGrid);
                                 cuGrid.LoadToMain();
                             }
                             else
                             {
+                                coreForm.SetDefaultGrid(cuGrid, true);
                                 cuGrid.LoadToNewWindow("External");
                             }
 
@@ -218,6 +220,22 @@ namespace RTCV.UI
                         }
                 }
             }
+
+            var form = CanvasForm.GetExtraForm("External");
+            if (form is null)
+                return;
+            form.FormClosing -= RemoveExternalForm;
+            form.FormClosing += RemoveExternalForm;
+        }
+        
+        private static void RemoveExternalForm(object sender, FormClosingEventArgs e)
+        {
+            var coreForm = S.GET<CoreForm>();
+            coreForm.PreviousGrids[1] = coreForm.PreviousGrids[(coreForm.ExternalIndex + 1) % 1];
+            coreForm.ExternalIndex = -1;
+            
+            // if the external form had any modules that should also be in the main form's grid, they need to be put back
+            coreForm.PreviousGrids[1].LoadToMain();
         }
     }
 }

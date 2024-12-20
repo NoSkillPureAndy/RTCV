@@ -23,7 +23,9 @@ namespace RTCV.UI
         internal static CoreForm thisForm;
         internal static CanvasForm cfForm;
 
-        public CanvasGrid previousGrid { get; set; } = null;
+        // Contains the previous grid in the main form and the previous external grid, in order of appearance
+        public CanvasGrid[] PreviousGrids { get; } = new CanvasGrid[2];
+        public int ExternalIndex = -1;
 
         //Values used for padding and scaling properly in high dpi
         internal static int xPadding { get; private set; }
@@ -297,12 +299,14 @@ This message only appears once.";
         {
             if (Params.IsParamSet("SIMPLE_MODE"))
             {
+                SetDefaultGrid(DefaultGrids.simpleMode);
                 DefaultGrids.simpleMode.LoadToMain();
                 SimpleModeForm smForm = S.GET<SimpleModeForm>();
                 smForm.EnteringSimpleMode();
             }
             else
             {
+                SetDefaultGrid(DefaultGrids.engineConfig);
                 DefaultGrids.engineConfig.LoadToMain();
             }
         }
@@ -356,8 +360,28 @@ This message only appears once.";
             }
             else
             {
-                LocalNetCoreRouter.Route(NetCore.Endpoints.CorruptCore, NetCore.Commands.Basic.ManualBlast, true);
+                LocalNetCoreRouter.Route(Endpoints.CorruptCore, NetCore.Commands.Basic.ManualBlast, true);
             }
+        }
+
+        public void SetDefaultGrid(CanvasGrid grid, bool isExternal = false)
+        {
+            if (PreviousGrids[1] == grid)
+                return;
+            
+            if (isExternal)
+            {   
+                // we don't want to store two external grids in the history, that wouldn't make sense
+                if (ExternalIndex < 1)
+                    PreviousGrids[0] = PreviousGrids[1];
+                else // if the last external form had any modules that should also be in the main form's grid, they need to be put back
+                    PreviousGrids[0].LoadToMain();
+            }
+            PreviousGrids[1] = grid;
+            if (isExternal)
+                ExternalIndex = 1;
+            else
+                ExternalIndex--; //Loading a custom layout 2.1 billion times crashes RTCV
         }
 
         private void OnStartEasyModeClick(object sender, MouseEventArgs e)

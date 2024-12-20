@@ -202,6 +202,7 @@ namespace RTCV.UI
 
             SyncObjectSingleton.FormExecute(() =>
             {
+                var coreForm = S.GET<CoreForm>();
                 if (UICore.FirstConnect)
                 {
                     lastVanguardClient = (string)AllSpec.VanguardSpec?[VSPEC.NAME] ?? "VANGUARD";
@@ -214,7 +215,7 @@ namespace RTCV.UI
                     //Configure the UI based on the vanguard spec
                     UICore.ConfigureUIFromVanguardSpec();
 
-                    S.GET<CoreForm>().Show();
+                    coreForm.Show();
 
                     //Pull any lists from the vanguard implementation
                     if (RtcCore.EmuDir != null)
@@ -224,7 +225,7 @@ namespace RTCV.UI
 
                     UICore.LoadLists(RtcCore.ListsDir);
 
-                    Panel sidebar = S.GET<CoreForm>().pnSideBar;
+                    Panel sidebar = coreForm.pnSideBar;
                     foreach (Control c in sidebar.Controls)
                     {
                         if (c is Button b)
@@ -257,7 +258,7 @@ namespace RTCV.UI
                     var vmdProtos = MemoryDomains.VmdPool.Values.Cast<VirtualMemoryDomain>().Select(x => x.Proto).ToArray();
                     LocalNetCoreRouter.Route(Endpoints.CorruptCore, Remote.PushVMDProtos, vmdProtos, true);
 
-                    S.GET<CoreForm>().Show();
+                    coreForm.Show();
 
                     //Configure the UI based on the vanguard spec
                     UICore.ConfigureUIFromVanguardSpec();
@@ -266,16 +267,27 @@ namespace RTCV.UI
                     S.GET<GlitchHarvesterBlastForm>().SetBlastButtonVisibility(true);
 
                     //Return to the main form. If the form is null for some reason, default to engineconfig
-                    if (S.GET<CoreForm>().previousGrid == null)
-                    {
-                        S.GET<CoreForm>().previousGrid = DefaultGrids.engineConfig;
-                    }
+                    coreForm.PreviousGrids[1] ??= DefaultGrids.engineConfig;
 
                     UICore.UnlockInterface();
-                    S.GET<CoreForm>().previousGrid.LoadToMain();
+
+                    switch (coreForm.ExternalIndex)
+                    {
+                        case 1:
+                            coreForm.PreviousGrids[0].LoadToMain();
+                            coreForm.PreviousGrids[1].LoadToNewWindow("External");
+                            break;
+                        case 0:
+                            coreForm.PreviousGrids[0].LoadToNewWindow("External");
+                            coreForm.PreviousGrids[1].LoadToMain();
+                            break;
+                        default:
+                            coreForm.PreviousGrids[1].LoadToMain();
+                            break;
+                    }
                 }
 
-                S.GET<CoreForm>().pbAutoKillSwitchTimeout.Value = 0; //remove this once core form is dead
+                coreForm.pbAutoKillSwitchTimeout.Value = 0; //remove this once core form is dead
 
                 if (!RtcCore.Attached)
                 {
@@ -283,7 +295,7 @@ namespace RTCV.UI
                 }
 
                 //Restart game protection
-                if (S.GET<CoreForm>().cbUseGameProtection.Checked)
+                if (coreForm.cbUseGameProtection.Checked)
                 {
                     if (StockpileManagerUISide.BackupedState != null)
                     {
@@ -298,11 +310,11 @@ namespace RTCV.UI
                     GameProtection.Start();
                     if (GameProtection.WasAutoCorruptRunning)
                     {
-                        S.GET<CoreForm>().AutoCorrupt = true;
+                        coreForm.AutoCorrupt = true;
                     }
                 }
 
-                S.GET<CoreForm>().Show();
+                coreForm.Show();
 
                 if (Params.IsParamSet("SIMPLE_MODE"))
                 {

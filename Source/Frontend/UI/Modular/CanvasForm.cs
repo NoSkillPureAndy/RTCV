@@ -263,13 +263,13 @@ namespace RTCV.UI
             {
                 //S.GET<RTC_Core_Form>().btnGlitchHarvester.Text = S.GET<RTC_Core_Form>().btnGlitchHarvester.Text.Replace("○ ", "");
 
-                if (this.Text == "Glitch Harvester")
+                if (Text == "Glitch Harvester")
                 {
                     S.GET<CoreForm>().pnGlitchHarvesterOpen.Visible = false;
                 }
 
                 e.Cancel = true;
-                this.Hide();
+                Hide();
             }
         }
     }
