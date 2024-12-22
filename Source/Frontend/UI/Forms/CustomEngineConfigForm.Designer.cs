@@ -138,7 +138,7 @@
             this.gbUnitSource.Controls.Add(this.rbUnitSourceValue);
             this.gbUnitSource.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbUnitSource.ForeColor = System.Drawing.Color.White;
-            this.gbUnitSource.Location = new System.Drawing.Point(15, 12);
+            this.gbUnitSource.Location = new System.Drawing.Point(15, 8);
             this.gbUnitSource.Name = "gbUnitSource";
             this.gbUnitSource.Size = new System.Drawing.Size(88, 55);
             this.gbUnitSource.TabIndex = 161;
@@ -214,7 +214,7 @@
             this.gbValueSettings.Controls.Add(this.gbValueSource);
             this.gbValueSettings.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbValueSettings.ForeColor = System.Drawing.Color.White;
-            this.gbValueSettings.Location = new System.Drawing.Point(15, 91);
+            this.gbValueSettings.Location = new System.Drawing.Point(15, 87);
             this.gbValueSettings.Name = "gbValueSettings";
             this.gbValueSettings.Size = new System.Drawing.Size(413, 90);
             this.gbValueSettings.TabIndex = 169;
@@ -230,7 +230,7 @@
             this.gbValueRange.Controls.Add(this.nmMinValue);
             this.gbValueRange.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbValueRange.ForeColor = System.Drawing.Color.White;
-            this.gbValueRange.Location = new System.Drawing.Point(107, 15);
+            this.gbValueRange.Location = new System.Drawing.Point(111, 15);
             this.gbValueRange.Name = "gbValueRange";
             this.gbValueRange.Size = new System.Drawing.Size(155, 66);
             this.gbValueRange.TabIndex = 166;
@@ -383,7 +383,7 @@
             this.gbLimiterList.Controls.Add(this.cbLimiterList);
             this.gbLimiterList.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbLimiterList.ForeColor = System.Drawing.Color.White;
-            this.gbLimiterList.Location = new System.Drawing.Point(193, 184);
+            this.gbLimiterList.Location = new System.Drawing.Point(193, 179);
             this.gbLimiterList.Name = "gbLimiterList";
             this.gbLimiterList.Size = new System.Drawing.Size(235, 115);
             this.gbLimiterList.TabIndex = 181;
@@ -482,7 +482,7 @@
             this.rbStoreModeBoth.ForeColor = System.Drawing.Color.White;
             this.rbStoreModeBoth.Location = new System.Drawing.Point(5, 46);
             this.rbStoreModeBoth.Name = "rbStoreModeBoth";
-            this.rbStoreModeBoth.Size = new System.Drawing.Size(49, 17);
+            this.rbStoreModeBoth.Size = new System.Drawing.Size(50, 17);
             this.rbStoreModeBoth.TabIndex = 194;
             this.rbStoreModeBoth.Text = "Both";
             this.rbStoreModeBoth.UseVisualStyleBackColor = true;
@@ -573,7 +573,7 @@
             this.gbStepSettings.Controls.Add(this.nmLifetime);
             this.gbStepSettings.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbStepSettings.ForeColor = System.Drawing.Color.White;
-            this.gbStepSettings.Location = new System.Drawing.Point(15, 183);
+            this.gbStepSettings.Location = new System.Drawing.Point(15, 179);
             this.gbStepSettings.Name = "gbStepSettings";
             this.gbStepSettings.Size = new System.Drawing.Size(150, 110);
             this.gbStepSettings.TabIndex = 188;
@@ -587,7 +587,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(5, 65);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 13);
+            this.label11.Size = new System.Drawing.Size(22, 13);
             this.label11.TabIndex = 191;
             this.label11.Text = "Tilt";
             // 
@@ -822,7 +822,7 @@
             this.gbStoreSettings.Enabled = false;
             this.gbStoreSettings.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gbStoreSettings.ForeColor = System.Drawing.Color.White;
-            this.gbStoreSettings.Location = new System.Drawing.Point(112, 12);
+            this.gbStoreSettings.Location = new System.Drawing.Point(112, 8);
             this.gbStoreSettings.Name = "gbStoreSettings";
             this.gbStoreSettings.Size = new System.Drawing.Size(316, 80);
             this.gbStoreSettings.TabIndex = 180;
@@ -950,7 +950,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(9, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 167;
             this.label2.Text = "Selected Template:";
             // 
@@ -966,9 +966,9 @@
             this.panel1.Controls.Add(this.gbLimiterList);
             this.panel1.Controls.Add(this.gbValueSettings);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(10, 60);
+            this.panel1.Location = new System.Drawing.Point(8, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 365);
+            this.panel1.Size = new System.Drawing.Size(443, 365);
             this.panel1.TabIndex = 192;
             this.panel1.Tag = "color:normal";
             // 
@@ -977,7 +977,7 @@
             this.lbFlavorText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFlavorText.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.lbFlavorText.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbFlavorText.Location = new System.Drawing.Point(187, 344);
+            this.lbFlavorText.Location = new System.Drawing.Point(189, 344);
             this.lbFlavorText.Name = "lbFlavorText";
             this.lbFlavorText.Size = new System.Drawing.Size(241, 14);
             this.lbFlavorText.TabIndex = 194;
@@ -991,7 +991,7 @@
             this.groupBox1.Controls.Add(this.cbClearRewind);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(15, 296);
+            this.groupBox1.Location = new System.Drawing.Point(15, 292);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(150, 65);
             this.groupBox1.TabIndex = 192;
@@ -1069,9 +1069,9 @@
             this.pnCustomPrecision.Controls.Add(this.label8);
             this.pnCustomPrecision.Controls.Add(this.nmAlignment);
             this.pnCustomPrecision.Controls.Add(this.cbUseAlignment);
-            this.pnCustomPrecision.Location = new System.Drawing.Point(10, 427);
+            this.pnCustomPrecision.Location = new System.Drawing.Point(8, 426);
             this.pnCustomPrecision.Name = "pnCustomPrecision";
-            this.pnCustomPrecision.Size = new System.Drawing.Size(441, 32);
+            this.pnCustomPrecision.Size = new System.Drawing.Size(443, 32);
             this.pnCustomPrecision.TabIndex = 193;
             this.pnCustomPrecision.Tag = "color:dark2";
             // 
@@ -1149,11 +1149,12 @@
             this.cbUseAlignment.AutoSize = true;
             this.cbUseAlignment.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbUseAlignment.Checked = true;
+            this.cbUseAlignment.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbUseAlignment.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbUseAlignment.ForeColor = System.Drawing.Color.White;
             this.cbUseAlignment.Location = new System.Drawing.Point(27, 7);
             this.cbUseAlignment.Name = "cbUseAlignment";
-            this.cbUseAlignment.Size = new System.Drawing.Size(106, 17);
+            this.cbUseAlignment.Size = new System.Drawing.Size(56, 17);
             this.cbUseAlignment.TabIndex = 151;
             this.cbUseAlignment.Text = "Align:";
             this.cbUseAlignment.UseVisualStyleBackColor = true;

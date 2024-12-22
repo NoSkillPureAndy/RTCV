@@ -70,9 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmActiveTableCapOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmActiveTableCapSize)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // lbAutoAddEvery
-            //
+            // 
             this.lbAutoAddEvery.AutoSize = true;
             this.lbAutoAddEvery.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbAutoAddEvery.ForeColor = System.Drawing.Color.White;
@@ -82,9 +82,9 @@
             this.lbAutoAddEvery.TabIndex = 127;
             this.lbAutoAddEvery.Text = "Auto-add every";
             this.lbAutoAddEvery.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnLoadDomains
-            //
+            // 
             this.btnLoadDomains.BackColor = System.Drawing.Color.Gray;
             this.btnLoadDomains.FlatAppearance.BorderSize = 0;
             this.btnLoadDomains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,9 +100,9 @@
             this.btnLoadDomains.UseVisualStyleBackColor = false;
             this.btnLoadDomains.Click += new System.EventHandler(this.LoadDomains);
             this.btnLoadDomains.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbSelectedMemoryDomain
-            //
+            // 
             this.cbSelectedMemoryDomain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbSelectedMemoryDomain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelectedMemoryDomain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,9 +115,10 @@
             this.cbSelectedMemoryDomain.TabIndex = 125;
             this.cbSelectedMemoryDomain.Tag = "color:dark1";
             this.cbSelectedMemoryDomain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableAddFile
-            //
+            // 
+            this.btnActiveTableAddFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActiveTableAddFile.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableAddFile.Enabled = false;
             this.btnActiveTableAddFile.FlatAppearance.BorderSize = 0;
@@ -133,9 +134,10 @@
             this.btnActiveTableAddFile.UseVisualStyleBackColor = false;
             this.btnActiveTableAddFile.Click += new System.EventHandler(this.AddActiveTable);
             this.btnActiveTableAddFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableSubtractFile
-            //
+            // 
+            this.btnActiveTableSubtractFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActiveTableSubtractFile.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableSubtractFile.Enabled = false;
             this.btnActiveTableSubtractFile.FlatAppearance.BorderSize = 0;
@@ -151,9 +153,10 @@
             this.btnActiveTableSubtractFile.UseVisualStyleBackColor = false;
             this.btnActiveTableSubtractFile.Click += new System.EventHandler(this.SubtractActiveTable);
             this.btnActiveTableSubtractFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableGenerate
-            //
+            // 
+            this.btnActiveTableGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActiveTableGenerate.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableGenerate.Enabled = false;
             this.btnActiveTableGenerate.FlatAppearance.BorderSize = 0;
@@ -169,9 +172,9 @@
             this.btnActiveTableGenerate.UseVisualStyleBackColor = false;
             this.btnActiveTableGenerate.Click += new System.EventHandler(this.GenerateVMDFromActiveTable);
             this.btnActiveTableGenerate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableDumpsReset
-            //
+            // 
             this.btnActiveTableDumpsReset.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableDumpsReset.Enabled = false;
             this.btnActiveTableDumpsReset.FlatAppearance.BorderSize = 0;
@@ -187,9 +190,10 @@
             this.btnActiveTableDumpsReset.UseVisualStyleBackColor = false;
             this.btnActiveTableDumpsReset.Click += new System.EventHandler(this.Initialize);
             this.btnActiveTableDumpsReset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbFreezeEngineNbDumps
-            //
+            // 
+            this.lbFreezeEngineNbDumps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbFreezeEngineNbDumps.AutoSize = true;
             this.lbFreezeEngineNbDumps.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbFreezeEngineNbDumps.ForeColor = System.Drawing.Color.White;
@@ -199,9 +203,10 @@
             this.lbFreezeEngineNbDumps.TabIndex = 86;
             this.lbFreezeEngineNbDumps.Text = "Memory dumps collected: #";
             this.lbFreezeEngineNbDumps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbActiveStatus
-            //
+            // 
+            this.lbActiveStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbActiveStatus.AutoSize = true;
             this.lbActiveStatus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbActiveStatus.ForeColor = System.Drawing.Color.White;
@@ -211,9 +216,10 @@
             this.lbActiveStatus.TabIndex = 87;
             this.lbActiveStatus.Text = "Active table status: NOT READY";
             this.lbActiveStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbActiveTableSize
-            //
+            // 
+            this.lbActiveTableSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbActiveTableSize.AutoSize = true;
             this.lbActiveTableSize.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbActiveTableSize.ForeColor = System.Drawing.Color.White;
@@ -223,9 +229,9 @@
             this.lbActiveTableSize.TabIndex = 85;
             this.lbActiveTableSize.Text = "Active table size: ######";
             this.lbActiveTableSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // nmAutoAddSec
-            //
+            // 
             this.nmAutoAddSec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nmAutoAddSec.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.nmAutoAddSec.ForeColor = System.Drawing.Color.White;
@@ -246,9 +252,9 @@
             0});
             this.nmAutoAddSec.ValueChanged += new System.EventHandler(this.HandleAutoAddIntervalChange);
             this.nmAutoAddSec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbAutoAddDump
-            //
+            // 
             this.cbAutoAddDump.AutoSize = true;
             this.cbAutoAddDump.Enabled = false;
             this.cbAutoAddDump.Font = new System.Drawing.Font("Segoe UI", 8F);
@@ -260,9 +266,10 @@
             this.cbAutoAddDump.UseVisualStyleBackColor = true;
             this.cbAutoAddDump.CheckedChanged += new System.EventHandler(this.HandleAutoAddDumpChange);
             this.cbAutoAddDump.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableLoad
-            //
+            // 
+            this.btnActiveTableLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActiveTableLoad.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableLoad.Enabled = false;
             this.btnActiveTableLoad.FlatAppearance.BorderSize = 0;
@@ -278,9 +285,10 @@
             this.btnActiveTableLoad.UseVisualStyleBackColor = false;
             this.btnActiveTableLoad.Click += new System.EventHandler(this.LoadActiveTable);
             this.btnActiveTableLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbDomainAddressSize
-            //
+            // 
+            this.lbDomainAddressSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbDomainAddressSize.AutoSize = true;
             this.lbDomainAddressSize.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbDomainAddressSize.ForeColor = System.Drawing.Color.White;
@@ -290,9 +298,9 @@
             this.lbDomainAddressSize.TabIndex = 82;
             this.lbDomainAddressSize.Text = "Domain address size: ######";
             this.lbDomainAddressSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableAddDump
-            //
+            // 
             this.btnActiveTableAddDump.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableAddDump.Enabled = false;
             this.btnActiveTableAddDump.FlatAppearance.BorderSize = 0;
@@ -308,10 +316,11 @@
             this.btnActiveTableAddDump.UseVisualStyleBackColor = false;
             this.btnActiveTableAddDump.Click += new System.EventHandler(this.AddState);
             this.btnActiveTableAddDump.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // groupBox2
-            //
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cbUseCorePrecision);
             this.groupBox2.Controls.Add(this.cbActiveTableExclude100percent);
@@ -327,14 +336,14 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(182, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(201, 234);
+            this.groupBox2.Size = new System.Drawing.Size(252, 234);
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Generation parameters";
             this.groupBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbUseCorePrecision
-            //
+            // 
             this.cbUseCorePrecision.AutoSize = true;
             this.cbUseCorePrecision.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbUseCorePrecision.ForeColor = System.Drawing.Color.White;
@@ -346,9 +355,9 @@
             this.cbUseCorePrecision.UseVisualStyleBackColor = true;
             this.cbUseCorePrecision.CheckedChanged += new System.EventHandler(this.HandleUseCorePrecisionChange);
             this.cbUseCorePrecision.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbActiveTableExclude100percent
-            //
+            // 
             this.cbActiveTableExclude100percent.AutoSize = true;
             this.cbActiveTableExclude100percent.Checked = true;
             this.cbActiveTableExclude100percent.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -361,22 +370,22 @@
             this.cbActiveTableExclude100percent.Text = "Exclude ever-changing %";
             this.cbActiveTableExclude100percent.UseVisualStyleBackColor = true;
             this.cbActiveTableExclude100percent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // track_ActiveTableActivityThreshold
-            //
-            this.track_ActiveTableActivityThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.track_ActiveTableActivityThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.track_ActiveTableActivityThreshold.Location = new System.Drawing.Point(8, 38);
             this.track_ActiveTableActivityThreshold.Maximum = 9999;
             this.track_ActiveTableActivityThreshold.Name = "track_ActiveTableActivityThreshold";
-            this.track_ActiveTableActivityThreshold.Size = new System.Drawing.Size(184, 45);
+            this.track_ActiveTableActivityThreshold.Size = new System.Drawing.Size(235, 45);
             this.track_ActiveTableActivityThreshold.TabIndex = 85;
             this.track_ActiveTableActivityThreshold.TickFrequency = 0;
             this.track_ActiveTableActivityThreshold.Scroll += new System.EventHandler(this.HandleActivityThresholdScroll);
             this.track_ActiveTableActivityThreshold.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label15
-            //
+            // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(164, 19);
             this.label15.Name = "label15";
@@ -384,9 +393,9 @@
             this.label15.TabIndex = 121;
             this.label15.Text = "%";
             this.label15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // nmActiveTableActivityThreshold
-            //
+            // 
             this.nmActiveTableActivityThreshold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nmActiveTableActivityThreshold.DecimalPlaces = 2;
             this.nmActiveTableActivityThreshold.ForeColor = System.Drawing.Color.White;
@@ -402,9 +411,9 @@
             this.nmActiveTableActivityThreshold.Tag = "color:dark1";
             this.nmActiveTableActivityThreshold.ValueChanged += new System.EventHandler(this.HandleActivityThresholdValueChange);
             this.nmActiveTableActivityThreshold.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label14
-            //
+            // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(10, 19);
             this.label14.Name = "label14";
@@ -412,10 +421,10 @@
             this.label14.TabIndex = 119;
             this.label14.Text = "Activity Threshold:";
             this.label14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // groupBox1
-            //
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.nmActiveTableCapOffset);
@@ -425,14 +434,14 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(14, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(178, 88);
+            this.groupBox1.Size = new System.Drawing.Size(229, 88);
             this.groupBox1.TabIndex = 85;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Capping distribution";
             this.groupBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label12
-            //
+            // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(8, 65);
             this.label12.Name = "label12";
@@ -440,9 +449,9 @@
             this.label12.TabIndex = 80;
             this.label12.Text = "Offset:";
             this.label12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // nmActiveTableCapOffset
-            //
+            // 
             this.nmActiveTableCapOffset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nmActiveTableCapOffset.Font = new System.Drawing.Font("Consolas", 8F);
             this.nmActiveTableCapOffset.ForeColor = System.Drawing.Color.White;
@@ -453,9 +462,9 @@
             this.nmActiveTableCapOffset.TabIndex = 119;
             this.nmActiveTableCapOffset.Tag = "color:dark1";
             this.nmActiveTableCapOffset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // rbActiveTableCapBlockEnd
-            //
+            // 
             this.rbActiveTableCapBlockEnd.AutoSize = true;
             this.rbActiveTableCapBlockEnd.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.rbActiveTableCapBlockEnd.Location = new System.Drawing.Point(8, 44);
@@ -465,9 +474,9 @@
             this.rbActiveTableCapBlockEnd.Text = "Block - From end";
             this.rbActiveTableCapBlockEnd.UseVisualStyleBackColor = true;
             this.rbActiveTableCapBlockEnd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // rbActiveTableCapBlockStart
-            //
+            // 
             this.rbActiveTableCapBlockStart.AutoSize = true;
             this.rbActiveTableCapBlockStart.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.rbActiveTableCapBlockStart.Location = new System.Drawing.Point(8, 29);
@@ -477,9 +486,9 @@
             this.rbActiveTableCapBlockStart.Text = "Block - From start";
             this.rbActiveTableCapBlockStart.UseVisualStyleBackColor = true;
             this.rbActiveTableCapBlockStart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // rbActiveTableCapRandom
-            //
+            // 
             this.rbActiveTableCapRandom.AutoSize = true;
             this.rbActiveTableCapRandom.Checked = true;
             this.rbActiveTableCapRandom.Font = new System.Drawing.Font("Segoe UI", 8F);
@@ -491,10 +500,10 @@
             this.rbActiveTableCapRandom.Text = "Random";
             this.rbActiveTableCapRandom.UseVisualStyleBackColor = true;
             this.rbActiveTableCapRandom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // nmActiveTableCapSize
-            //
-            this.nmActiveTableCapSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.nmActiveTableCapSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nmActiveTableCapSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nmActiveTableCapSize.ForeColor = System.Drawing.Color.White;
@@ -510,7 +519,7 @@
             0,
             0});
             this.nmActiveTableCapSize.Name = "nmActiveTableCapSize";
-            this.nmActiveTableCapSize.Size = new System.Drawing.Size(126, 22);
+            this.nmActiveTableCapSize.Size = new System.Drawing.Size(177, 22);
             this.nmActiveTableCapSize.TabIndex = 77;
             this.nmActiveTableCapSize.Tag = "color:dark1";
             this.nmActiveTableCapSize.Value = new decimal(new int[] {
@@ -519,9 +528,10 @@
             0,
             0});
             this.nmActiveTableCapSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label6
-            //
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 121);
             this.label6.Name = "label6";
@@ -529,9 +539,9 @@
             this.label6.TabIndex = 118;
             this.label6.Text = "Cap size:";
             this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbActiveTableCapSize
-            //
+            // 
             this.cbActiveTableCapSize.AutoSize = true;
             this.cbActiveTableCapSize.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbActiveTableCapSize.ForeColor = System.Drawing.Color.White;
@@ -542,9 +552,10 @@
             this.cbActiveTableCapSize.Text = "Cap active table size";
             this.cbActiveTableCapSize.UseVisualStyleBackColor = true;
             this.cbActiveTableCapSize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnActiveTableQuickSave
-            //
+            // 
+            this.btnActiveTableQuickSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActiveTableQuickSave.BackColor = System.Drawing.Color.Gray;
             this.btnActiveTableQuickSave.Enabled = false;
             this.btnActiveTableQuickSave.FlatAppearance.BorderSize = 0;
@@ -560,9 +571,9 @@
             this.btnActiveTableQuickSave.UseVisualStyleBackColor = false;
             this.btnActiveTableQuickSave.Click += new System.EventHandler(this.SaveActiveTable);
             this.btnActiveTableQuickSave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label16
-            //
+            // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label16.ForeColor = System.Drawing.Color.White;
@@ -572,13 +583,13 @@
             this.label16.TabIndex = 122;
             this.label16.Text = "sec";
             this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // VmdActForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.lbAutoAddEvery);
             this.Controls.Add(this.btnLoadDomains);
             this.Controls.Add(this.cbSelectedMemoryDomain);
@@ -600,6 +611,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(371, 250);
             this.Name = "VmdActForm";
             this.Tag = "color:dark2";
             this.Text = "Active Table Generator";

@@ -37,9 +37,10 @@ namespace RTCV.UI.Components.EngineConfig
             // 
             this.engineGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.engineGroupBox.Controls.Add(this.placeholderComboBox);
+            this.engineGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
             this.engineGroupBox.Name = "engineGroupBox";
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 202);
             this.engineGroupBox.TabIndex = 0;
             this.engineGroupBox.TabStop = false;
             this.engineGroupBox.Tag = "color:dark1";
@@ -66,7 +67,7 @@ namespace RTCV.UI.Components.EngineConfig
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.engineGroupBox);
             this.Name = "EngineConfigControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 202);
             this.Tag = "color:dark1";
             this.engineGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);

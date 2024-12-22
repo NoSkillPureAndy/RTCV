@@ -46,9 +46,9 @@ namespace RTCV.UI
             this.btnAddStashToStockpile.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnAddStashToStockpile.ForeColor = System.Drawing.Color.White;
             this.btnAddStashToStockpile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStashToStockpile.Image")));
-            this.btnAddStashToStockpile.Location = new System.Drawing.Point(14, 355);
+            this.btnAddStashToStockpile.Location = new System.Drawing.Point(12, 348);
             this.btnAddStashToStockpile.Name = "btnAddStashToStockpile";
-            this.btnAddStashToStockpile.Size = new System.Drawing.Size(256, 32);
+            this.btnAddStashToStockpile.Size = new System.Drawing.Size(200, 32);
             this.btnAddStashToStockpile.TabIndex = 112;
             this.btnAddStashToStockpile.TabStop = false;
             this.btnAddStashToStockpile.Tag = "color:light1";
@@ -67,7 +67,7 @@ namespace RTCV.UI
             this.btnClearStashHistory.ForeColor = System.Drawing.Color.White;
             this.btnClearStashHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnClearStashHistory.Image")));
             this.btnClearStashHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearStashHistory.Location = new System.Drawing.Point(14, 13);
+            this.btnClearStashHistory.Location = new System.Drawing.Point(12, 12);
             this.btnClearStashHistory.Name = "btnClearStashHistory";
             this.btnClearStashHistory.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnClearStashHistory.Size = new System.Drawing.Size(77, 32);
@@ -89,7 +89,7 @@ namespace RTCV.UI
             this.btnStashDOWN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStashDOWN.Font = new System.Drawing.Font("Segoe UI Symbol", 12F);
             this.btnStashDOWN.ForeColor = System.Drawing.Color.White;
-            this.btnStashDOWN.Location = new System.Drawing.Point(238, 13);
+            this.btnStashDOWN.Location = new System.Drawing.Point(180, 12);
             this.btnStashDOWN.Name = "btnStashDOWN";
             this.btnStashDOWN.Size = new System.Drawing.Size(32, 32);
             this.btnStashDOWN.TabIndex = 110;
@@ -108,7 +108,7 @@ namespace RTCV.UI
             this.btnStashUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStashUP.Font = new System.Drawing.Font("Segoe UI Symbol", 12F);
             this.btnStashUP.ForeColor = System.Drawing.Color.White;
-            this.btnStashUP.Location = new System.Drawing.Point(203, 13);
+            this.btnStashUP.Location = new System.Drawing.Point(145, 12);
             this.btnStashUP.Name = "btnStashUP";
             this.btnStashUP.Size = new System.Drawing.Size(32, 32);
             this.btnStashUP.TabIndex = 109;
@@ -130,11 +130,11 @@ namespace RTCV.UI
             this.lbStashHistory.ForeColor = System.Drawing.Color.White;
             this.lbStashHistory.FormattingEnabled = true;
             this.lbStashHistory.IntegralHeight = false;
-            this.lbStashHistory.Location = new System.Drawing.Point(14, 48);
+            this.lbStashHistory.Location = new System.Drawing.Point(12, 47);
             this.lbStashHistory.Name = "lbStashHistory";
             this.lbStashHistory.ScrollAlwaysVisible = true;
             this.lbStashHistory.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbStashHistory.Size = new System.Drawing.Size(256, 304);
+            this.lbStashHistory.Size = new System.Drawing.Size(200, 298);
             this.lbStashHistory.TabIndex = 108;
             this.lbStashHistory.Tag = "color:normal";
             this.lbStashHistory.SelectedIndexChanged += new System.EventHandler(this.HandleStashHistorySelectionChange);
@@ -145,7 +145,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(284, 400);
+            this.ClientSize = new System.Drawing.Size(224, 392);
             this.Controls.Add(this.btnAddStashToStockpile);
             this.Controls.Add(this.btnClearStashHistory);
             this.Controls.Add(this.btnStashDOWN);
@@ -154,6 +154,7 @@ namespace RTCV.UI
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(224, 60);
             this.Name = "StashHistoryForm";
             this.Tag = "color:dark1";
             this.Text = "Stash History";

@@ -38,7 +38,7 @@
             this.btnOpenTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenTool.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenTool.ForeColor = System.Drawing.Color.White;
-            this.btnOpenTool.Location = new System.Drawing.Point(5, 5);
+            this.btnOpenTool.Location = new System.Drawing.Point(0, 0);
             this.btnOpenTool.Name = "btnOpenTool";
             this.btnOpenTool.Size = new System.Drawing.Size(190, 23);
             this.btnOpenTool.TabIndex = 136;
@@ -53,8 +53,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.btnOpenTool);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "OpenToolButton";
-            this.Size = new System.Drawing.Size(195, 28);
+            this.Size = new System.Drawing.Size(190, 23);
             this.Tag = "color:dark3";
             this.ResumeLayout(false);
 

@@ -30,30 +30,30 @@ namespace RTCV.UI
         {
             this.flpTools = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            //
+            // 
             // flpTools
-            //
+            // 
             this.flpTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpTools.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpTools.Location = new System.Drawing.Point(0, 0);
             this.flpTools.Name = "flpTools";
-            this.flpTools.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.flpTools.Size = new System.Drawing.Size(390, 250);
+            this.flpTools.Padding = new System.Windows.Forms.Padding(8, 5, 0, 0);
+            this.flpTools.Size = new System.Drawing.Size(441, 250);
             this.flpTools.TabIndex = 138;
-            //
+            // 
             // OpenToolsForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.flpTools);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Symbol", 8F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OpenToolsForm";
-            this.Tag = "color:dark3";
+            this.Tag = "color:dark2";
             this.Text = "Extra Tools and Plugins";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HandleFormClosing);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);

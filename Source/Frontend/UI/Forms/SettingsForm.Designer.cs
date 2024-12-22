@@ -59,7 +59,7 @@
             this.btnRtcFactoryClean.ForeColor = System.Drawing.Color.White;
             this.btnRtcFactoryClean.Image = ((System.Drawing.Image)(resources.GetObject("btnRtcFactoryClean.Image")));
             this.btnRtcFactoryClean.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRtcFactoryClean.Location = new System.Drawing.Point(409, 499);
+            this.btnRtcFactoryClean.Location = new System.Drawing.Point(407, 499);
             this.btnRtcFactoryClean.Name = "btnRtcFactoryClean";
             this.btnRtcFactoryClean.Size = new System.Drawing.Size(280, 29);
             this.btnRtcFactoryClean.TabIndex = 127;
@@ -75,9 +75,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnListBoxForm.BackColor = System.Drawing.Color.Gray;
-            this.pnListBoxForm.Location = new System.Drawing.Point(19, 66);
+            this.pnListBoxForm.Location = new System.Drawing.Point(16, 66);
             this.pnListBoxForm.Name = "pnListBoxForm";
-            this.pnListBoxForm.Size = new System.Drawing.Size(670, 422);
+            this.pnListBoxForm.Size = new System.Drawing.Size(671, 422);
             this.pnListBoxForm.TabIndex = 137;
             this.pnListBoxForm.Tag = "color:normal";
             // 
@@ -91,7 +91,7 @@
             this.btnOpenConsole.ForeColor = System.Drawing.Color.White;
             this.btnOpenConsole.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenConsole.Image")));
             this.btnOpenConsole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenConsole.Location = new System.Drawing.Point(563, 27);
+            this.btnOpenConsole.Location = new System.Drawing.Point(561, 27);
             this.btnOpenConsole.Name = "btnOpenConsole";
             this.btnOpenConsole.Size = new System.Drawing.Size(126, 29);
             this.btnOpenConsole.TabIndex = 138;
@@ -111,7 +111,7 @@
             this.btnDebugInfo.ForeColor = System.Drawing.Color.White;
             this.btnDebugInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnDebugInfo.Image")));
             this.btnDebugInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDebugInfo.Location = new System.Drawing.Point(428, 27);
+            this.btnDebugInfo.Location = new System.Drawing.Point(426, 27);
             this.btnDebugInfo.Name = "btnDebugInfo";
             this.btnDebugInfo.Size = new System.Drawing.Size(126, 29);
             this.btnDebugInfo.TabIndex = 139;
@@ -129,7 +129,7 @@
             this.btnTestForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTestForm.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnTestForm.ForeColor = System.Drawing.Color.White;
-            this.btnTestForm.Location = new System.Drawing.Point(362, 27);
+            this.btnTestForm.Location = new System.Drawing.Point(360, 27);
             this.btnTestForm.Name = "btnTestForm";
             this.btnTestForm.Size = new System.Drawing.Size(57, 29);
             this.btnTestForm.TabIndex = 140;

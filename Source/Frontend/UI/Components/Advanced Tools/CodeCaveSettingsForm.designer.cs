@@ -61,7 +61,7 @@ namespace RTCV.UI
             this.lbDomains.AutoSize = true;
             this.lbDomains.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDomains.ForeColor = System.Drawing.Color.White;
-            this.lbDomains.Location = new System.Drawing.Point(228, 32);
+            this.lbDomains.Location = new System.Drawing.Point(235, 32);
             this.lbDomains.Name = "lbDomains";
             this.lbDomains.Size = new System.Drawing.Size(166, 13);
             this.lbDomains.TabIndex = 86;
@@ -78,7 +78,7 @@ namespace RTCV.UI
             this.lbMemoryDomains.ForeColor = System.Drawing.Color.White;
             this.lbMemoryDomains.FormattingEnabled = true;
             this.lbMemoryDomains.IntegralHeight = false;
-            this.lbMemoryDomains.Location = new System.Drawing.Point(231, 58);
+            this.lbMemoryDomains.Location = new System.Drawing.Point(238, 58);
             this.lbMemoryDomains.Margin = new System.Windows.Forms.Padding(5);
             this.lbMemoryDomains.Name = "lbMemoryDomains";
             this.lbMemoryDomains.ScrollAlwaysVisible = true;
@@ -93,7 +93,7 @@ namespace RTCV.UI
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 14);
+            this.label1.Location = new System.Drawing.Point(24, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 31);
             this.label1.TabIndex = 129;
@@ -117,7 +117,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(434, 250);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbMemoryDomains);

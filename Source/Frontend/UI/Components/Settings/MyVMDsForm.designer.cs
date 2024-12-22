@@ -50,11 +50,11 @@ namespace RTCV.UI
             this.lbLoadedVmdList.ForeColor = System.Drawing.Color.White;
             this.lbLoadedVmdList.FormattingEnabled = true;
             this.lbLoadedVmdList.IntegralHeight = false;
-            this.lbLoadedVmdList.Location = new System.Drawing.Point(12, 14);
+            this.lbLoadedVmdList.Location = new System.Drawing.Point(12, 12);
             this.lbLoadedVmdList.Margin = new System.Windows.Forms.Padding(5);
             this.lbLoadedVmdList.Name = "lbLoadedVmdList";
             this.lbLoadedVmdList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbLoadedVmdList.Size = new System.Drawing.Size(173, 223);
+            this.lbLoadedVmdList.Size = new System.Drawing.Size(263, 381);
             this.lbLoadedVmdList.TabIndex = 12;
             this.lbLoadedVmdList.Tag = "color:dark2";
             this.lbLoadedVmdList.SelectedIndexChanged += new System.EventHandler(this.HandleLoadedVmdListSelectionChange);
@@ -68,7 +68,7 @@ namespace RTCV.UI
             this.btnRefreshVmdFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshVmdFiles.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnRefreshVmdFiles.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshVmdFiles.Location = new System.Drawing.Point(197, 212);
+            this.btnRefreshVmdFiles.Location = new System.Drawing.Point(287, 368);
             this.btnRefreshVmdFiles.Name = "btnRefreshVmdFiles";
             this.btnRefreshVmdFiles.Size = new System.Drawing.Size(182, 25);
             this.btnRefreshVmdFiles.TabIndex = 131;
@@ -89,7 +89,7 @@ namespace RTCV.UI
             this.btnLoadVmd.ForeColor = System.Drawing.Color.White;
             this.btnLoadVmd.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadVmd.Image")));
             this.btnLoadVmd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoadVmd.Location = new System.Drawing.Point(197, 14);
+            this.btnLoadVmd.Location = new System.Drawing.Point(287, 12);
             this.btnLoadVmd.Name = "btnLoadVmd";
             this.btnLoadVmd.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnLoadVmd.Size = new System.Drawing.Size(182, 41);
@@ -113,7 +113,7 @@ namespace RTCV.UI
             this.btnImportVmd.ForeColor = System.Drawing.Color.White;
             this.btnImportVmd.Image = ((System.Drawing.Image)(resources.GetObject("btnImportVmd.Image")));
             this.btnImportVmd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImportVmd.Location = new System.Drawing.Point(197, 61);
+            this.btnImportVmd.Location = new System.Drawing.Point(287, 59);
             this.btnImportVmd.Name = "btnImportVmd";
             this.btnImportVmd.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnImportVmd.Size = new System.Drawing.Size(182, 25);
@@ -137,7 +137,7 @@ namespace RTCV.UI
             this.btnSaveVmd.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnSaveVmd.ForeColor = System.Drawing.Color.White;
             this.btnSaveVmd.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveVmd.Image")));
-            this.btnSaveVmd.Location = new System.Drawing.Point(197, 92);
+            this.btnSaveVmd.Location = new System.Drawing.Point(287, 90);
             this.btnSaveVmd.Name = "btnSaveVmd";
             this.btnSaveVmd.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnSaveVmd.Size = new System.Drawing.Size(182, 25);
@@ -161,7 +161,7 @@ namespace RTCV.UI
             this.btnRenameVMD.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnRenameVMD.ForeColor = System.Drawing.Color.White;
             this.btnRenameVMD.Image = ((System.Drawing.Image)(resources.GetObject("btnRenameVMD.Image")));
-            this.btnRenameVMD.Location = new System.Drawing.Point(197, 123);
+            this.btnRenameVMD.Location = new System.Drawing.Point(287, 121);
             this.btnRenameVMD.Name = "btnRenameVMD";
             this.btnRenameVMD.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnRenameVMD.Size = new System.Drawing.Size(89, 25);
@@ -186,7 +186,7 @@ namespace RTCV.UI
             this.btnUnloadVmd.ForeColor = System.Drawing.Color.White;
             this.btnUnloadVmd.Image = ((System.Drawing.Image)(resources.GetObject("btnUnloadVmd.Image")));
             this.btnUnloadVmd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnloadVmd.Location = new System.Drawing.Point(292, 123);
+            this.btnUnloadVmd.Location = new System.Drawing.Point(382, 121);
             this.btnUnloadVmd.Name = "btnUnloadVmd";
             this.btnUnloadVmd.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnUnloadVmd.Size = new System.Drawing.Size(87, 25);
@@ -209,7 +209,7 @@ namespace RTCV.UI
             this.btnOpenFolder.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenFolder.ForeColor = System.Drawing.Color.White;
             this.btnOpenFolder.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenFolder.Image")));
-            this.btnOpenFolder.Location = new System.Drawing.Point(196, 181);
+            this.btnOpenFolder.Location = new System.Drawing.Point(287, 337);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnOpenFolder.Size = new System.Drawing.Size(182, 25);
@@ -228,7 +228,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.btnRenameVMD);
             this.Controls.Add(this.btnUnloadVmd);

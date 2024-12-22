@@ -34,21 +34,22 @@
             this.cbSelectBox = new System.Windows.Forms.ComboBox();
             this.pnComponentForm.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // pnComponentForm
-            //
-            this.pnComponentForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.pnComponentForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnComponentForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.pnComponentForm.Controls.Add(this.label8);
-            this.pnComponentForm.Location = new System.Drawing.Point(11, 31);
+            this.pnComponentForm.Location = new System.Drawing.Point(12, 33);
             this.pnComponentForm.Name = "pnComponentForm";
-            this.pnComponentForm.Size = new System.Drawing.Size(390, 250);
+            this.pnComponentForm.Size = new System.Drawing.Size(440, 251);
             this.pnComponentForm.TabIndex = 117;
             this.pnComponentForm.Tag = "color:normal";
-            //
+            // 
             // label8
-            //
+            // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label8.ForeColor = System.Drawing.Color.Silver;
@@ -58,10 +59,10 @@
             this.label8.TabIndex = 120;
             this.label8.Tag = "color:normal";
             this.label8.Text = "Component is detached/unavailable";
-            //
+            // 
             // cbSelectBox
-            //
-            this.cbSelectBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.cbSelectBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSelectBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.cbSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -69,25 +70,26 @@
             this.cbSelectBox.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbSelectBox.ForeColor = System.Drawing.Color.White;
             this.cbSelectBox.FormattingEnabled = true;
-            this.cbSelectBox.Location = new System.Drawing.Point(11, 10);
+            this.cbSelectBox.Location = new System.Drawing.Point(12, 12);
             this.cbSelectBox.Name = "cbSelectBox";
-            this.cbSelectBox.Size = new System.Drawing.Size(390, 21);
+            this.cbSelectBox.Size = new System.Drawing.Size(440, 21);
             this.cbSelectBox.TabIndex = 116;
             this.cbSelectBox.TabStop = false;
             this.cbSelectBox.Tag = "color:normal";
             this.cbSelectBox.SelectedIndexChanged += new System.EventHandler(this.AnchorSelectedItemToPanel);
-            //
+            // 
             // SelectBoxForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(413, 291);
+            this.ClientSize = new System.Drawing.Size(464, 296);
             this.Controls.Add(this.pnComponentForm);
             this.Controls.Add(this.cbSelectBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(464, 296);
             this.Name = "SelectBoxForm";
             this.Tag = "color:dark1";
             this.Text = "SelectBox Component";

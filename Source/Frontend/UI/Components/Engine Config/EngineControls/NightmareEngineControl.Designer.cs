@@ -47,8 +47,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label15);
             this.engineGroupBox.Controls.Add(this.cbBlastType);
             this.engineGroupBox.Controls.Add(this.label9);
-            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.Controls.SetChildIndex(this.label9, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.cbBlastType, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label15, 0);
@@ -180,7 +179,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "NightmareEngineControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

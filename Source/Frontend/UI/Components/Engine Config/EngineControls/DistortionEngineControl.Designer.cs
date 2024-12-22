@@ -41,8 +41,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.btnResyncDistortionEngine);
             this.engineGroupBox.Controls.Add(this.nmDistortionDelay);
             this.engineGroupBox.Controls.Add(this.label7);
-            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label7, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.nmDistortionDelay, 0);
@@ -62,12 +61,13 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             // btnResyncDistortionEngine
             // 
+            this.btnResyncDistortionEngine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnResyncDistortionEngine.BackColor = System.Drawing.Color.Gray;
             this.btnResyncDistortionEngine.FlatAppearance.BorderSize = 0;
             this.btnResyncDistortionEngine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResyncDistortionEngine.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnResyncDistortionEngine.ForeColor = System.Drawing.Color.White;
-            this.btnResyncDistortionEngine.Location = new System.Drawing.Point(6, 160);
+            this.btnResyncDistortionEngine.Location = new System.Drawing.Point(6, 169);
             this.btnResyncDistortionEngine.Name = "btnResyncDistortionEngine";
             this.btnResyncDistortionEngine.Size = new System.Drawing.Size(159, 24);
             this.btnResyncDistortionEngine.TabIndex = 150;
@@ -120,7 +120,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "DistortionEngineControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

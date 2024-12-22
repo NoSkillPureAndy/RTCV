@@ -106,6 +106,8 @@ namespace RTCV.UI.Components.Controls
         public SavestateList()
         {
             InitializeComponent();
+            Resize += (s, ev) => CalculateStatesPerPage();
+            // why do these get reset to 4px, forcing me to set them again?
         }
 
         private void InitializeSavestateHolder()
@@ -113,21 +115,45 @@ namespace RTCV.UI.Components.Controls
             //Nuke any old holder if it exists
             SelectedHolder?.SetSelected(false);
             SelectedHolder = null;
+            flowPanel.Controls.Clear();
+            _controlList = new List<SavestateHolder>();
+            CalculateStatesPerPage();
+        }
 
+        private void CalculateStatesPerPage()
+        {
             var ssHeight = 22;
             var padding = 3;
             //Calculate how many we can fit within the space we have.
-            _numPerPage = (flowPanel.Height / (ssHeight + padding)) - 1;
-            //Create the list
-            flowPanel.Controls.Clear();
-            _controlList = new List<SavestateHolder>();
-            for (var i = 0; i < _numPerPage; i++)
+            _numPerPage = ((flowPanel.Height - 2) / (ssHeight + padding)) - 1;
+            if (_numPerPage < 0)
+                _numPerPage = 0;
+            if (_controlList.Count == _numPerPage)
+                return;
+            
+            if (_numPerPage > _controlList.Count)
             {
-                var ssh = new SavestateHolder(i);
-                ssh.btnSavestate.MouseDown += BtnSavestate_MouseDown;
-                flowPanel.Controls.Add(ssh);
-                _controlList.Add(ssh);
+                for (var i = _controlList.Count; i < _numPerPage; i++)
+                {
+                    var ssh = new SavestateHolder(i);
+                    ssh.btnSavestate.MouseDown += BtnSavestate_MouseDown;
+                    flowPanel.Controls.Add(ssh);
+                    _controlList.Add(ssh);
+                }
             }
+            else
+            {
+                for (var i = _controlList.Count; i > _numPerPage; i--)
+                {
+                    flowPanel.Controls.Remove(_controlList[i - 1]);
+                    _controlList.RemoveAt(i - 1);
+                }
+            }
+            
+            if (!(_dataSource is null))
+                DataSource_PositionChanged(null, null);
+            if (Parent is IColorize colorize)
+                colorize.Recolor();
         }
 
         public void BtnSavestate_MouseDown(object sender, MouseEventArgs e)
@@ -613,6 +639,5 @@ namespace RTCV.UI.Components.Controls
 
             RegisterStashKeyToSelected(newSk);
         }
-
     }
 }

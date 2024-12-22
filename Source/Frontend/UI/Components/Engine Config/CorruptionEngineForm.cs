@@ -47,33 +47,40 @@ namespace RTCV.UI
         public CorruptionEngineForm()
         {
             InitializeComponent();
-
-            this.undockedSizable = false;
+            undockedSizable = false;
 
             var engineControlLocation = new Point(gbSelectedEngine.Location.X, gbSelectedEngine.Location.Y);
 
             FreezeEngineControl = new Components.EngineConfig.EngineControls.FreezeEngineControl(this);
+            FreezeEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(FreezeEngineControl);
 
             NightmareEngineControl = new Components.EngineConfig.EngineControls.NightmareEngineControl(engineControlLocation);
+            NightmareEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(NightmareEngineControl);
 
             DistortionEngineControl = new Components.EngineConfig.EngineControls.DistortionEngineControl(engineControlLocation);
+            DistortionEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(DistortionEngineControl);
 
             CustomEngineControl = new Components.EngineConfig.EngineControls.CustomEngineControl(engineControlLocation);
+            CustomEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(CustomEngineControl);
 
             PipeEngineControl = new Components.EngineConfig.EngineControls.PipeEngineControl(this);
+            PipeEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(PipeEngineControl);
 
             BlastGeneratorEngineControl = new Components.EngineConfig.EngineControls.BlastGeneratorEngineControl(engineControlLocation);
+            BlastGeneratorEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(BlastGeneratorEngineControl);
 
             VectorEngineControl = new Components.EngineConfig.EngineControls.VectorEngineControl(this);
+            VectorEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(VectorEngineControl);
 
             ClusterEngineControl = new Components.EngineConfig.EngineControls.ClusterEngineControl(engineControlLocation);
+            ClusterEngineControl.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             this.Controls.Add(ClusterEngineControl);
         }
 
@@ -213,7 +220,6 @@ namespace RTCV.UI
             cbCustomPrecision.Enabled = false;
             nmAlignment.Maximum = RtcCore.CurrentPrecision - 1;
 
-            //S.GET<GlitchHarvesterIntensityForm>().Visible = true;
             S.GET<GeneralParametersForm>().Show();
             S.GET<MemoryDomainsForm>().Show();
             S.GET<GlitchHarvesterIntensityForm>().Show();

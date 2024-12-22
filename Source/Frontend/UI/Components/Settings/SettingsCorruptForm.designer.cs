@@ -60,7 +60,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 16);
+            this.label3.Location = new System.Drawing.Point(15, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 15);
             this.label3.TabIndex = 146;
@@ -73,9 +73,9 @@
             this.panel4.BackColor = System.Drawing.Color.Gray;
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Location = new System.Drawing.Point(20, 34);
+            this.panel4.Location = new System.Drawing.Point(18, 31);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(276, 137);
+            this.panel4.Size = new System.Drawing.Size(445, 137);
             this.panel4.TabIndex = 145;
             this.panel4.Tag = "color:normal";
             // 
@@ -89,7 +89,7 @@
             this.panel5.ForeColor = System.Drawing.Color.White;
             this.panel5.Location = new System.Drawing.Point(14, 11);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(247, 51);
+            this.panel5.Size = new System.Drawing.Size(416, 51);
             this.panel5.TabIndex = 152;
             this.panel5.TabStop = false;
             this.panel5.Tag = "";
@@ -145,7 +145,7 @@
             this.panel6.ForeColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(14, 66);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(247, 61);
+            this.panel6.Size = new System.Drawing.Size(416, 61);
             this.panel6.TabIndex = 156;
             this.panel6.TabStop = false;
             this.panel6.Tag = "";
@@ -182,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 184);
+            this.label2.Location = new System.Drawing.Point(15, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 144;
@@ -195,9 +195,9 @@
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.panel1);
-            this.panel3.Location = new System.Drawing.Point(20, 202);
+            this.panel3.Location = new System.Drawing.Point(18, 207);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(276, 180);
+            this.panel3.Size = new System.Drawing.Size(445, 180);
             this.panel3.TabIndex = 141;
             this.panel3.Tag = "color:normal";
             // 
@@ -211,7 +211,7 @@
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(14, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 53);
+            this.panel2.Size = new System.Drawing.Size(416, 53);
             this.panel2.TabIndex = 142;
             this.panel2.TabStop = false;
             this.panel2.Tag = "";
@@ -255,7 +255,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(14, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 100);
+            this.panel1.Size = new System.Drawing.Size(416, 100);
             this.panel1.TabIndex = 140;
             this.panel1.TabStop = false;
             this.panel1.Tag = "";
@@ -321,7 +321,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(320, 394);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);

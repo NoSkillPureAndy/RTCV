@@ -39,9 +39,9 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // btnGenerateList
-            //
+            // 
             this.btnGenerateList.BackColor = System.Drawing.Color.Gray;
             this.btnGenerateList.FlatAppearance.BorderSize = 0;
             this.btnGenerateList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -57,11 +57,11 @@
             this.btnGenerateList.UseVisualStyleBackColor = false;
             this.btnGenerateList.Click += new System.EventHandler(this.GenerateList);
             this.btnGenerateList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // tbListValues
-            //
-            this.tbListValues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.tbListValues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbListValues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbListValues.ForeColor = System.Drawing.Color.White;
@@ -70,13 +70,13 @@
             this.tbListValues.Multiline = true;
             this.tbListValues.Name = "tbListValues";
             this.tbListValues.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbListValues.Size = new System.Drawing.Size(161, 226);
+            this.tbListValues.Size = new System.Drawing.Size(212, 226);
             this.tbListValues.TabIndex = 128;
             this.tbListValues.Tag = "color:dark1";
             this.tbListValues.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -86,9 +86,9 @@
             this.label2.TabIndex = 131;
             this.label2.Text = "List Name:";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // tbListName
-            //
+            // 
             this.tbListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbListName.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.tbListName.ForeColor = System.Drawing.Color.White;
@@ -98,17 +98,18 @@
             this.tbListName.TabIndex = 132;
             this.tbListName.Tag = "color:dark1";
             this.tbListName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbSaveFile
-            //
-            this.cbSaveFile.Location = new System.Drawing.Point(14, 21);
+            // 
+            this.cbSaveFile.Location = new System.Drawing.Point(14, 18);
             this.cbSaveFile.Name = "cbSaveFile";
             this.cbSaveFile.Size = new System.Drawing.Size(104, 24);
             this.cbSaveFile.TabIndex = 0;
             this.cbSaveFile.Text = "Save List to File";
-            //
+            // 
             // btnRefreshListsFromFile
-            //
+            // 
+            this.btnRefreshListsFromFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRefreshListsFromFile.BackColor = System.Drawing.Color.Gray;
             this.btnRefreshListsFromFile.FlatAppearance.BorderSize = 0;
             this.btnRefreshListsFromFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,9 +124,9 @@
             this.btnRefreshListsFromFile.Text = "Refresh Lists from Files";
             this.btnRefreshListsFromFile.UseVisualStyleBackColor = false;
             this.btnRefreshListsFromFile.Click += new System.EventHandler(this.RefreshListsFromFile);
-            //
+            // 
             // groupBox1
-            //
+            // 
             this.groupBox1.Controls.Add(this.btnHelp);
             this.groupBox1.Controls.Add(this.cbSaveFile);
             this.groupBox1.Controls.Add(this.btnGenerateList);
@@ -138,9 +139,9 @@
             this.groupBox1.TabIndex = 137;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List Generator";
-            //
+            // 
             // btnHelp
-            //
+            // 
             this.btnHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHelp.FlatAppearance.BorderSize = 0;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,13 +156,13 @@
             this.btnHelp.Tag = "color:light1";
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.ShowHelpMessage);
-            //
+            // 
             // ListGenForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefreshListsFromFile);
             this.Controls.Add(this.tbListValues);
@@ -170,6 +171,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(300, 180);
             this.Name = "ListGenForm";
             this.Tag = "color:dark3";
             this.Text = "List Generator";

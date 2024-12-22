@@ -40,8 +40,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label10);
             this.engineGroupBox.Controls.Add(this.label21);
             this.engineGroupBox.Controls.Add(this.btnOpenBlastGenerator);
-            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.btnOpenBlastGenerator, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label21, 0);
@@ -72,12 +71,13 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             // btnOpenBlastGenerator
             // 
+            this.btnOpenBlastGenerator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnOpenBlastGenerator.BackColor = System.Drawing.Color.Gray;
             this.btnOpenBlastGenerator.FlatAppearance.BorderSize = 0;
             this.btnOpenBlastGenerator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenBlastGenerator.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenBlastGenerator.ForeColor = System.Drawing.Color.White;
-            this.btnOpenBlastGenerator.Location = new System.Drawing.Point(6, 160);
+            this.btnOpenBlastGenerator.Location = new System.Drawing.Point(6, 169);
             this.btnOpenBlastGenerator.Name = "btnOpenBlastGenerator";
             this.btnOpenBlastGenerator.Size = new System.Drawing.Size(159, 24);
             this.btnOpenBlastGenerator.TabIndex = 148;
@@ -92,7 +92,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "BlastGeneratorEngineControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

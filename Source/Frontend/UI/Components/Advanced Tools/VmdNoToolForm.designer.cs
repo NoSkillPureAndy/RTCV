@@ -47,7 +47,7 @@ namespace RTCV.UI
             this.btnOpenPackageDownloader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenPackageDownloader.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOpenPackageDownloader.ForeColor = System.Drawing.Color.White;
-            this.btnOpenPackageDownloader.Location = new System.Drawing.Point(2, 225);
+            this.btnOpenPackageDownloader.Location = new System.Drawing.Point(2, 211);
             this.btnOpenPackageDownloader.Name = "btnOpenPackageDownloader";
             this.btnOpenPackageDownloader.Size = new System.Drawing.Size(131, 36);
             this.btnOpenPackageDownloader.TabIndex = 197;
@@ -127,7 +127,7 @@ namespace RTCV.UI
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(330, 16);
+            this.label5.Location = new System.Drawing.Point(317, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 15);
             this.label5.TabIndex = 192;
@@ -141,7 +141,7 @@ namespace RTCV.UI
             this.btnPrepareGlitchHarvester.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrepareGlitchHarvester.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPrepareGlitchHarvester.ForeColor = System.Drawing.Color.White;
-            this.btnPrepareGlitchHarvester.Location = new System.Drawing.Point(323, 42);
+            this.btnPrepareGlitchHarvester.Location = new System.Drawing.Point(310, 42);
             this.btnPrepareGlitchHarvester.Name = "btnPrepareGlitchHarvester";
             this.btnPrepareGlitchHarvester.Size = new System.Drawing.Size(129, 63);
             this.btnPrepareGlitchHarvester.TabIndex = 191;
@@ -160,9 +160,9 @@ namespace RTCV.UI
             this.lbDragAndDropGH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbDragAndDropGH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbDragAndDropGH.ForeColor = System.Drawing.Color.White;
-            this.lbDragAndDropGH.Location = new System.Drawing.Point(323, 115);
+            this.lbDragAndDropGH.Location = new System.Drawing.Point(310, 115);
             this.lbDragAndDropGH.Name = "lbDragAndDropGH";
-            this.lbDragAndDropGH.Size = new System.Drawing.Size(129, 146);
+            this.lbDragAndDropGH.Size = new System.Drawing.Size(129, 132);
             this.lbDragAndDropGH.TabIndex = 38;
             this.lbDragAndDropGH.Tag = "color:light3";
             this.lbDragAndDropGH.Text = "Drag and drop load \nto Glitch Harvester";
@@ -175,7 +175,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(454, 264);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.btnOpenPackageDownloader);
             this.Controls.Add(this.btnNavigateToMyPlugins);
             this.Controls.Add(this.btnNavigateToMyVMDs);
@@ -187,6 +187,7 @@ namespace RTCV.UI
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(271, 185);
             this.Name = "NoToolShortcuts";
             this.Tag = "color:dark1";
             this.Text = "No Tool Selected (Shortcuts)";

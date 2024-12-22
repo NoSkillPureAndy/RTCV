@@ -70,7 +70,6 @@ namespace RTCV.UI
             InitializeComponent();
 
             popoutAllowed = true;
-            this.undockedSizable = false;
 
             //cbRenderType.SelectedIndex = 0;
 

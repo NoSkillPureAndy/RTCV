@@ -43,8 +43,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label20);
             this.engineGroupBox.Controls.Add(this.cbClearFreezesOnRewind);
             this.engineGroupBox.Controls.Add(this.btnClearAllFreezes);
-            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.Controls.SetChildIndex(this.btnClearAllFreezes, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.cbClearFreezesOnRewind, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label20, 0);
@@ -106,7 +105,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.cbClearFreezesOnRewind.AutoSize = true;
             this.cbClearFreezesOnRewind.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbClearFreezesOnRewind.ForeColor = System.Drawing.Color.White;
-            this.cbClearFreezesOnRewind.Location = new System.Drawing.Point(184, 37);
+            this.cbClearFreezesOnRewind.Location = new System.Drawing.Point(8, 64);
             this.cbClearFreezesOnRewind.Name = "cbClearFreezesOnRewind";
             this.cbClearFreezesOnRewind.Size = new System.Drawing.Size(165, 17);
             this.cbClearFreezesOnRewind.TabIndex = 145;
@@ -115,12 +114,13 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             // btnClearAllFreezes
             // 
+            this.btnClearAllFreezes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearAllFreezes.BackColor = System.Drawing.Color.Gray;
             this.btnClearAllFreezes.FlatAppearance.BorderSize = 0;
             this.btnClearAllFreezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearAllFreezes.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnClearAllFreezes.ForeColor = System.Drawing.Color.White;
-            this.btnClearAllFreezes.Location = new System.Drawing.Point(6, 160);
+            this.btnClearAllFreezes.Location = new System.Drawing.Point(6, 169);
             this.btnClearAllFreezes.Name = "btnClearAllFreezes";
             this.btnClearAllFreezes.Size = new System.Drawing.Size(159, 24);
             this.btnClearAllFreezes.TabIndex = 144;
@@ -134,7 +134,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "FreezeEngineControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

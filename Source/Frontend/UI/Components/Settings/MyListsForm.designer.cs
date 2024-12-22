@@ -50,11 +50,11 @@ namespace RTCV.UI
             this.lbKnownLists.ForeColor = System.Drawing.Color.White;
             this.lbKnownLists.FormattingEnabled = true;
             this.lbKnownLists.IntegralHeight = false;
-            this.lbKnownLists.Location = new System.Drawing.Point(12, 14);
+            this.lbKnownLists.Location = new System.Drawing.Point(12, 12);
             this.lbKnownLists.Margin = new System.Windows.Forms.Padding(5);
             this.lbKnownLists.Name = "lbKnownLists";
             this.lbKnownLists.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbKnownLists.Size = new System.Drawing.Size(173, 223);
+            this.lbKnownLists.Size = new System.Drawing.Size(263, 381);
             this.lbKnownLists.TabIndex = 12;
             this.lbKnownLists.Tag = "color:dark2";
             this.lbKnownLists.SelectedIndexChanged += new System.EventHandler(this.OnKnownListSelectedIndexChanged);
@@ -68,7 +68,7 @@ namespace RTCV.UI
             this.btnRefreshListFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshListFiles.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnRefreshListFiles.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshListFiles.Location = new System.Drawing.Point(197, 212);
+            this.btnRefreshListFiles.Location = new System.Drawing.Point(287, 368);
             this.btnRefreshListFiles.Name = "btnRefreshListFiles";
             this.btnRefreshListFiles.Size = new System.Drawing.Size(182, 25);
             this.btnRefreshListFiles.TabIndex = 131;
@@ -88,7 +88,7 @@ namespace RTCV.UI
             this.btnImportList.ForeColor = System.Drawing.Color.White;
             this.btnImportList.Image = ((System.Drawing.Image)(resources.GetObject("btnImportList.Image")));
             this.btnImportList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImportList.Location = new System.Drawing.Point(197, 61);
+            this.btnImportList.Location = new System.Drawing.Point(287, 59);
             this.btnImportList.Name = "btnImportList";
             this.btnImportList.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnImportList.Size = new System.Drawing.Size(182, 25);
@@ -112,7 +112,7 @@ namespace RTCV.UI
             this.btnSaveList.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnSaveList.ForeColor = System.Drawing.Color.White;
             this.btnSaveList.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveList.Image")));
-            this.btnSaveList.Location = new System.Drawing.Point(197, 92);
+            this.btnSaveList.Location = new System.Drawing.Point(287, 90);
             this.btnSaveList.Name = "btnSaveList";
             this.btnSaveList.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnSaveList.Size = new System.Drawing.Size(182, 25);
@@ -136,7 +136,7 @@ namespace RTCV.UI
             this.btnRenameList.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnRenameList.ForeColor = System.Drawing.Color.White;
             this.btnRenameList.Image = ((System.Drawing.Image)(resources.GetObject("btnRenameList.Image")));
-            this.btnRenameList.Location = new System.Drawing.Point(197, 123);
+            this.btnRenameList.Location = new System.Drawing.Point(287, 121);
             this.btnRenameList.Name = "btnRenameList";
             this.btnRenameList.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnRenameList.Size = new System.Drawing.Size(89, 25);
@@ -161,7 +161,7 @@ namespace RTCV.UI
             this.btnRemoveList.ForeColor = System.Drawing.Color.White;
             this.btnRemoveList.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveList.Image")));
             this.btnRemoveList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveList.Location = new System.Drawing.Point(292, 123);
+            this.btnRemoveList.Location = new System.Drawing.Point(382, 121);
             this.btnRemoveList.Name = "btnRemoveList";
             this.btnRemoveList.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnRemoveList.Size = new System.Drawing.Size(87, 25);
@@ -185,7 +185,7 @@ namespace RTCV.UI
             this.btnEnableDisableList.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnEnableDisableList.ForeColor = System.Drawing.Color.White;
             this.btnEnableDisableList.Image = ((System.Drawing.Image)(resources.GetObject("btnEnableDisableList.Image")));
-            this.btnEnableDisableList.Location = new System.Drawing.Point(197, 14);
+            this.btnEnableDisableList.Location = new System.Drawing.Point(287, 12);
             this.btnEnableDisableList.Name = "btnEnableDisableList";
             this.btnEnableDisableList.Size = new System.Drawing.Size(182, 41);
             this.btnEnableDisableList.TabIndex = 177;
@@ -207,7 +207,7 @@ namespace RTCV.UI
             this.btnOpenFolder.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenFolder.ForeColor = System.Drawing.Color.White;
             this.btnOpenFolder.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenFolder.Image")));
-            this.btnOpenFolder.Location = new System.Drawing.Point(197, 181);
+            this.btnOpenFolder.Location = new System.Drawing.Point(287, 337);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnOpenFolder.Size = new System.Drawing.Size(182, 25);
@@ -225,7 +225,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.btnEnableDisableList);
             this.Controls.Add(this.btnRenameList);

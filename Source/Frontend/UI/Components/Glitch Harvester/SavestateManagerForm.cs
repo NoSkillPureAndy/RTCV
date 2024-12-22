@@ -55,7 +55,6 @@ namespace RTCV.UI
             InitializeComponent();
 
             popoutAllowed = true;
-            undockedSizable = false;
 
             savestateList.DataSource = savestateBindingSource;
             btnSaveSavestateList.BackColorChanged += (o, e) => UnsavedEdits = UnsavedEdits; //this is pretty cursed but it works

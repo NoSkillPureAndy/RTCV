@@ -42,7 +42,7 @@ namespace RTCV.UI
             this.lbClearBindHint.AutoSize = true;
             this.lbClearBindHint.ForeColor = System.Drawing.Color.White;
             this.lbClearBindHint.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lbClearBindHint.Location = new System.Drawing.Point(265, 15);
+            this.lbClearBindHint.Location = new System.Drawing.Point(334, 15);
             this.lbClearBindHint.Name = "lbClearBindHint";
             this.lbClearBindHint.Size = new System.Drawing.Size(137, 13);
             this.lbClearBindHint.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace RTCV.UI
             this.HotkeyTabControl.Location = new System.Drawing.Point(12, 11);
             this.HotkeyTabControl.Name = "HotkeyTabControl";
             this.HotkeyTabControl.SelectedIndex = 0;
-            this.HotkeyTabControl.Size = new System.Drawing.Size(388, 329);
+            this.HotkeyTabControl.Size = new System.Drawing.Size(457, 382);
             this.HotkeyTabControl.TabIndex = 0;
             this.HotkeyTabControl.Tag = "color:normal";
             // 
@@ -67,7 +67,7 @@ namespace RTCV.UI
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(380, 303);
+            this.tabPage1.Size = new System.Drawing.Size(449, 356);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Tag = "color:normal";
             this.tabPage1.Text = "tabPage1";
@@ -78,7 +78,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(412, 352);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.lbClearBindHint);
             this.Controls.Add(this.HotkeyTabControl);
             this.DoubleBuffered = true;

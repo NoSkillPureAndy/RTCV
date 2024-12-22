@@ -42,8 +42,6 @@
             // 
             // cbBlastRadius
             // 
-            this.cbBlastRadius.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbBlastRadius.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.cbBlastRadius.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBlastRadius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -57,9 +55,9 @@
             "EVEN",
             "PROPORTIONAL",
             "NORMALIZED"});
-            this.cbBlastRadius.Location = new System.Drawing.Point(99, 129);
+            this.cbBlastRadius.Location = new System.Drawing.Point(99, 127);
             this.cbBlastRadius.Name = "cbBlastRadius";
-            this.cbBlastRadius.Size = new System.Drawing.Size(107, 21);
+            this.cbBlastRadius.Size = new System.Drawing.Size(113, 21);
             this.cbBlastRadius.TabIndex = 21;
             this.cbBlastRadius.Tag = "color:normal";
             this.cbBlastRadius.SelectedIndexChanged += new System.EventHandler(this.OnBlastRadiusSelectedIndexChanged);
@@ -67,12 +65,10 @@
             // 
             // labelBlastRadius
             // 
-            this.labelBlastRadius.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBlastRadius.AutoSize = true;
             this.labelBlastRadius.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelBlastRadius.ForeColor = System.Drawing.Color.White;
-            this.labelBlastRadius.Location = new System.Drawing.Point(15, 131);
+            this.labelBlastRadius.Location = new System.Drawing.Point(9, 128);
             this.labelBlastRadius.Name = "labelBlastRadius";
             this.labelBlastRadius.Size = new System.Drawing.Size(81, 17);
             this.labelBlastRadius.TabIndex = 20;
@@ -89,11 +85,11 @@
             this.multiTB_ErrorDelay.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.multiTB_ErrorDelay.Hexadecimal = false;
             this.multiTB_ErrorDelay.Label = "Error Delay";
-            this.multiTB_ErrorDelay.Location = new System.Drawing.Point(9, 64);
+            this.multiTB_ErrorDelay.Location = new System.Drawing.Point(4, 64);
             this.multiTB_ErrorDelay.Maximum = ((long)(65535));
             this.multiTB_ErrorDelay.Minimum = ((long)(1));
             this.multiTB_ErrorDelay.Name = "multiTB_ErrorDelay";
-            this.multiTB_ErrorDelay.Size = new System.Drawing.Size(206, 60);
+            this.multiTB_ErrorDelay.Size = new System.Drawing.Size(216, 60);
             this.multiTB_ErrorDelay.TabIndex = 23;
             this.multiTB_ErrorDelay.Tag = "color:dark1";
             this.multiTB_ErrorDelay.UncapNumericBox = false;
@@ -109,11 +105,11 @@
             this.multiTB_Intensity.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.multiTB_Intensity.Hexadecimal = false;
             this.multiTB_Intensity.Label = "Intensity";
-            this.multiTB_Intensity.Location = new System.Drawing.Point(10, 9);
+            this.multiTB_Intensity.Location = new System.Drawing.Point(4, 5);
             this.multiTB_Intensity.Maximum = ((long)(65535));
             this.multiTB_Intensity.Minimum = ((long)(1));
             this.multiTB_Intensity.Name = "multiTB_Intensity";
-            this.multiTB_Intensity.Size = new System.Drawing.Size(205, 60);
+            this.multiTB_Intensity.Size = new System.Drawing.Size(216, 60);
             this.multiTB_Intensity.TabIndex = 22;
             this.multiTB_Intensity.Tag = "color:dark1";
             this.multiTB_Intensity.UncapNumericBox = false;
@@ -121,6 +117,7 @@
             // 
             // btnClearAllFreezes
             // 
+            this.btnClearAllFreezes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearAllFreezes.BackColor = System.Drawing.Color.Gray;
             this.btnClearAllFreezes.FlatAppearance.BorderSize = 0;
             this.btnClearAllFreezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -128,7 +125,7 @@
             this.btnClearAllFreezes.ForeColor = System.Drawing.Color.White;
             this.btnClearAllFreezes.Location = new System.Drawing.Point(99, 203);
             this.btnClearAllFreezes.Name = "btnClearAllFreezes";
-            this.btnClearAllFreezes.Size = new System.Drawing.Size(107, 33);
+            this.btnClearAllFreezes.Size = new System.Drawing.Size(113, 33);
             this.btnClearAllFreezes.TabIndex = 159;
             this.btnClearAllFreezes.TabStop = false;
             this.btnClearAllFreezes.Tag = "color:light1";
@@ -137,10 +134,11 @@
             // 
             // cbCreateInfiniteUnits
             // 
+            this.cbCreateInfiniteUnits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbCreateInfiniteUnits.AutoSize = true;
             this.cbCreateInfiniteUnits.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbCreateInfiniteUnits.ForeColor = System.Drawing.Color.White;
-            this.cbCreateInfiniteUnits.Location = new System.Drawing.Point(18, 159);
+            this.cbCreateInfiniteUnits.Location = new System.Drawing.Point(12, 158);
             this.cbCreateInfiniteUnits.Name = "cbCreateInfiniteUnits";
             this.cbCreateInfiniteUnits.Size = new System.Drawing.Size(128, 17);
             this.cbCreateInfiniteUnits.TabIndex = 158;
@@ -150,10 +148,11 @@
             // 
             // cbClearFreezesOnRewind
             // 
+            this.cbClearFreezesOnRewind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbClearFreezesOnRewind.AutoSize = true;
             this.cbClearFreezesOnRewind.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbClearFreezesOnRewind.ForeColor = System.Drawing.Color.White;
-            this.cbClearFreezesOnRewind.Location = new System.Drawing.Point(18, 179);
+            this.cbClearFreezesOnRewind.Location = new System.Drawing.Point(12, 178);
             this.cbClearFreezesOnRewind.Name = "cbClearFreezesOnRewind";
             this.cbClearFreezesOnRewind.Size = new System.Drawing.Size(177, 17);
             this.cbClearFreezesOnRewind.TabIndex = 157;
@@ -162,10 +161,11 @@
             // 
             // lbMaxFreeze
             // 
+            this.lbMaxFreeze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMaxFreeze.AutoSize = true;
             this.lbMaxFreeze.Font = new System.Drawing.Font("Segoe UI Symbol", 8F);
             this.lbMaxFreeze.ForeColor = System.Drawing.Color.White;
-            this.lbMaxFreeze.Location = new System.Drawing.Point(15, 198);
+            this.lbMaxFreeze.Location = new System.Drawing.Point(9, 198);
             this.lbMaxFreeze.Name = "lbMaxFreeze";
             this.lbMaxFreeze.Size = new System.Drawing.Size(72, 13);
             this.lbMaxFreeze.TabIndex = 156;
@@ -173,11 +173,12 @@
             // 
             // updownMaxFreeze
             // 
+            this.updownMaxFreeze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.updownMaxFreeze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.updownMaxFreeze.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.updownMaxFreeze.ForeColor = System.Drawing.Color.White;
             this.updownMaxFreeze.Hexadecimal = false;
-            this.updownMaxFreeze.Location = new System.Drawing.Point(18, 214);
+            this.updownMaxFreeze.Location = new System.Drawing.Point(12, 214);
             this.updownMaxFreeze.Maximum = new decimal(new int[] {
             65536,
             0,
@@ -215,6 +216,7 @@
             this.Controls.Add(this.labelBlastRadius);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(224, 248);
             this.Name = "GeneralParametersForm";
             this.Tag = "color:dark1";
             this.Text = "General Parameters";

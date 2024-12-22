@@ -48,9 +48,10 @@
             this.cbSelectedMemoryDomain = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // mtbRange
-            //
+            // 
+            this.mtbRange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.mtbRange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mtbRange.Checked = false;
             this.mtbRange.DisplayCheckbox = true;
@@ -69,9 +70,9 @@
             this.mtbRange.Value = ((long)(0));
             this.mtbRange.ValueChanged += new System.EventHandler<RTCV.UI.Components.Controls.ValueUpdateEventArgs>(this.ComputeRangeExpression);
             this.mtbRange.CheckChanged += new System.EventHandler<System.EventArgs>(this.ComputeRangeExpression);
-            //
+            // 
             // mtbStartAddress
-            //
+            // 
             this.mtbStartAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mtbStartAddress.Checked = false;
             this.mtbStartAddress.DisplayCheckbox = false;
@@ -89,23 +90,24 @@
             this.mtbStartAddress.UncapNumericBox = false;
             this.mtbStartAddress.Value = ((long)(0));
             this.mtbStartAddress.ValueChanged += new System.EventHandler<RTCV.UI.Components.Controls.ValueUpdateEventArgs>(this.ComputeRangeExpression);
-            //
+            // 
             // tbVmdName
-            //
-            this.tbVmdName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.tbVmdName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbVmdName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbVmdName.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.tbVmdName.ForeColor = System.Drawing.Color.White;
             this.tbVmdName.Location = new System.Drawing.Point(74, 191);
             this.tbVmdName.Name = "tbVmdName";
-            this.tbVmdName.Size = new System.Drawing.Size(311, 22);
+            this.tbVmdName.Size = new System.Drawing.Size(362, 22);
             this.tbVmdName.TabIndex = 132;
             this.tbVmdName.Tag = "color:dark1";
             this.tbVmdName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label2
-            //
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -115,9 +117,9 @@
             this.label2.TabIndex = 131;
             this.label2.Text = "VMD Name:";
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -127,10 +129,11 @@
             this.label5.TabIndex = 129;
             this.label5.Text = "Range expression";
             this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // tbRangeExpression
-            //
-            this.tbRangeExpression.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.tbRangeExpression.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbRangeExpression.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbRangeExpression.Font = new System.Drawing.Font("Consolas", 8F);
@@ -139,14 +142,14 @@
             this.tbRangeExpression.Multiline = true;
             this.tbRangeExpression.Name = "tbRangeExpression";
             this.tbRangeExpression.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbRangeExpression.Size = new System.Drawing.Size(161, 71);
+            this.tbRangeExpression.Size = new System.Drawing.Size(212, 71);
             this.tbRangeExpression.TabIndex = 128;
             this.tbRangeExpression.Tag = "color:dark1";
             this.tbRangeExpression.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnGenerateVMD
-            //
-            this.btnGenerateVMD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.btnGenerateVMD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenerateVMD.BackColor = System.Drawing.Color.Gray;
             this.btnGenerateVMD.Enabled = false;
@@ -156,7 +159,7 @@
             this.btnGenerateVMD.ForeColor = System.Drawing.Color.White;
             this.btnGenerateVMD.Location = new System.Drawing.Point(6, 220);
             this.btnGenerateVMD.Name = "btnGenerateVMD";
-            this.btnGenerateVMD.Size = new System.Drawing.Size(379, 26);
+            this.btnGenerateVMD.Size = new System.Drawing.Size(430, 26);
             this.btnGenerateVMD.TabIndex = 124;
             this.btnGenerateVMD.TabStop = false;
             this.btnGenerateVMD.Tag = "color:light1";
@@ -164,10 +167,10 @@
             this.btnGenerateVMD.UseVisualStyleBackColor = false;
             this.btnGenerateVMD.Click += new System.EventHandler(this.HandleGenerateVMDClick);
             this.btnGenerateVMD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // groupBox1
-            //
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lbEndianTypeValue);
             this.groupBox1.Controls.Add(this.lbWordSizeValue);
@@ -179,14 +182,14 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(229, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(156, 81);
+            this.groupBox1.Size = new System.Drawing.Size(207, 81);
             this.groupBox1.TabIndex = 123;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Domain summary";
             this.groupBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbEndianTypeValue
-            //
+            // 
             this.lbEndianTypeValue.AutoSize = true;
             this.lbEndianTypeValue.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbEndianTypeValue.ForeColor = System.Drawing.Color.White;
@@ -196,9 +199,9 @@
             this.lbEndianTypeValue.TabIndex = 92;
             this.lbEndianTypeValue.Text = "#####";
             this.lbEndianTypeValue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbWordSizeValue
-            //
+            // 
             this.lbWordSizeValue.AutoSize = true;
             this.lbWordSizeValue.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbWordSizeValue.ForeColor = System.Drawing.Color.White;
@@ -208,9 +211,9 @@
             this.lbWordSizeValue.TabIndex = 91;
             this.lbWordSizeValue.Text = "#####";
             this.lbWordSizeValue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbDomainSizeValue
-            //
+            // 
             this.lbDomainSizeValue.AutoSize = true;
             this.lbDomainSizeValue.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbDomainSizeValue.ForeColor = System.Drawing.Color.White;
@@ -220,9 +223,9 @@
             this.lbDomainSizeValue.TabIndex = 90;
             this.lbDomainSizeValue.Text = "#####";
             this.lbDomainSizeValue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbEndianTypeLabel
-            //
+            // 
             this.lbEndianTypeLabel.AutoSize = true;
             this.lbEndianTypeLabel.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbEndianTypeLabel.ForeColor = System.Drawing.Color.White;
@@ -232,9 +235,9 @@
             this.lbEndianTypeLabel.TabIndex = 88;
             this.lbEndianTypeLabel.Text = "Endian Type:";
             this.lbEndianTypeLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbWordSizeLabel
-            //
+            // 
             this.lbWordSizeLabel.AutoSize = true;
             this.lbWordSizeLabel.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbWordSizeLabel.ForeColor = System.Drawing.Color.White;
@@ -244,9 +247,9 @@
             this.lbWordSizeLabel.TabIndex = 87;
             this.lbWordSizeLabel.Text = "Word Size:";
             this.lbWordSizeLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // lbDomainSizeLabel
-            //
+            // 
             this.lbDomainSizeLabel.AutoSize = true;
             this.lbDomainSizeLabel.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lbDomainSizeLabel.ForeColor = System.Drawing.Color.White;
@@ -256,9 +259,9 @@
             this.lbDomainSizeLabel.TabIndex = 86;
             this.lbDomainSizeLabel.Text = "Domain Size:";
             this.lbDomainSizeLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // label17
-            //
+            // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label17.ForeColor = System.Drawing.Color.White;
@@ -268,9 +271,9 @@
             this.label17.TabIndex = 117;
             this.label17.Text = "Memory Domain";
             this.label17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // btnLoadDomains
-            //
+            // 
             this.btnLoadDomains.BackColor = System.Drawing.Color.Gray;
             this.btnLoadDomains.FlatAppearance.BorderSize = 0;
             this.btnLoadDomains.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,9 +289,9 @@
             this.btnLoadDomains.UseVisualStyleBackColor = false;
             this.btnLoadDomains.Click += new System.EventHandler(this.SelectAll);
             this.btnLoadDomains.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // cbSelectedMemoryDomain
-            //
+            // 
             this.cbSelectedMemoryDomain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbSelectedMemoryDomain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSelectedMemoryDomain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -302,13 +305,13 @@
             this.cbSelectedMemoryDomain.Tag = "color:dark1";
             this.cbSelectedMemoryDomain.SelectedIndexChanged += new System.EventHandler(this.HandleSelectedMemoryDomainChange);
             this.cbSelectedMemoryDomain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
-            //
+            // 
             // VmdSimpleGenForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(390, 250);
+            this.ClientSize = new System.Drawing.Size(441, 250);
             this.Controls.Add(this.mtbRange);
             this.Controls.Add(this.mtbStartAddress);
             this.Controls.Add(this.tbVmdName);
@@ -323,6 +326,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(370, 250);
             this.Name = "VmdSimpleGenForm";
             this.Tag = "color:dark3";
             this.Text = "Simple VMD Generator";

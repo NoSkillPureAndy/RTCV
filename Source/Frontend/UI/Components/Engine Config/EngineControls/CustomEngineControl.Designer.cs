@@ -39,8 +39,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.engineGroupBox.Controls.Add(this.label2);
             this.engineGroupBox.Controls.Add(this.label3);
             this.engineGroupBox.Controls.Add(this.btnOpenCustomEngine);
-            this.engineGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.engineGroupBox.Size = new System.Drawing.Size(428, 190);
+            this.engineGroupBox.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.Controls.SetChildIndex(this.placeholderComboBox, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.btnOpenCustomEngine, 0);
             this.engineGroupBox.Controls.SetChildIndex(this.label3, 0);
@@ -48,13 +47,14 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Italic);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(112, 82);
+            this.label2.Location = new System.Drawing.Point(119, 88);
             this.label2.MaximumSize = new System.Drawing.Size(205, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(204, 26);
+            this.label2.Size = new System.Drawing.Size(201, 26);
             this.label2.TabIndex = 150;
             this.label2.Text = "It has so many options, there\'s no way we could fit them all here!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,12 +72,13 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             // 
             // btnOpenCustomEngine
             // 
+            this.btnOpenCustomEngine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnOpenCustomEngine.BackColor = System.Drawing.Color.Gray;
             this.btnOpenCustomEngine.FlatAppearance.BorderSize = 0;
             this.btnOpenCustomEngine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenCustomEngine.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnOpenCustomEngine.ForeColor = System.Drawing.Color.White;
-            this.btnOpenCustomEngine.Location = new System.Drawing.Point(6, 160);
+            this.btnOpenCustomEngine.Location = new System.Drawing.Point(6, 169);
             this.btnOpenCustomEngine.Name = "btnOpenCustomEngine";
             this.btnOpenCustomEngine.Size = new System.Drawing.Size(159, 24);
             this.btnOpenCustomEngine.TabIndex = 148;
@@ -92,7 +93,7 @@ namespace RTCV.UI.Components.EngineConfig.EngineControls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "CustomEngineControl";
-            this.Size = new System.Drawing.Size(428, 190);
+            this.Size = new System.Drawing.Size(440, 199);
             this.engineGroupBox.ResumeLayout(false);
             this.engineGroupBox.PerformLayout();
             this.ResumeLayout(false);

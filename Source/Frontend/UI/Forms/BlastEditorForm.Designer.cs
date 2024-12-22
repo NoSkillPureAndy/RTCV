@@ -220,7 +220,7 @@ namespace RTCV.UI
             this.btnDisable50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisable50.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDisable50.ForeColor = System.Drawing.Color.White;
-            this.btnDisable50.Location = new System.Drawing.Point(14, 144);
+            this.btnDisable50.Location = new System.Drawing.Point(12, 148);
             this.btnDisable50.Name = "btnDisable50";
             this.btnDisable50.Size = new System.Drawing.Size(135, 23);
             this.btnDisable50.TabIndex = 114;
@@ -237,7 +237,7 @@ namespace RTCV.UI
             this.btnInvertDisabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvertDisabled.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnInvertDisabled.ForeColor = System.Drawing.Color.White;
-            this.btnInvertDisabled.Location = new System.Drawing.Point(14, 168);
+            this.btnInvertDisabled.Location = new System.Drawing.Point(12, 172);
             this.btnInvertDisabled.Name = "btnInvertDisabled";
             this.btnInvertDisabled.Size = new System.Drawing.Size(135, 23);
             this.btnInvertDisabled.TabIndex = 116;
@@ -254,7 +254,7 @@ namespace RTCV.UI
             this.btnRemoveDisabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveDisabled.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnRemoveDisabled.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveDisabled.Location = new System.Drawing.Point(14, 192);
+            this.btnRemoveDisabled.Location = new System.Drawing.Point(12, 196);
             this.btnRemoveDisabled.Name = "btnRemoveDisabled";
             this.btnRemoveDisabled.Size = new System.Drawing.Size(135, 23);
             this.btnRemoveDisabled.TabIndex = 115;
@@ -271,7 +271,7 @@ namespace RTCV.UI
             this.btnSanitizeTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSanitizeTool.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnSanitizeTool.ForeColor = System.Drawing.Color.White;
-            this.btnSanitizeTool.Location = new System.Drawing.Point(15, 222);
+            this.btnSanitizeTool.Location = new System.Drawing.Point(12, 226);
             this.btnSanitizeTool.Name = "btnSanitizeTool";
             this.btnSanitizeTool.Size = new System.Drawing.Size(135, 23);
             this.btnSanitizeTool.TabIndex = 178;
@@ -288,7 +288,7 @@ namespace RTCV.UI
             this.btnDisableEverything.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisableEverything.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDisableEverything.ForeColor = System.Drawing.Color.White;
-            this.btnDisableEverything.Location = new System.Drawing.Point(14, 252);
+            this.btnDisableEverything.Location = new System.Drawing.Point(12, 256);
             this.btnDisableEverything.Name = "btnDisableEverything";
             this.btnDisableEverything.Size = new System.Drawing.Size(135, 23);
             this.btnDisableEverything.TabIndex = 128;
@@ -305,7 +305,7 @@ namespace RTCV.UI
             this.btnEnableEverything.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnableEverything.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnEnableEverything.ForeColor = System.Drawing.Color.White;
-            this.btnEnableEverything.Location = new System.Drawing.Point(14, 276);
+            this.btnEnableEverything.Location = new System.Drawing.Point(12, 280);
             this.btnEnableEverything.Name = "btnEnableEverything";
             this.btnEnableEverything.Size = new System.Drawing.Size(135, 23);
             this.btnEnableEverything.TabIndex = 129;
@@ -322,7 +322,7 @@ namespace RTCV.UI
             this.btnRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSelected.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnRemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSelected.Location = new System.Drawing.Point(14, 307);
+            this.btnRemoveSelected.Location = new System.Drawing.Point(12, 311);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
             this.btnRemoveSelected.Size = new System.Drawing.Size(135, 23);
             this.btnRemoveSelected.TabIndex = 139;
@@ -339,7 +339,7 @@ namespace RTCV.UI
             this.btnDuplicateSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuplicateSelected.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDuplicateSelected.ForeColor = System.Drawing.Color.White;
-            this.btnDuplicateSelected.Location = new System.Drawing.Point(14, 337);
+            this.btnDuplicateSelected.Location = new System.Drawing.Point(12, 341);
             this.btnDuplicateSelected.Name = "btnDuplicateSelected";
             this.btnDuplicateSelected.Size = new System.Drawing.Size(135, 23);
             this.btnDuplicateSelected.TabIndex = 130;
@@ -356,7 +356,7 @@ namespace RTCV.UI
             this.btnAddRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRow.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnAddRow.ForeColor = System.Drawing.Color.White;
-            this.btnAddRow.Location = new System.Drawing.Point(14, 361);
+            this.btnAddRow.Location = new System.Drawing.Point(12, 365);
             this.btnAddRow.Name = "btnAddRow";
             this.btnAddRow.Size = new System.Drawing.Size(135, 23);
             this.btnAddRow.TabIndex = 177;
@@ -374,7 +374,7 @@ namespace RTCV.UI
             this.btnAddStashToStockpile.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnAddStashToStockpile.ForeColor = System.Drawing.Color.White;
             this.btnAddStashToStockpile.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStashToStockpile.Image")));
-            this.btnAddStashToStockpile.Location = new System.Drawing.Point(14, 392);
+            this.btnAddStashToStockpile.Location = new System.Drawing.Point(12, 396);
             this.btnAddStashToStockpile.Name = "btnAddStashToStockpile";
             this.btnAddStashToStockpile.Size = new System.Drawing.Size(135, 23);
             this.btnAddStashToStockpile.TabIndex = 150;
@@ -394,9 +394,9 @@ namespace RTCV.UI
             this.panel1.Controls.Add(this.btnShiftBlastLayerDown);
             this.panel1.Controls.Add(this.btnShiftBlastLayerUp);
             this.panel1.Controls.Add(this.updownShiftBlastLayerAmount);
-            this.panel1.Location = new System.Drawing.Point(14, 77);
+            this.panel1.Location = new System.Drawing.Point(12, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 60);
+            this.panel1.Size = new System.Drawing.Size(135, 60);
             this.panel1.TabIndex = 137;
             this.panel1.Tag = "color:light2";
             // 
@@ -464,7 +464,7 @@ namespace RTCV.UI
             this.pnMemoryTargetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnMemoryTargetting.BackColor = System.Drawing.Color.Gray;
             this.pnMemoryTargetting.Controls.Add(this.lbBlastLayerSize);
-            this.pnMemoryTargetting.Location = new System.Drawing.Point(14, 26);
+            this.pnMemoryTargetting.Location = new System.Drawing.Point(12, 25);
             this.pnMemoryTargetting.Name = "pnMemoryTargetting";
             this.pnMemoryTargetting.Size = new System.Drawing.Size(135, 24);
             this.pnMemoryTargetting.TabIndex = 134;
@@ -473,7 +473,7 @@ namespace RTCV.UI
             // lbBlastLayerSize
             // 
             this.lbBlastLayerSize.ForeColor = System.Drawing.Color.White;
-            this.lbBlastLayerSize.Location = new System.Drawing.Point(5, 5);
+            this.lbBlastLayerSize.Location = new System.Drawing.Point(3, 5);
             this.lbBlastLayerSize.Name = "lbBlastLayerSize";
             this.lbBlastLayerSize.Size = new System.Drawing.Size(120, 19);
             this.lbBlastLayerSize.TabIndex = 132;
@@ -502,7 +502,7 @@ namespace RTCV.UI
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 8);
+            this.label3.Location = new System.Drawing.Point(9, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 135;
@@ -516,7 +516,7 @@ namespace RTCV.UI
             this.btnLoadCorrupt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadCorrupt.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnLoadCorrupt.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnLoadCorrupt.Location = new System.Drawing.Point(14, 426);
+            this.btnLoadCorrupt.Location = new System.Drawing.Point(12, 428);
             this.btnLoadCorrupt.Name = "btnLoadCorrupt";
             this.btnLoadCorrupt.Size = new System.Drawing.Size(135, 25);
             this.btnLoadCorrupt.TabIndex = 14;
@@ -534,7 +534,7 @@ namespace RTCV.UI
             this.btnCorrupt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCorrupt.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnCorrupt.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnCorrupt.Location = new System.Drawing.Point(14, 452);
+            this.btnCorrupt.Location = new System.Drawing.Point(12, 454);
             this.btnCorrupt.Name = "btnCorrupt";
             this.btnCorrupt.Size = new System.Drawing.Size(135, 25);
             this.btnCorrupt.TabIndex = 13;
@@ -552,7 +552,7 @@ namespace RTCV.UI
             this.btnSendToStash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendToStash.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnSendToStash.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnSendToStash.Location = new System.Drawing.Point(14, 478);
+            this.btnSendToStash.Location = new System.Drawing.Point(12, 480);
             this.btnSendToStash.Name = "btnSendToStash";
             this.btnSendToStash.Size = new System.Drawing.Size(135, 25);
             this.btnSendToStash.TabIndex = 12;
@@ -567,7 +567,7 @@ namespace RTCV.UI
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(11, 59);
+            this.label4.Location = new System.Drawing.Point(9, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 136;
@@ -1262,7 +1262,7 @@ namespace RTCV.UI
             this.importBlastlayerFromCorruptedFileToolStripMenuItem.Text = "Import Blastlayer From Corrupted &File";
             this.importBlastlayerFromCorruptedFileToolStripMenuItem.Click += new System.EventHandler(this.importBlastlayerFromCorruptedFileToolStripMenuItem_Click);
             // 
-            // showBlastlayerNameInTitleToolStripMenuItem
+            // dontShowBlastlayerNameInTitleToolStripMenuItem
             // 
             this.dontShowBlastlayerNameInTitleToolStripMenuItem.CheckOnClick = true;
             this.dontShowBlastlayerNameInTitleToolStripMenuItem.Name = "dontShowBlastlayerNameInTitleToolStripMenuItem";
@@ -1412,7 +1412,7 @@ namespace RTCV.UI
             this.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(837, 559);
+            this.MinimumSize = new System.Drawing.Size(837, 580);
             this.Name = "BlastEditorForm";
             this.Text = "Blast Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);

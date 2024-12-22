@@ -50,9 +50,9 @@
             this.pnDetachedModeSettings.BackColor = System.Drawing.Color.Gray;
             this.pnDetachedModeSettings.Controls.Add(this.cbCrashSoundEffect);
             this.pnDetachedModeSettings.Controls.Add(this.label1);
-            this.pnDetachedModeSettings.Location = new System.Drawing.Point(23, 36);
+            this.pnDetachedModeSettings.Location = new System.Drawing.Point(18, 33);
             this.pnDetachedModeSettings.Name = "pnDetachedModeSettings";
-            this.pnDetachedModeSettings.Size = new System.Drawing.Size(360, 74);
+            this.pnDetachedModeSettings.Size = new System.Drawing.Size(445, 74);
             this.pnDetachedModeSettings.TabIndex = 132;
             this.pnDetachedModeSettings.Tag = "color:normal";
             // 
@@ -94,7 +94,7 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(16, 18);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(128, 13);
+            this.label20.Size = new System.Drawing.Size(129, 13);
             this.label20.TabIndex = 116;
             this.label20.Text = "Backups the game state";
             // 
@@ -154,7 +154,7 @@
             this.lbDetachedModeSettings.AutoSize = true;
             this.lbDetachedModeSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.lbDetachedModeSettings.ForeColor = System.Drawing.Color.White;
-            this.lbDetachedModeSettings.Location = new System.Drawing.Point(27, 18);
+            this.lbDetachedModeSettings.Location = new System.Drawing.Point(22, 15);
             this.lbDetachedModeSettings.Name = "lbDetachedModeSettings";
             this.lbDetachedModeSettings.Size = new System.Drawing.Size(50, 15);
             this.lbDetachedModeSettings.TabIndex = 133;
@@ -169,9 +169,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.nmGameProtectionDelay);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Location = new System.Drawing.Point(23, 141);
+            this.panel1.Location = new System.Drawing.Point(18, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 77);
+            this.panel1.Size = new System.Drawing.Size(445, 77);
             this.panel1.TabIndex = 133;
             this.panel1.Tag = "color:normal";
             // 
@@ -180,7 +180,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 123);
+            this.label2.Location = new System.Drawing.Point(25, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 134;
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(412, 241);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnDetachedModeSettings);

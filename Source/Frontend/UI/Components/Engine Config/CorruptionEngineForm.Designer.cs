@@ -50,15 +50,16 @@ namespace RTCV.UI
             this.pnCustomPrecision.Controls.Add(this.label8);
             this.pnCustomPrecision.Controls.Add(this.nmAlignment);
             this.pnCustomPrecision.Controls.Add(this.cbUseAlignment);
-            this.pnCustomPrecision.Location = new System.Drawing.Point(18, 198);
+            this.pnCustomPrecision.Location = new System.Drawing.Point(12, 204);
             this.pnCustomPrecision.Name = "pnCustomPrecision";
-            this.pnCustomPrecision.Size = new System.Drawing.Size(428, 32);
+            this.pnCustomPrecision.Size = new System.Drawing.Size(440, 32);
             this.pnCustomPrecision.TabIndex = 139;
             this.pnCustomPrecision.Tag = "color:dark2";
             this.pnCustomPrecision.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HandleMouseDown);
             // 
             // cbCustomPrecision
             // 
+            this.cbCustomPrecision.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbCustomPrecision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.cbCustomPrecision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomPrecision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -70,7 +71,7 @@ namespace RTCV.UI
             "16-bit",
             "32-bit",
             "64-bit"});
-            this.cbCustomPrecision.Location = new System.Drawing.Point(302, 6);
+            this.cbCustomPrecision.Location = new System.Drawing.Point(314, 6);
             this.cbCustomPrecision.Name = "cbCustomPrecision";
             this.cbCustomPrecision.Size = new System.Drawing.Size(121, 21);
             this.cbCustomPrecision.TabIndex = 81;
@@ -80,10 +81,11 @@ namespace RTCV.UI
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(201, 9);
+            this.label5.Location = new System.Drawing.Point(213, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 82;
@@ -91,6 +93,7 @@ namespace RTCV.UI
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F);
             this.label8.ForeColor = System.Drawing.Color.White;
@@ -102,6 +105,7 @@ namespace RTCV.UI
             // 
             // nmAlignment
             // 
+            this.nmAlignment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nmAlignment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
             this.nmAlignment.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.nmAlignment.ForeColor = System.Drawing.Color.White;
@@ -131,13 +135,14 @@ namespace RTCV.UI
             // 
             // cbUseAlignment
             // 
+            this.cbUseAlignment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbUseAlignment.AutoSize = true;
             this.cbUseAlignment.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbUseAlignment.Checked = true;
             this.cbUseAlignment.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbUseAlignment.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cbUseAlignment.ForeColor = System.Drawing.Color.White;
-            this.cbUseAlignment.Location = new System.Drawing.Point(17, 8);
+            this.cbUseAlignment.Location = new System.Drawing.Point(7, 8);
             this.cbUseAlignment.Name = "cbUseAlignment";
             this.cbUseAlignment.Size = new System.Drawing.Size(56, 17);
             this.cbUseAlignment.TabIndex = 150;
@@ -163,7 +168,7 @@ namespace RTCV.UI
             "Cluster Engine",
             "Custom Engine",
             "Blast Generator"});
-            this.cbSelectedEngine.Location = new System.Drawing.Point(18, 15);
+            this.cbSelectedEngine.Location = new System.Drawing.Point(12, 12);
             this.cbSelectedEngine.Name = "cbSelectedEngine";
             this.cbSelectedEngine.Size = new System.Drawing.Size(165, 21);
             this.cbSelectedEngine.TabIndex = 138;
@@ -177,11 +182,11 @@ namespace RTCV.UI
             this.gbSelectedEngine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbSelectedEngine.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gbSelectedEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.gbSelectedEngine.ForeColor = System.Drawing.Color.White;
-            this.gbSelectedEngine.Location = new System.Drawing.Point(18, 9);
+            this.gbSelectedEngine.Location = new System.Drawing.Point(12, 6);
             this.gbSelectedEngine.Name = "gbSelectedEngine";
-            this.gbSelectedEngine.Size = new System.Drawing.Size(428, 190);
+            this.gbSelectedEngine.Size = new System.Drawing.Size(440, 199);
             this.gbSelectedEngine.TabIndex = 137;
             this.gbSelectedEngine.TabStop = false;
             this.gbSelectedEngine.Visible = false;
@@ -198,6 +203,7 @@ namespace RTCV.UI
             this.Controls.Add(this.gbSelectedEngine);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(464, 248);
             this.Name = "CorruptionEngineForm";
             this.Tag = "color:dark1";
             this.Text = "Corruption Engine";

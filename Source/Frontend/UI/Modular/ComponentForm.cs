@@ -10,6 +10,8 @@ namespace RTCV.UI.Modular
         private protected static NLog.Logger logger;
         private Panel defaultPanel = null;
         private Panel previousPanel = null;
+        private Size dockedMinimumSize = new Size(int.MinValue, int.MinValue);
+        private Size dockedMaximumSize = new Size(int.MinValue, int.MinValue);
 
         public Panel blockPanel { get; set; } = null;
 
@@ -56,6 +58,17 @@ namespace RTCV.UI.Modular
                 _p.WindowState = FormWindowState.Normal;
             }
 
+            if (this.dockedMinimumSize == new Size(int.MinValue, int.MinValue))
+            {
+                this.dockedMinimumSize = this.MinimumSize;
+                this.dockedMaximumSize = this.MaximumSize;
+            }
+            else
+            {
+                this.MinimumSize = this.dockedMinimumSize;
+                this.MaximumSize = this.dockedMaximumSize;
+            }
+
             this.Size = this.Parent.Size;
             this.Location = new Point(0, 0);
 
@@ -83,6 +96,11 @@ namespace RTCV.UI.Modular
             }
 
             this.Show();
+
+            if (dockedMinimumSize.Width > 0 && dockedMinimumSize.Height > 0)
+                this.MinimumSize = new Size(dockedMinimumSize.Width + Width - ClientRectangle.Width, dockedMinimumSize.Height + Height - ClientRectangle.Height);
+            if (dockedMaximumSize.Width > 0 && dockedMaximumSize.Height > 0)
+                this.MaximumSize = new Size(dockedMaximumSize.Width + Width - ClientRectangle.Width, dockedMaximumSize.Height + Height - ClientRectangle.Height);
         }
 
         public void RestoreToPreviousPanel()

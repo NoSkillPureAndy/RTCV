@@ -45,7 +45,7 @@ namespace RTCV.UI
             this.btnOpenCloudDebug.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnOpenCloudDebug.ForeColor = System.Drawing.Color.White;
             this.btnOpenCloudDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenCloudDebug.Location = new System.Drawing.Point(21, 104);
+            this.btnOpenCloudDebug.Location = new System.Drawing.Point(18, 100);
             this.btnOpenCloudDebug.Name = "btnOpenCloudDebug";
             this.btnOpenCloudDebug.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnOpenCloudDebug.Size = new System.Drawing.Size(150, 33);
@@ -66,7 +66,7 @@ namespace RTCV.UI
             this.btnNetcoreTest.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnNetcoreTest.ForeColor = System.Drawing.Color.White;
             this.btnNetcoreTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNetcoreTest.Location = new System.Drawing.Point(342, 104);
+            this.btnNetcoreTest.Location = new System.Drawing.Point(344, 100);
             this.btnNetcoreTest.Name = "btnNetcoreTest";
             this.btnNetcoreTest.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnNetcoreTest.Size = new System.Drawing.Size(119, 33);
@@ -87,7 +87,7 @@ namespace RTCV.UI
             this.btnTestLockdown.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnTestLockdown.ForeColor = System.Drawing.Color.White;
             this.btnTestLockdown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTestLockdown.Location = new System.Drawing.Point(342, 183);
+            this.btnTestLockdown.Location = new System.Drawing.Point(344, 179);
             this.btnTestLockdown.Name = "btnTestLockdown";
             this.btnTestLockdown.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnTestLockdown.Size = new System.Drawing.Size(119, 33);
@@ -108,7 +108,7 @@ namespace RTCV.UI
             this.btnTestSubform.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnTestSubform.ForeColor = System.Drawing.Color.White;
             this.btnTestSubform.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTestSubform.Location = new System.Drawing.Point(342, 144);
+            this.btnTestSubform.Location = new System.Drawing.Point(344, 140);
             this.btnTestSubform.Name = "btnTestSubform";
             this.btnTestSubform.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnTestSubform.Size = new System.Drawing.Size(119, 33);
@@ -125,7 +125,7 @@ namespace RTCV.UI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 65);
+            this.label1.Location = new System.Drawing.Point(13, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(445, 20);
             this.label1.TabIndex = 7;
@@ -136,7 +136,7 @@ namespace RTCV.UI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(9, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 45);
             this.label2.TabIndex = 6;
@@ -147,7 +147,7 @@ namespace RTCV.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(511, 408);
+            this.ClientSize = new System.Drawing.Size(481, 405);
             this.Controls.Add(this.btnOpenCloudDebug);
             this.Controls.Add(this.btnNetcoreTest);
             this.Controls.Add(this.btnTestLockdown);
