@@ -197,20 +197,20 @@ namespace RTCV.UI.Components.Controls
             else if (e.Button == MouseButtons.Right)
             {
                 var cms = new ContextMenuStrip();
-                cms.Items.Add("Delete entry", null, (ob, ev) =>
+                var holder = (SavestateHolder)((Button)sender).Parent;
+                var holderIndex = _controlList.IndexOf(holder);
+                if (holderIndex != -1)
                 {
-                    var holder = (SavestateHolder)((Button)sender).Parent;
-                    var holderIndex = _controlList.IndexOf(holder);
-                    if (holderIndex != -1)
+                    var indexToRemove = holderIndex + _dataSource.Position;
+                    if (indexToRemove >= 0 && indexToRemove < _dataSource.Count)
                     {
-                        var indexToRemove = holderIndex + _dataSource.Position;
-                        if (indexToRemove >= 0 && indexToRemove <= _dataSource.Count)
+                        cms.Items.Add("Delete entry", null, (ob, ev) =>
                         {
                             _dataSource.RemoveAt(indexToRemove);
                             S.GET<SavestateManagerForm>().UnsavedEdits = true;
-                        }
+                        });
                     }
-                });
+                }
 
                 cms.Items.Add("New Blastlayer from this Savestate (Blast Editor)", null, (ob, ev) =>
                 {
