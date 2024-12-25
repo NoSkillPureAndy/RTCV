@@ -1,5 +1,6 @@
 namespace RTCV.UI
 {
+    using System;
     using System.Drawing;
     using System.Windows.Forms;
     using RTCV.UI.Modular;
@@ -49,12 +50,35 @@ namespace RTCV.UI
         public bool CanPopout { get; set; } = false;
         public int TilesX { get => SizeX; set => SizeX = value; }
         public int TilesY { get => SizeY; set => SizeY = value; }
+        private Point _mouseDownAt = new Point(int.MinValue);
 
         private void OnFormTileMouseDown(object sender, MouseEventArgs e)
         {
-            Point p = new Point(e.Location.X, e.Location.Y - pnComponentFormHost.Location.Y);
+            Point p = new Point(e.X, e.Y - pnComponentFormHost.Location.Y);
             var ea = new MouseEventArgs(e.Button, e.Clicks, p.X, p.Y, e.Delta);
             (childForm as ComponentForm)?.HandleMouseDown(childForm, ea);
+            
+            if (e.Button == MouseButtons.Left)
+                _mouseDownAt = new Point(e.X, e.Y);
+        }
+
+        private void OnFormTileMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+                return;
+            var cf = childForm as ComponentForm;
+            if (!cf.popoutAllowed)
+                return;
+
+            Point p = new Point(Math.Abs(e.X - _mouseDownAt.X), Math.Abs(e.Y - _mouseDownAt.Y));
+            bool stillDocked = pnComponentFormHost.Controls.Contains(childForm);
+            if (p.X < 15 && p.Y < 15 && stillDocked)
+                return;
+
+            if (stillDocked)
+                cf.SwitchToWindow();
+            
+            childForm.Location = PointToScreen(e.Location - new Size(_mouseDownAt));
         }
 
         public void ReAnchorToPanel()
@@ -67,6 +91,11 @@ namespace RTCV.UI
                 cf.Size = pnComponentFormHost.Size;
                 this.Anchor = cf.Anchor;
             }
+        }
+
+        private void lbComponentFormName_MouseMove(object sender, MouseEventArgs e)
+        {
+            OnFormTileMouseMove(sender, e);
         }
     }
 
