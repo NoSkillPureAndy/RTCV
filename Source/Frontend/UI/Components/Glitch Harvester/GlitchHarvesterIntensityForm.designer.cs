@@ -93,7 +93,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(9999, 104);
-            this.MinimumSize = new System.Drawing.Size(174, 104);
+            this.MinimumSize = new System.Drawing.Size(192, 104);
             this.Name = "GlitchHarvesterIntensityForm";
             this.Tag = "color:dark1";
             this.Text = "Generator Control";

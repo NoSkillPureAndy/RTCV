@@ -13,47 +13,59 @@ namespace RTCV.UI
     {
         //grid that represents the layout of a single form
 
-        public int X { get; private set; } = 0;
-        public int Y { get; private set; } = 0;
+        public int Width { get; private set; } = 0;
+        public int Height { get; private set; } = 0;
+        public int MinimumWidth { get; private set; } = 0;
+        public int MinimumHeight { get; private set; } = 0;
         public Form[,] gridComponent { get; private set; }
         public Size?[,] gridComponentSize { get; private set; }
         public bool?[,] gridComponentDisplayHeader { get; private set; }
+        public AnchorStyles?[,] gridComponentAnchor { get; private set; }
 
         public string GridName { get; private set; } = "";
         internal bool isResizable = false;
 
-        public CanvasGrid(int x, int y, string gridName)
+        public CanvasGrid(int width, int height, string gridName) : this(width, height, width, height, gridName)
         {
-            X = x;
-            Y = y;
-            gridComponent = new Form[X, Y];
-            gridComponentSize = new Size?[X, Y];
-            gridComponentDisplayHeader = new bool?[X, Y];
+        }
+
+        public CanvasGrid(int width, int height, int minWidth, int minHeight, string gridName)
+        {
+            Width = width;
+            Height = height;
+            MinimumWidth = minWidth;
+            MinimumHeight = minHeight;
+            gridComponent = new Form[Width, Height];
+            gridComponentSize = new Size?[Width, Height];
+            gridComponentDisplayHeader = new bool?[Width, Height];
+            gridComponentAnchor = new AnchorStyles?[Width, Height];
             GridName = gridName;
         }
 
         internal void SetTileForm(Form componentForm, int tilePosX, int tilePosY, int tileSizeX, int tileSizeY, bool displayHeader, AnchorStyles anchor = (AnchorStyles.Top | AnchorStyles.Left))
         {
             //removes tileForm position if already exists
-            for (int _x = 0; _x < X; _x++)
+            for (int _x = 0; _x < Width; _x++)
             {
-                for (int _y = 0; _y < Y; _y++)
+                for (int _y = 0; _y < Height; _y++)
                 {
                     if (gridComponent[_x, _y] == componentForm)
                     {
                         gridComponent[_x, _y] = null;
                         gridComponentSize[_x, _y] = null;
                         gridComponentDisplayHeader[_x, _y] = null;
+                        gridComponentAnchor[_x, _y] = null;
                     }
                 }
             }
 
             //place tileForm if within grid space
-            if (tilePosX < X && tilePosY < Y)
+            if (tilePosX < Width && tilePosY < Height)
             {
                 gridComponent[tilePosX, tilePosY] = componentForm;
                 gridComponentSize[tilePosX, tilePosY] = new Size(tileSizeX, tileSizeY);
                 gridComponentDisplayHeader[tilePosX, tilePosY] = displayHeader;
+                gridComponentAnchor[tilePosX, tilePosY] = anchor;
             }
 
             componentForm.Anchor = anchor;
@@ -90,6 +102,8 @@ namespace RTCV.UI
 
             int gridSizeX = 26;
             int gridSizeY = 19;
+            int minSizeX = -1;
+            int minSizeY = -1;
             string gridName = "Custom Grid";
             CanvasGrid cuGrid = new CanvasGrid(gridSizeX, gridSizeY, gridName);
 
@@ -122,17 +136,34 @@ namespace RTCV.UI
                             break;
                         }
                     case "GridSize":
-                        {
-                            string[] subData = data.Split(',');
+                    {
+                        string[] subData = data.Split(',');
 
-                            gridSizeX = Convert.ToInt32(subData[0].Trim());
-                            gridSizeY = Convert.ToInt32(subData[1].Trim());
+                        gridSizeX = Convert.ToInt32(subData[0].Trim());
+                        gridSizeY = Convert.ToInt32(subData[1].Trim());
 
-                            break;
-                        }
+                        break;
+                    }
+                    case "MinimumSize":
+                    {
+                        string[] subData = data.Split(',');
+
+                        minSizeX = Convert.ToInt32(subData[0].Trim());
+                        minSizeY = Convert.ToInt32(subData[1].Trim());
+
+                        break;
+                    }
                     case "CreateGrid":
                         {
-                            cuGrid = new CanvasGrid(gridSizeX, gridSizeY, gridName);
+                            if (minSizeX == -1 || minSizeY == -1)
+                            {
+                                cuGrid = new CanvasGrid(gridSizeX, gridSizeY, gridName);
+                            }
+                            else
+                            {
+                                cuGrid = new CanvasGrid(gridSizeX, gridSizeY, minSizeX, minSizeY, gridName);
+                            }
+
                             break;
                         }
                     case "IsResizable":

@@ -97,18 +97,19 @@ namespace RTCV.UI
 
         private void ResizeCanvas(CanvasGrid canvasGrid)
         {
-            this.SetSize(getTilePos(canvasGrid.X), getTilePos(canvasGrid.Y));
+            this.SetSize(getTilePos(canvasGrid.Width), getTilePos(canvasGrid.Height), getTilePos(canvasGrid.MinimumWidth), getTilePos(canvasGrid.MinimumHeight));
         }
 
-        public void SetSize(int x, int y)
+        public void SetSize(int width, int height, int minWidth, int minHeight)
         {
             if (this.TopLevel)
             {
-                this.Size = new Size(x + CoreForm.xPadding, y + CoreForm.yPadding);
+                this.MinimumSize = new Size(minWidth + CoreForm.xPadding, minHeight + CoreForm.yPadding);
+                this.Size = new Size(width + CoreForm.xPadding, height + CoreForm.yPadding);
             }
             else
             {
-                CoreForm.thisForm.SetSize(x, y);
+                CoreForm.thisForm.SetSize(width, height, minWidth, minHeight);
             }
         }
 
@@ -116,20 +117,24 @@ namespace RTCV.UI
         {
             targetForm.ResizeCanvas(canvasGrid);
 
-            for (int x = 0; x < canvasGrid.X; x++)
+            for (int x = 0; x < canvasGrid.Width; x++)
             {
-                for (int y = 0; y < canvasGrid.Y; y++)
+                for (int y = 0; y < canvasGrid.Height; y++)
                 {
                     if (canvasGrid.gridComponent[x, y] != null)
                     {
                         targetForm.Text = canvasGrid.GridName;
-                        bool DisplayHeader = (canvasGrid.gridComponentDisplayHeader[x, y].HasValue ? canvasGrid.gridComponentDisplayHeader[x, y].Value : false);
+                        
+                        bool displayHeader = canvasGrid.gridComponentDisplayHeader[x, y].HasValue ? canvasGrid.gridComponentDisplayHeader[x, y].Value : false;
+                        AnchorStyles anchor = canvasGrid.gridComponentAnchor[x, y].HasValue ? canvasGrid.gridComponentAnchor[x, y].Value : AnchorStyles.None;
                         var size = canvasGrid.gridComponentSize[x, y];
-                        ComponentFormTile tileForm = getTileForm(canvasGrid.gridComponent[x, y], size?.Width, size?.Height, DisplayHeader);
+                        
+                        ComponentFormTile tileForm = getTileForm(canvasGrid.gridComponent[x, y], size?.Width, size?.Height, displayHeader);
+                        
                         tileForm.TopLevel = false;
                         targetForm.Controls.Add(tileForm);
                         tileForm.Location = getTileLocation(x, y);
-
+                        tileForm.childForm.Anchor = anchor;
                         tileForm.Anchor = tileForm.childForm.Anchor;
 
                         tileForm.Show();
@@ -137,7 +142,7 @@ namespace RTCV.UI
                 }
             }
 
-            targetForm.MinimumSize = targetForm.Size;
+            //targetForm.MinimumSize = new Size(getTilePos(canvasGrid.MinimumWidth), getTilePos(canvasGrid.MinimumHeight));
         }
 
         //public void BlockView() => (this as IBlockable)?.BlockView();
@@ -145,12 +150,8 @@ namespace RTCV.UI
 
         internal static void loadTileFormExtraWindow(CanvasGrid canvasGrid, string WindowHeader, bool silent = false)
         {
-            CanvasForm extraForm;
-
-            if (allExtraForms.ContainsKey(WindowHeader))
+            if (allExtraForms.TryGetValue(WindowHeader, out var extraForm))
             {
-                extraForm = allExtraForms[WindowHeader];
-
                 foreach (Control ctr in extraForm?.Controls)
                 {
                     if (ctr is ComponentFormTile cft)

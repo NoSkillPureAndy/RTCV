@@ -424,7 +424,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(515, 200);
+            this.MinimumSize = new System.Drawing.Size(512, 192);
             this.Name = "StockpileManagerForm";
             this.Tag = "color:dark1";
             this.Text = "Stockpile Manager";

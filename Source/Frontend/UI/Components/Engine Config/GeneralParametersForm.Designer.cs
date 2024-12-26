@@ -217,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(224, 248);
+            this.MaximumSize = new System.Drawing.Size(9999, 248);
             this.Name = "GeneralParametersForm";
             this.Tag = "color:dark1";
             this.Text = "General Parameters";

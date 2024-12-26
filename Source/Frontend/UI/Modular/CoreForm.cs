@@ -174,10 +174,12 @@ This message only appears once.";
             //DefaultGrids.engineConfig.LoadToMain();
         }
 
-        public void SetSize(int x, int y)
+        public void SetSize(int width, int height, int minWidth, int minHeight)
         {
+            //this.MinimumSize = new Size(x + xPadding, y + yPadding + coreYPadding); //For Horizontal tab-style menu in coreform
+            this.MinimumSize = new Size(minWidth + xPadding + corePadding, minHeight + yPadding); //For Vertical tab-style menu in coreform
             //this.Size = new Size(x + xPadding, y + yPadding + coreYPadding); //For Horizontal tab-style menu in coreform
-            this.Size = new Size(x + xPadding + corePadding, y + yPadding); //For Vertical tab-style menu in coreform
+            this.Size = new Size(width + xPadding + corePadding, height + yPadding); //For Vertical tab-style menu in coreform
         }
 
         private void OnResizeBegin(object sender, EventArgs e)

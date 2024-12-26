@@ -154,7 +154,7 @@ namespace RTCV.UI
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(224, 60);
+            this.MinimumSize = new System.Drawing.Size(128, 128);
             this.Name = "StashHistoryForm";
             this.Tag = "color:dark1";
             this.Text = "Stash History";

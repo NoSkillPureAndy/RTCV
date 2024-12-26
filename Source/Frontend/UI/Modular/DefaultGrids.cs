@@ -123,7 +123,7 @@ namespace RTCV.UI.Modular
             {
                 if (_glitchHarvester == null)
                 {
-                    var ghGrid = new CanvasGrid(20, 12, "Glitch Harvester")
+                    var ghGrid = new CanvasGrid(20, 12, 20, 10, "Glitch Harvester")
                     {
                         isResizable = true
                     };
