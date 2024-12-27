@@ -30,28 +30,7 @@ namespace RTCV.UI
             set
             {
                 _UnsavedEdits = value;
-
-                if (_UnsavedEdits)
-                {
-                    if (btnSaveStockpile.Enabled)
-                    {
-                        btnSaveStockpile.BackColor = Color.Tomato;
-                    }
-                    else
-                    {
-                        btnSaveStockpileAs.BackColor = Color.Tomato;
-                    }
-                }
-                else
-                {
-                    const float light1 = 0.10f;
-                    const float generalDarken = -0.50f;
-                    Color c = Colors.GeneralColor.ChangeColorBrightness(generalDarken).ChangeColorBrightness(light1);
-                    btnSaveStockpile.BackColor = c;
-                    btnSaveStockpile.FlatAppearance.BorderColor = c;
-                    btnSaveStockpileAs.BackColor = c;
-                    btnSaveStockpileAs.FlatAppearance.BorderColor = c;
-                }
+                UpdateSaveButtonColor(value);
             }
         }
 
@@ -66,8 +45,8 @@ namespace RTCV.UI
             {
                 RefreshNoteIcons();
             };
-            btnSaveStockpile.BackColorChanged += (o, e) => UnsavedEdits = UnsavedEdits; //this is pretty cursed but it works
-            btnSaveStockpileAs.BackColorChanged += (o, e) => UnsavedEdits = UnsavedEdits;
+            btnSaveStockpile.BackColorChanged += (o, e) => UpdateSaveButtonColor(UnsavedEdits);
+            btnSaveStockpileAs.BackColorChanged += (o, e) => UpdateSaveButtonColor(UnsavedEdits);
         }
 
         public void HandleCellClick(object sender, DataGridViewCellEventArgs e)
@@ -679,6 +658,31 @@ namespace RTCV.UI
             foreach (DataGridViewRow dataRow in dgvStockpile.Rows)
             {
                 StashKey sk = (StashKey)dataRow.Cells["Item"].Value;
+            }
+        }
+        
+        private void UpdateSaveButtonColor(bool unsaved)
+        {
+            if (unsaved)
+            {
+                if (btnSaveStockpile.Enabled)
+                {
+                    btnSaveStockpile.BackColor = Color.Tomato;
+                }
+                else
+                {
+                    btnSaveStockpileAs.BackColor = Color.Tomato;
+                }
+            }
+            else
+            {
+                const float light1 = 0.10f;
+                const float generalDarken = -0.50f;
+                Color c = Colors.GeneralColor.ChangeColorBrightness(generalDarken).ChangeColorBrightness(light1);
+                btnSaveStockpile.BackColor = c;
+                btnSaveStockpile.FlatAppearance.BorderColor = c;
+                btnSaveStockpileAs.BackColor = c;
+                btnSaveStockpileAs.FlatAppearance.BorderColor = c;
             }
         }
 

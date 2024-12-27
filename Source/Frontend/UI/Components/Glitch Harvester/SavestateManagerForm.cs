@@ -36,18 +36,7 @@ namespace RTCV.UI
             {
                 _unsavedEdits = value;
 
-                if (_unsavedEdits)
-                {
-                    btnSaveSavestateList.BackColor = Color.Tomato;
-                }
-                else
-                {
-                    const float dark2 = -0.35f;
-                    const float generalDarken = -0.50f;
-                    Color c = Colors.GeneralColor.ChangeColorBrightness(generalDarken).ChangeColorBrightness(dark2);
-                    btnSaveSavestateList.BackColor = c;
-                    btnSaveSavestateList.FlatAppearance.BorderColor = c;
-                }
+                UpdateSaveButtonColor(value);
             }
         }
         public SavestateManagerForm()
@@ -57,7 +46,7 @@ namespace RTCV.UI
             popoutAllowed = true;
 
             savestateList.DataSource = savestateBindingSource;
-            btnSaveSavestateList.BackColorChanged += (o, e) => UnsavedEdits = UnsavedEdits; //this is pretty cursed but it works
+            btnSaveSavestateList.BackColorChanged += (o, e) => UpdateSaveButtonColor(UnsavedEdits);
         }
 
         private void OnLoadSavestateListButtonMouseClick(object sender, MouseEventArgs e)
@@ -453,6 +442,22 @@ namespace RTCV.UI
                 }
 
                 return;
+            }
+        }
+        
+        private void UpdateSaveButtonColor(bool unsaved)
+        {
+            if (unsaved)
+            {
+                btnSaveSavestateList.BackColor = Color.Tomato;
+            }
+            else
+            {
+                const float dark2 = -0.35f;
+                const float generalDarken = -0.50f;
+                Color c = Colors.GeneralColor.ChangeColorBrightness(generalDarken).ChangeColorBrightness(dark2);
+                btnSaveSavestateList.BackColor = c;
+                btnSaveSavestateList.FlatAppearance.BorderColor = c;
             }
         }
 
