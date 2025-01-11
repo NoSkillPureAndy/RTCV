@@ -123,7 +123,8 @@ namespace RTCV.UI
                 StockpileManagerUISide.CurrentStashkey.Alias = Name;
             }
 
-            sk.BlastLayer.RasterizeVMDs();
+            if (Params.IsParamSet("RASTERIZE_VMD_UPON_STOCKPILING"))
+                sk.BlastLayer.RasterizeVMDs();
 
             DataGridViewRow dataRow = S.GET<StockpileManagerForm>().dgvStockpile.Rows[S.GET<StockpileManagerForm>().dgvStockpile.Rows.Add()];
             dataRow.Cells["Item"].Value = sk;

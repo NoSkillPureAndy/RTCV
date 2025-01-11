@@ -96,6 +96,11 @@ namespace RTCV.UI
             S.GET<GlitchHarvesterIntensityForm>().multiTB_Intensity.UncapNumericBox = cbUncapIntensity.Checked;
         }
 
+        private void HandleRasterizeUponStockpilingChange(object sender, EventArgs e)
+        {
+            Params.SetOrRemoveParam("RASTERIZE_VMD_UPON_STOCKPILING", cbRasterizeUponStockpiling.Checked);
+        }
+
         private void RefreshInputDevices(object sender, EventArgs e)
         {
             Input.Input.Initialize();

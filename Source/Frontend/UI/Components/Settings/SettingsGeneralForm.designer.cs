@@ -41,12 +41,14 @@ namespace RTCV.UI
             this.btnOpenOnlineWiki = new System.Windows.Forms.Button();
             this.btnWatchTutorialVideo = new System.Windows.Forms.Button();
             this.btnResetRandomSeed = new System.Windows.Forms.Button();
+            this.cbRasterizeUponStockpiling = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.cbRasterizeUponStockpiling);
             this.panel1.Controls.Add(this.cbAutoUncorrupt);
             this.panel1.Controls.Add(this.cbUncapIntensity);
             this.panel1.Controls.Add(this.cbDontCleanAtQuit);
@@ -54,7 +56,7 @@ namespace RTCV.UI
             this.panel1.Controls.Add(this.cbDisableEmulatorOSD);
             this.panel1.Location = new System.Drawing.Point(18, 206);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 119);
+            this.panel1.Size = new System.Drawing.Size(323, 135);
             this.panel1.TabIndex = 138;
             this.panel1.Tag = "color:normal";
             // 
@@ -232,6 +234,19 @@ namespace RTCV.UI
             this.btnResetRandomSeed.UseVisualStyleBackColor = false;
             this.btnResetRandomSeed.Click += new System.EventHandler(this.btnResetRandomSeed_Click);
             // 
+            // cbRasterizeUponStockpiling
+            // 
+            this.cbRasterizeUponStockpiling.AutoSize = true;
+            this.cbRasterizeUponStockpiling.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cbRasterizeUponStockpiling.ForeColor = System.Drawing.Color.White;
+            this.cbRasterizeUponStockpiling.Location = new System.Drawing.Point(11, 110);
+            this.cbRasterizeUponStockpiling.Name = "cbRasterizeUponStockpiling";
+            this.cbRasterizeUponStockpiling.Size = new System.Drawing.Size(250, 17);
+            this.cbRasterizeUponStockpiling.TabIndex = 5;
+            this.cbRasterizeUponStockpiling.Text = "Rasterize VMDs before sending to stockpile";
+            this.cbRasterizeUponStockpiling.UseVisualStyleBackColor = true;
+            this.cbRasterizeUponStockpiling.CheckedChanged += new System.EventHandler(this.HandleRasterizeUponStockpilingChange);
+            // 
             // SettingsGeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +286,6 @@ namespace RTCV.UI
         public System.Windows.Forms.Button btnWatchTutorialVideo;
         public System.Windows.Forms.Button btnResetRandomSeed;
         public System.Windows.Forms.CheckBox cbAutoUncorrupt;
+        public System.Windows.Forms.CheckBox cbRasterizeUponStockpiling;
     }
 }

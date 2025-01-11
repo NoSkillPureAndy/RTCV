@@ -168,6 +168,7 @@ This message only appears once.";
                 Params.SetParam("COMPRESS_SAVESTATES"); //Default param
                 Params.SetParam("INCLUDE_REFERENCED_FILES"); //Default param
                 Params.SetParam("LOAD_STASH_ON_ARROW_CLICK"); //Default param
+                Params.SetParam("RASTERIZE_VMD_UPON_STOCKPILING"); //Default param
             }
 
             //RtcCore.DownloadProblematicProcesses();
