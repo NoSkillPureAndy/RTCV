@@ -2186,15 +2186,7 @@ namespace RTCV.UI
 
         private void showBlastlayerNameInTitleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dontShowBlastlayerNameInTitleToolStripMenuItem.Checked)
-            {
-                Params.SetParam("DONT_SHOW_BLASTLAYER_NAME_IN_EDITOR");
-            }
-            else
-            {
-                Params.RemoveParam("DONT_SHOW_BLASTLAYER_NAME_IN_EDITOR");
-            }
-
+            Params.SetOrRemoveParam("DONT_SHOW_BLASTLAYER_NAME_IN_EDITOR", dontShowBlastlayerNameInTitleToolStripMenuItem.Checked);
             SetTitle(currentSK?.Alias ?? "Unsaved");
         }
 

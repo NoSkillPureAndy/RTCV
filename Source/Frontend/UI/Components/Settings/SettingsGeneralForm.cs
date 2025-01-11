@@ -1,3 +1,5 @@
+using RTCV.NetCore;
+
 namespace RTCV.UI
 {
     using System;
@@ -71,57 +73,25 @@ namespace RTCV.UI
 
         private void HandleDisableBizhawkOSDChange(object sender, EventArgs e)
         {
-            if (cbDisableEmulatorOSD.Checked)
-            {
-                NetCore.Params.SetParam(RTCSPEC.CORE_EMULATOROSDDISABLED);
-            }
-            else
-            {
-                NetCore.Params.RemoveParam(RTCSPEC.CORE_EMULATOROSDDISABLED);
-            }
-
+            Params.SetOrRemoveParam(RTCSPEC.CORE_EMULATOROSDDISABLED, cbDisableEmulatorOSD.Checked);
             RtcCore.EmulatorOsdDisabled = cbDisableEmulatorOSD.Checked;
         }
 
         private void HandleAllowCrossCoreCorruptionChange(object sender, EventArgs e)
         {
-            if (cbAllowCrossCoreCorruption.Checked)
-            {
-                NetCore.Params.SetParam("ALLOW_CROSS_CORE_CORRUPTION");
-            }
-            else
-            {
-                NetCore.Params.RemoveParam("ALLOW_CROSS_CORE_CORRUPTION");
-            }
-
+            Params.SetOrRemoveParam("ALLOW_CROSS_CORE_CORRUPTION", cbAllowCrossCoreCorruption.Checked);
             RtcCore.AllowCrossCoreCorruption = cbAllowCrossCoreCorruption.Checked;
         }
 
         private void HandleDontCleanAtQuitChange(object sender, EventArgs e)
         {
-            if (cbDontCleanAtQuit.Checked)
-            {
-                NetCore.Params.SetParam("DONT_CLEAN_SAVESTATES_AT_QUIT");
-            }
-            else
-            {
-                NetCore.Params.RemoveParam("DONT_CLEAN_SAVESTATES_AT_QUIT");
-            }
-
+            Params.SetOrRemoveParam("DONT_CLEAN_SAVESTATES_AT_QUIT", cbDontCleanAtQuit.Checked);
             RtcCore.DontCleanSavestatesOnQuit = cbDontCleanAtQuit.Checked;
         }
 
         private void HandleUncapIntensityChange(object sender, EventArgs e)
         {
-            if (cbUncapIntensity.Checked)
-            {
-                NetCore.Params.SetParam("UNCAP_INTENSITY");
-            }
-            else
-            {
-                NetCore.Params.RemoveParam("UNCAP_INTENSITY");
-            }
-
+            Params.SetOrRemoveParam("UNCAP_INTENSITY", cbUncapIntensity.Checked);
             S.GET<GeneralParametersForm>().multiTB_Intensity.UncapNumericBox = cbUncapIntensity.Checked;
             S.GET<GlitchHarvesterIntensityForm>().multiTB_Intensity.UncapNumericBox = cbUncapIntensity.Checked;
         }

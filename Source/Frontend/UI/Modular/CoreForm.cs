@@ -721,17 +721,7 @@ This message only appears once.";
                     BlastEditorForm.OpenBlastEditor();
                 }));
 
-                var ghmain = (columnsMenu.Items.Add("Open the Glitch Harvester to Main Window", null, new EventHandler((ob, ev) =>
-                {
-                    if (Params.IsParamSet("GH_OPEN_MAIN"))
-                    {
-                        Params.RemoveParam("GH_OPEN_MAIN");
-                    }
-                    else
-                    {
-                        Params.SetParam("GH_OPEN_MAIN");
-                    }
-                })) as ToolStripMenuItem);
+                var ghmain = columnsMenu.Items.Add("Open the Glitch Harvester to Main Window", null, (ob, ev) => Params.ToggleParam("GH_OPEN_MAIN")) as ToolStripMenuItem;
 
                 ghmain.Checked = Params.IsParamSet("GH_OPEN_MAIN");
 

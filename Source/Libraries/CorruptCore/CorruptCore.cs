@@ -496,7 +496,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("ALLOW_CROSS_CORE_CORRUPTION"))
                 {
-                    partial[RTCSPEC.CORE_ALLOWCROSSCORECORRUPTION] = (string.Equals(Params.ReadParam("ALLOW_CROSS_CORE_CORRUPTION"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_ALLOWCROSSCORECORRUPTION] = string.Equals(Params.ReadParam("ALLOW_CROSS_CORE_CORRUPTION"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -505,7 +505,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_SOURCEADDRESS"))
                 {
-                    partial[RTCSPEC.CORE_REROLLSOURCEADDRESS] = (string.Equals(Params.ReadParam("REROLL_SOURCEADDRESS"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLSOURCEADDRESS] = string.Equals(Params.ReadParam("REROLL_SOURCEADDRESS"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -514,7 +514,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_SOURCEDOMAIN"))
                 {
-                    partial[RTCSPEC.CORE_REROLLSOURCEDOMAIN] = (string.Equals(Params.ReadParam("REROLL_SOURCEDOMAIN"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLSOURCEDOMAIN] = string.Equals(Params.ReadParam("REROLL_SOURCEDOMAIN"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -523,7 +523,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_IGNOREORIGINALSOURCE"))
                 {
-                    partial[RTCSPEC.CORE_REROLLIGNOREORIGINALSOURCE] = (string.Equals(Params.ReadParam("REROLL_IGNOREORIGINALSOURCE"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLIGNOREORIGINALSOURCE] = string.Equals(Params.ReadParam("REROLL_IGNOREORIGINALSOURCE"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -532,7 +532,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_ADDRESS"))
                 {
-                    partial[RTCSPEC.CORE_REROLLADDRESS] = (string.Equals(Params.ReadParam("REROLL_ADDRESS"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLADDRESS] = string.Equals(Params.ReadParam("REROLL_ADDRESS"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -541,7 +541,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_DOMAIN"))
                 {
-                    partial[RTCSPEC.CORE_REROLLDOMAIN] = (string.Equals(Params.ReadParam("REROLL_DOMAIN"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLDOMAIN] = string.Equals(Params.ReadParam("REROLL_DOMAIN"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
@@ -550,7 +550,7 @@ namespace RTCV.CorruptCore
 
                 if (Params.IsParamSet("REROLL_FOLLOWSCUSTOMENGINE"))
                 {
-                    partial[RTCSPEC.CORE_REROLLFOLLOWENGINESETTINGS] = (string.Equals(Params.ReadParam("REROLL_FOLLOWSCUSTOMENGINE"), "TRUE", StringComparison.OrdinalIgnoreCase));
+                    partial[RTCSPEC.CORE_REROLLFOLLOWENGINESETTINGS] = string.Equals(Params.ReadParam("REROLL_FOLLOWSCUSTOMENGINE"), "TRUE", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {

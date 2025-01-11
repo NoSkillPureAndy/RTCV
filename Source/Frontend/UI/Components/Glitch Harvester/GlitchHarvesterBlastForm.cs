@@ -552,20 +552,12 @@ namespace RTCV.UI
             }))).Checked = StockpileManagerUISide.StashAfterOperation;
             ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Load stash items when selected with arrows", null, new EventHandler((ob, ev) =>
             {
-                bool set = Params.IsParamSet("LOAD_STASH_ON_ARROW_CLICK");
-                if (set)
-                    Params.RemoveParam("LOAD_STASH_ON_ARROW_CLICK");
-                else
-                    Params.SetParam("LOAD_STASH_ON_ARROW_CLICK");
-                S.GET<StashHistoryForm>().LoadWhenSelectedWithArrows = !set;
+                S.GET<StashHistoryForm>().LoadWhenSelectedWithArrows = Params.ToggleParam("LOAD_STASH_ON_ARROW_CLICK");
                 RedrawActionUI();
             }))).Checked = Params.IsParamSet("LOAD_STASH_ON_ARROW_CLICK");
             ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Compress savestates", null, new EventHandler((ob, ev) =>
             {
-                if (Params.IsParamSet("COMPRESS_SAVESTATES"))
-                    Params.RemoveParam("COMPRESS_SAVESTATES");
-                else
-                    Params.SetParam("COMPRESS_SAVESTATES");
+                Params.ToggleParam("COMPRESS_SAVESTATES");
                 RedrawActionUI();
             }))).Checked = Params.IsParamSet("COMPRESS_SAVESTATES");
 

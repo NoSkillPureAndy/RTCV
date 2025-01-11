@@ -353,10 +353,7 @@ namespace RTCV.UI
 
         private void cbCloseOnSend_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbCloseOnSend.Checked)
-                RTCV.NetCore.Params.SetParam("SANITIZETOOL_AUTOCLOSE");
-            else
-                Params.RemoveParam("SANITIZETOOL_AUTOCLOSE");
+            Params.SetOrRemoveParam("SANITIZETOOL_AUTOCLOSE", cbCloseOnSend.Checked);
         }
 
         private void SanitizeToolForm_Load(object sender, EventArgs e)

@@ -527,7 +527,7 @@ namespace RTCV.UI
                 S.GET<SaveProgressForm>().Dock = DockStyle.Fill;
                 ghForm?.OpenSubForm(S.GET<SaveProgressForm>());
 
-                var r = await Task.Run(() => Stockpile.Save(sks, path, NetCore.Params.IsParamSet("INCLUDE_REFERENCED_FILES"), NetCore.Params.IsParamSet("COMPRESS_STOCKPILE")));
+                var r = await Task.Run(() => Stockpile.Save(sks, path, Params.IsParamSet("INCLUDE_REFERENCED_FILES"), Params.IsParamSet("COMPRESS_STOCKPILE")));
 
                 if (r)
                 {
@@ -553,7 +553,7 @@ namespace RTCV.UI
             Point locate = new Point(((Control)sender).Location.X + e.Location.X, ((Control)sender).Location.Y + e.Location.Y);
 
             ContextMenuStrip loadMenuItems = new ContextMenuStrip();
-            loadMenuItems.Items.Add("Load Stockpile", null, new EventHandler((ob, ev) =>
+            loadMenuItems.Items.Add("Load Stockpile", null, (ob, ev) =>
             {
                 string filename = "";
                 OpenFileDialog ofd = new OpenFileDialog
@@ -573,9 +573,9 @@ namespace RTCV.UI
                 }
 
                 LoadStockpile(filename);
-            }));
+            });
 
-            loadMenuItems.Items.Add($"Load {RtcCore.VanguardImplementationName} settings from Stockpile", null, new EventHandler((ob, ev) =>
+            loadMenuItems.Items.Add($"Load {RtcCore.VanguardImplementationName} settings from Stockpile", null, (ob, ev) =>
             {
                 try
                 {
@@ -591,9 +591,9 @@ namespace RTCV.UI
                 finally
                 {
                 }
-            }));
+            });
 
-            loadMenuItems.Items.Add($"Restore {RtcCore.VanguardImplementationName} config Backup", null, new EventHandler((ob, ev) =>
+            loadMenuItems.Items.Add($"Restore {RtcCore.VanguardImplementationName} config Backup", null, (ob, ev) =>
             {
                 try
                 {
@@ -611,7 +611,7 @@ namespace RTCV.UI
                 finally
                 {
                 }
-            })).Enabled = (File.Exists(Path.Combine(RtcCore.EmuDir, "backup_config.ini")));
+            }).Enabled = (File.Exists(Path.Combine(RtcCore.EmuDir, "backup_config.ini")));
 
             loadMenuItems.Show(this, locate);
         }
@@ -625,7 +625,7 @@ namespace RTCV.UI
             }
 
             UICore.SetHotkeyTimer(false);
-            string path = "";
+            string path;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog
             {
                 DefaultExt = "sks",
@@ -874,49 +874,16 @@ namespace RTCV.UI
                 Font = new Font("Segoe UI", 12)
             });
 
-            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Stockpile items: " + dgvStockpile.Rows.Cast<DataGridViewRow>().Count().ToString() , null, new EventHandler((ob, ev) =>
+            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Stockpile items: " + dgvStockpile.Rows.Cast<DataGridViewRow>().Count(), null, (ob, ev) =>
             {
 
-            }))).Enabled = false;
+            })).Enabled = false;
 
-            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Compress Stockpiles", null, new EventHandler((ob, ev) =>
-            {
-                if (Params.IsParamSet("COMPRESS_STOCKPILE"))
-                {
-                    Params.RemoveParam("COMPRESS_STOCKPILE");
-                }
-                else
-                {
-                    Params.SetParam("COMPRESS_STOCKPILE");
-                }
-            }))).Checked = Params.IsParamSet("COMPRESS_STOCKPILE");
+            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Compress Stockpiles", null, (ob, ev) => Params.ToggleParam("COMPRESS_STOCKPILE"))).Checked = Params.IsParamSet("COMPRESS_STOCKPILE");
 
-            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Include referenced files", null, new EventHandler((ob, ev) =>
-            {
-                if (Params.IsParamSet("INCLUDE_REFERENCED_FILES"))
-                {
-                    Params.RemoveParam("INCLUDE_REFERENCED_FILES");
-                }
-                else
-                {
-                    Params.SetParam("INCLUDE_REFERENCED_FILES");
-                }
-            }))).Checked = Params.IsParamSet("INCLUDE_REFERENCED_FILES");
+            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Include referenced files", null, (ob, ev) => Params.ToggleParam("INCLUDE_REFERENCED_FILES"))).Checked = Params.IsParamSet("INCLUDE_REFERENCED_FILES");
             
-            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Load entry when selected with arrows", null, new EventHandler((ob, ev) =>
-            {
-                bool set = Params.IsParamSet("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK");
-                if (set)
-                {
-                    Params.RemoveParam("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK");
-                }
-                else
-                {
-                    Params.SetParam("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK");
-                }
-
-                _loadEntryWhenSelectedWithArrows = !set;
-            }))).Checked = Params.IsParamSet("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK");
+            ((ToolStripMenuItem)ghSettingsMenu.Items.Add("Load entry when selected with arrows", null, (ob, ev) => _loadEntryWhenSelectedWithArrows = Params.ToggleParam("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK"))).Checked = Params.IsParamSet("LOAD_STOCKPILE_ENTRY_ON_ARROW_CLICK");
 
             ghSettingsMenu.Items.Add(new ToolStripSeparator());
 

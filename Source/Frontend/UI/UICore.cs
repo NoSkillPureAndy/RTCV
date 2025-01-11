@@ -77,7 +77,6 @@ namespace RTCV.UI
             RtcCore.StartUISide();
 
             //Loading RTC Params
-
             S.GET<SettingsGeneralForm>().cbDisableEmulatorOSD.Checked = Params.IsParamSet(RTCSPEC.CORE_EMULATOROSDDISABLED);
             S.GET<SettingsGeneralForm>().cbAllowCrossCoreCorruption.Checked = Params.IsParamSet("ALLOW_CROSS_CORE_CORRUPTION");
             S.GET<SettingsGeneralForm>().cbDontCleanAtQuit.Checked = Params.IsParamSet("DONT_CLEAN_SAVESTATES_AT_QUIT");

@@ -61,5 +61,28 @@
         }
 
         public static bool IsParamSet(string paramName) => File.Exists(Path.Combine(ParamsDir, paramName));
+
+        public static bool ToggleParam(string paramName)
+        {
+            if (IsParamSet(paramName))
+            {
+                RemoveParam(paramName);
+                return false;
+            }
+            SetParam(paramName);
+            return true;
+        }
+
+        public static void SetOrRemoveParam(string paramName, bool condition)
+        {
+            if (condition)
+            {
+                SetParam(paramName);
+            }
+            else
+            {
+                RemoveParam(paramName);
+            }
+        }
     }
 }
