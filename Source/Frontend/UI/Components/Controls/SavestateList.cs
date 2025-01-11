@@ -21,6 +21,7 @@ namespace RTCV.UI.Components.Controls
         private List<SavestateHolder> _controlList;
         private SavestateHolder _selectedHolder;
         private string _saveStateWord = "Savestate";
+        private bool _wasSaveWhenFilledSlotWasLastSelected;
 
         public SavestateHolder SelectedHolder
         {
@@ -36,7 +37,7 @@ namespace RTCV.UI.Components.Controls
 
         private int _numPerPage;
 
-        public int NumPerPage => _numPerPage;
+        private int NumPerPage => _numPerPage;
 
         private BindingSource _dataSource;
 
@@ -168,12 +169,33 @@ namespace RTCV.UI.Components.Controls
             if (e == null || e.Button == MouseButtons.Left)
             {
                 SelectedHolder?.SetSelected(false);
+                bool hadEmptySlotSelected = SelectedHolder is { sk: null };
                 SelectedHolder = (SavestateHolder)((Button)sender).Parent;
                 SelectedHolder.SetSelected(true);
 
                 if (SelectedHolder.sk == null)
                 {
+                    btnSaveLoad.Text = "SAVE";
+                    btnSaveLoad.ForeColor = Color.OrangeRed;
                     return;
+                }
+
+                if (hadEmptySlotSelected)
+                {
+                    if (_wasSaveWhenFilledSlotWasLastSelected)
+                    {
+                        btnSaveLoad.Text = "SAVE";
+                        btnSaveLoad.ForeColor = Color.OrangeRed;
+                    }
+                    else
+                    {
+                        btnSaveLoad.Text = "LOAD";
+                        btnSaveLoad.ForeColor = Color.FromArgb(192, 255, 192);
+                    }
+                }
+                else
+                {
+                    _wasSaveWhenFilledSlotWasLastSelected = btnSaveLoad.Text == "SAVE";
                 }
 
                 StashKey psk = SelectedHolder.sk;
@@ -339,6 +361,10 @@ namespace RTCV.UI.Components.Controls
                 btnSaveLoad.Text = "LOAD";
                 btnSaveLoad.ForeColor = Color.FromArgb(192, 255, 192);
             }
+            if (SelectedHolder is { sk: { } })
+            {
+                _wasSaveWhenFilledSlotWasLastSelected = btnSaveLoad.Text == "SAVE";
+            }
         }
 
         private bool CheckAndFixingMissingStates(StashKey psk)
@@ -436,6 +462,7 @@ namespace RTCV.UI.Components.Controls
 
                 btnSaveLoad.Text = "LOAD";
                 btnSaveLoad.ForeColor = Color.FromArgb(192, 255, 192);
+                _wasSaveWhenFilledSlotWasLastSelected = false;
             }
         }
 
