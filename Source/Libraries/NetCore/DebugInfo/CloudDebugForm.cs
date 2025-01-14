@@ -30,13 +30,19 @@ namespace RTCV.NetCore
 
             lbException.Text = _ex.Message;
             var sb = new StringBuilder();
-            sb.AppendLine($"{_ex.Message}\n{_ex.StackTrace}");
-            var e = ex;
-            while (e.InnerException != null)
+            if (ex is AggregateException)
             {
-                sb.AppendLine();
-                sb.AppendLine($"Inner Exception: {_ex.Message}\n{_ex.StackTrace}");
-                e = e.InnerException;
+                sb.Append($"Aggregate Exception: {ex}");
+            }
+            else
+            {
+                sb.AppendLine($"{_ex.Message}\n{_ex.StackTrace}");
+                while (ex.InnerException != null)
+                {
+                    sb.AppendLine();
+                    sb.AppendLine($"Inner Exception: {_ex.Message}\n{_ex.StackTrace}");
+                    ex = ex.InnerException;
+                }
             }
             tbStackTrace.Text = sb.ToString();
 
