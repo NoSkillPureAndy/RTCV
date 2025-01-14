@@ -1,3 +1,6 @@
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace RTCV.CorruptCore
 {
     using System;
@@ -34,7 +37,7 @@ namespace RTCV.CorruptCore
         {
         }
 
-        public VirtualMemoryDomain Generate()
+        public VirtualMemoryDomain Generate(IProgress<int> progress = null)
         {
             VirtualMemoryDomain VMD = new VirtualMemoryDomain
             {
@@ -67,20 +70,49 @@ namespace RTCV.CorruptCore
                 {
                     continue;
                 }
-
-                for (long i = start; i < end; i++)
+                int addresses = addressCount;
+                
+                int threads = (int)Math.Min(Environment.ProcessorCount - 2, end - start);
+                if (threads <= 0)
+                    threads = 1;
+                
+                object lockObject = new object();
+                Parallel.For(0, threads, thread =>
                 {
-                    if (!IsAddressInRanges(i, RemoveSingles, RemoveRanges))
-                    {
-                        if (PointerSpacer == 1 || addressCount % PointerSpacer == 0)
-                        {
-                            //VMD.PointerDomains.Add(GenDomain);
-                            VMD.PointerAddresses.Add(i);
-                        }
-                    }
+                    List<long> pointerAddresses = new List<long>();
+                    long size = (end - start) / threads;
+                    long beginning = size * thread + start;
+                    long ending;
+                    if (thread == threads - 1)
+                        ending = end;
+                    else
+                        ending = size * (thread + 1) - 1 + start;
+                    int ourAddresses = addresses + (int)beginning;
 
-                    addressCount++;
-                }
+                    for (long i = beginning; i < ending; i++)
+                    {
+                        if (!IsAddressInRanges(i, RemoveSingles, RemoveRanges))
+                        {
+                            if (PointerSpacer == 1 || ourAddresses % PointerSpacer == 0)
+                            {
+                                //VMD.PointerDomains.Add(GenDomain);
+                                pointerAddresses.Add(i);
+                            }
+                        }
+
+                        if (progress != null && ourAddresses % (1423 * threads) == 0)
+                        {
+                            progress.Report(threads);
+                        }
+                        ourAddresses++;
+                    }
+                    Interlocked.Add(ref addressCount, ourAddresses);
+                    lock (lockObject)
+                    {
+                        VMD.PointerAddresses.AddRange(pointerAddresses);
+                    }
+                });
+                addressCount += addresses;
             }
 
             foreach (long single in AddSingles)

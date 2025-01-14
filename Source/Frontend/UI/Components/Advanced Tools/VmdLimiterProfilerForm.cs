@@ -1,3 +1,7 @@
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace RTCV.UI
 {
     using System;
@@ -9,6 +13,7 @@ namespace RTCV.UI
     using RTCV.NetCore;
     using RTCV.Common;
     using RTCV.UI.Modular;
+    using System.Collections.Generic;
 
     public partial class VmdLimiterProfilerForm : ComponentForm, IBlockable
     {
@@ -22,6 +27,8 @@ namespace RTCV.UI
         public VmdLimiterProfilerForm()
         {
             InitializeComponent();
+            pbProgress.Visible = false; // these need to be visible in the designer
+            lbProgress.Visible = false;
         }
 
         private void LoadDomains(object sender, EventArgs e)
@@ -73,9 +80,9 @@ namespace RTCV.UI
         {
         }
 
-        private void HandleGenerateVMDClick(object sender, EventArgs e) => GenerateVMD();
+        private async void HandleGenerateVMDClick(object sender, EventArgs e) => await GenerateVMD();
 
-        private bool GenerateVMD(bool AutoGenerate = false)
+        private async Task<bool> GenerateVMD(bool autoGenerate = false)
         {
             if (string.IsNullOrWhiteSpace(cbSelectedMemoryDomain.SelectedItem?.ToString()) || !MemoryDomains.MemoryInterfaces.ContainsKey(cbSelectedMemoryDomain.SelectedItem.ToString()))
             {
@@ -83,13 +90,13 @@ namespace RTCV.UI
                 return false;
             }
 
-            if (!AutoGenerate && !string.IsNullOrWhiteSpace(tbVmdName.Text) && MemoryDomains.VmdPool.ContainsKey($"[V]{tbVmdName.Text}"))
+            if (!autoGenerate && !string.IsNullOrWhiteSpace(tbVmdName.Text) && MemoryDomains.VmdPool.ContainsKey($"[V]{tbVmdName.Text}"))
             {
                 MessageBox.Show("There is already a VMD with this name in the VMD Pool");
                 return false;
             }
 
-            if (AutoGenerate && MemoryDomains.VmdPool.ContainsKey($"[V]{tbVmdName.Text}"))
+            if (autoGenerate && MemoryDomains.VmdPool.ContainsKey($"[V]{tbVmdName.Text}"))
             {
                 MemoryDomains.RemoveVMD($"[V]{tbVmdName.Text}");
             }
@@ -121,52 +128,60 @@ namespace RTCV.UI
                 MessageBox.Show("Load before generate is checked but no Savestate is selected in the Glitch Harvester!");
                 return false;
             }
-            var legalAdresses = LocalNetCoreRouter.QueryRoute<long[]>(NetCore.Endpoints.CorruptCore, NetCore.Commands.Remote.LongArrayFilterDomain, new object[] { mi.Name, LimiterListHash, cbLoadBeforeGenerate.Checked ? sk : null });
+            
+            bool killswitchWasEnabled = AutoKillSwitch.Enabled;
+            AutoKillSwitch.Enabled = false;
+            
+            lbProgress.Visible = true;
+            pbProgress.Visible = true;
+            btnGenerateVMD.Enabled = false;
+            lbProgress.Text = "Filtering the domain...";
+            var legalAdresses = LocalNetCoreRouter.QueryRoute<long[]>(Endpoints.CorruptCore, NetCore.Commands.Remote.LongArrayFilterDomain, new object[] { mi.Name, LimiterListHash, cbLoadBeforeGenerate.Checked ? sk : null });
             if (legalAdresses == null || legalAdresses.Length == 0)
             {
                 tbVmdName.Text = "";
+                lbProgress.Visible = false;
+                pbProgress.Visible = false;
+                btnGenerateVMD.Enabled = true;
+                AutoKillSwitch.Enabled = killswitchWasEnabled;
                 return false;
             }
 
-            proto.AddSingles.AddRange(legalAdresses);
+            List<long> singles;
+            List<long[]> ranges;
+            bool invert = cbInvert.Checked;
+            if (invert)
+            {
+                proto.AddRanges.Add(new[] { 0, currentDomainSize });
+                singles = proto.RemoveSingles;
+                ranges = proto.RemoveRanges;
+            }
+            else
+            {
+                singles = proto.AddSingles;
+                ranges = proto.AddRanges;
+            }
 
-            if (proto.AddRanges.Count == 0 && proto.AddSingles.Count == 0)
+            singles.AddRange(legalAdresses);
+
+            if (singles.Count == 0 && singles.Count == 0)
             {
                 //No add range was specified, use entire domain
-                proto.AddRanges.Add(new long[] { 0, (currentDomainSize > long.MaxValue ? long.MaxValue : Convert.ToInt64(currentDomainSize)) });
+                ranges.Add(new[] { 0, currentDomainSize });
             }
 
             //Precalc the size of the vmd
-            //Ignore the fact that addranges and subtractranges can overlap. Only account for add
-            long size = 0;
-            foreach (var v in proto.AddSingles)
-            {
-                size++;
-            }
-
-            foreach (var v in proto.AddRanges)
+            //Ignore the fact that addranges and removeranges can overlap. 
+            long size = singles.Count;
+                
+            foreach (var v in ranges)
             {
                 long x = v[1] - v[0];
                 size += x;
             }
-            //If the size is still 0 and we have removals, we're gonna use the entire range then sub from it so size is now the size of the domain
-            if (size == 0 &&
-                (proto.RemoveSingles.Count > 0 || proto.RemoveRanges.Count > 0) ||
-                (proto.RemoveSingles.Count == 0 && proto.RemoveRanges.Count == 0 && size == 0))
-            {
-                size = currentDomainSize;
-            }
-
-            foreach (var v in proto.RemoveSingles)
-            {
-                size--;
-            }
-
-            foreach (var v in proto.RemoveRanges)
-            {
-                long x = v[1] - v[0];
-                size -= x;
-            }
+            
+            if (invert)
+                size = currentDomainSize - size;
 
             //Verify they want to continue if the domain is larger than 32MB and they didn't manually set ranges
             if (size > 0x2000000)
@@ -174,19 +189,65 @@ namespace RTCV.UI
                 DialogResult result = MessageBox.Show("The VMD you're trying to generate is larger than 32MB\n The VMD size is " + ((size / 1024 / 1024) + 1) + " MB (" + (size / 1024f / 1024f / 1024f) + " GB).\n Are you sure you want to continue?", "VMD Detected", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                 {
+                    AutoKillSwitch.Enabled = killswitchWasEnabled;
+                    lbProgress.Visible = false;
+                    pbProgress.Visible = false;
+                    btnGenerateVMD.Enabled = true;
                     return false;
                 }
             }
 
-            VMD = proto.Generate();
+            Stopwatch watch = new Stopwatch();
+            long value = 0;
+            IProgress<int> progress = new Progress<int>(threads =>
+            {
+                if (currentDomainSize == 0)
+                    return;
+                
+                long val = Math.Min(Interlocked.Add(ref value, 1423 * threads), currentDomainSize);
+                float percentage = (float)val / currentDomainSize;
+                
+                TimeSpan remaining = TimeSpan.FromTicks((long)(watch.Elapsed.Ticks / Math.Max(percentage, 0.0001) - watch.Elapsed.Ticks));
+                
+                lbProgress.Text = $@"Generating VMD, {remaining:mm\:ss} remaining   0x{val:X}/0x{currentDomainSize:X} ({percentage:P2})";
+                pbProgress.Value = (int)(percentage * 500);
+            });
+            
+            lbProgress.Text = "Generating VMD...";
+            watch.Start();
+            VMD = await Task.Run(() => proto.Generate(progress));
+            watch.Stop();
 
             if (VMD.Size == 0)
             {
                 MessageBox.Show("The resulting VMD had no pointers so the operation got cancelled.");
+                lbProgress.Visible = false;
+                pbProgress.Visible = false;
+                btnGenerateVMD.Enabled = true;
+                AutoKillSwitch.Enabled = killswitchWasEnabled;
                 return false;
             }
 
-            MemoryDomains.AddVMD(VMD);
+            Timer t = new Timer();
+            lbProgress.Text = "Generating VMD on the Vanguard's side...";
+            t.Interval = 100;
+            long timeTaken = watch.ElapsedMilliseconds;
+            long timeLeft = timeTaken;
+            t.Tick += (s, e) =>
+            {
+                timeLeft -= 100;
+                TimeSpan remaining = TimeSpan.FromMilliseconds(Math.Max(timeLeft, 0));
+                lbProgress.Text = @$"Generating VMD on the Vanguard's side... ~{remaining:mm\:ss} remaining";
+                pbProgress.Value = (int)(Math.Min(((float)(timeTaken - timeLeft) / timeTaken) * 500, 500));
+            };
+            t.Start();
+            await Task.Run(() => MemoryDomains.AddVMD(VMD));
+            t.Stop();
+            
+            lbProgress.Visible = false;
+            pbProgress.Visible = false;
+            
+            AutoKillSwitch.Enabled = killswitchWasEnabled;
 
             tbVmdName.Text = "";
             cbSelectedMemoryDomain.SelectedIndex = -1;
@@ -201,12 +262,13 @@ namespace RTCV.UI
             //refresh to vmd pool menu
             S.GET<VmdPoolForm>().RefreshVMDs();
 
-            if (!AutoGenerate)
+            if (!autoGenerate)
             {
                 //Selects back the VMD Pool menu
                 S.GET<VmdPoolForm>().GetFocus();
             }
 
+            btnGenerateVMD.Enabled = true;
             return true;
         }
 

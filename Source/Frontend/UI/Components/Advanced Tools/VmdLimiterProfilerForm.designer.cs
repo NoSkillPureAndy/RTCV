@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VmdLimiterProfilerForm));
             this.pnLimiterList = new System.Windows.Forms.Panel();
+            this.cbInvert = new System.Windows.Forms.CheckBox();
             this.cbVectorLimiterList = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tbVmdName = new System.Windows.Forms.TextBox();
@@ -46,6 +47,8 @@
             this.btnLoadDomains = new System.Windows.Forms.Button();
             this.cbSelectedMemoryDomain = new System.Windows.Forms.ComboBox();
             this.cbLoadBeforeGenerate = new System.Windows.Forms.CheckBox();
+            this.lbProgress = new System.Windows.Forms.Label();
+            this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.pnLimiterList.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +58,7 @@
             this.pnLimiterList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnLimiterList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.pnLimiterList.Controls.Add(this.cbInvert);
             this.pnLimiterList.Controls.Add(this.cbVectorLimiterList);
             this.pnLimiterList.Controls.Add(this.label13);
             this.pnLimiterList.ForeColor = System.Drawing.Color.White;
@@ -63,6 +67,20 @@
             this.pnLimiterList.Size = new System.Drawing.Size(267, 51);
             this.pnLimiterList.TabIndex = 135;
             this.pnLimiterList.Tag = "color:dark2";
+            // 
+            // cbInvert
+            // 
+            this.cbInvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbInvert.AutoSize = true;
+            this.cbInvert.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbInvert.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cbInvert.ForeColor = System.Drawing.Color.White;
+            this.cbInvert.Location = new System.Drawing.Point(204, 3);
+            this.cbInvert.Name = "cbInvert";
+            this.cbInvert.Size = new System.Drawing.Size(55, 17);
+            this.cbInvert.TabIndex = 137;
+            this.cbInvert.Text = "Invert";
+            this.cbInvert.UseVisualStyleBackColor = true;
             // 
             // cbVectorLimiterList
             // 
@@ -296,12 +314,36 @@
             this.cbLoadBeforeGenerate.Text = "Load Glitch Harvester Savestate Before Generate";
             this.cbLoadBeforeGenerate.UseVisualStyleBackColor = true;
             // 
+            // lbProgress
+            // 
+            this.lbProgress.AutoSize = true;
+            this.lbProgress.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lbProgress.ForeColor = System.Drawing.Color.White;
+            this.lbProgress.Location = new System.Drawing.Point(4, 115);
+            this.lbProgress.Name = "lbProgress";
+            this.lbProgress.Size = new System.Drawing.Size(67, 13);
+            this.lbProgress.TabIndex = 137;
+            this.lbProgress.Text = "VMD Name:";
+            // 
+            // pbProgress
+            // 
+            this.pbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProgress.Location = new System.Drawing.Point(6, 131);
+            this.pbProgress.Maximum = 500;
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.Size = new System.Drawing.Size(430, 23);
+            this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pbProgress.TabIndex = 138;
+            // 
             // VmdLimiterProfilerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(441, 250);
+            this.Controls.Add(this.pbProgress);
+            this.Controls.Add(this.lbProgress);
             this.Controls.Add(this.cbLoadBeforeGenerate);
             this.Controls.Add(this.pnLimiterList);
             this.Controls.Add(this.tbVmdName);
@@ -349,5 +391,8 @@
         public System.Windows.Forms.ComboBox cbVectorLimiterList;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.CheckBox cbLoadBeforeGenerate;
+        public System.Windows.Forms.CheckBox cbInvert;
+        private System.Windows.Forms.Label lbProgress;
+        private System.Windows.Forms.ProgressBar pbProgress;
     }
 }
