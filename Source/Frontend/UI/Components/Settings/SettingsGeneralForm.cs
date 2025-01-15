@@ -18,7 +18,7 @@ namespace RTCV.UI
         {
             InitializeComponent();
 
-            popoutAllowed = false;
+            PopoutAllowed = false;
         }
 
         //todo - rewrite this?
@@ -113,7 +113,7 @@ namespace RTCV.UI
 
         private void btnResetRandomSeed_Click(object sender, EventArgs e)
         {
-            CorruptCore.RtcCore.ResetSeed();
+            RtcCore.ResetSeed();
         }
 
         private void cbAutoUncorrupt_CheckedChanged(object sender, EventArgs e)

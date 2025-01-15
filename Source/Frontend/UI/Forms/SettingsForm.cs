@@ -34,7 +34,7 @@ namespace RTCV.UI
 
             lbForm = new ListBoxForm(forms.ToArray())
             {
-                popoutAllowed = false
+                PopoutAllowed = false
             };
 
             lbForm.AnchorToPanel(pnListBoxForm);

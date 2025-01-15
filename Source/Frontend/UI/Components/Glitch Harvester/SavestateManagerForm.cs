@@ -43,7 +43,7 @@ namespace RTCV.UI
         {
             InitializeComponent();
 
-            popoutAllowed = true;
+            PopoutAllowed = true;
 
             savestateList.DataSource = savestateBindingSource;
             btnSaveSavestateList.BackColorChanged += (o, e) => UpdateSaveButtonColor(UnsavedEdits);

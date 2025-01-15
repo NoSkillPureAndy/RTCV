@@ -16,8 +16,6 @@ namespace RTCV.UI
         public NoToolShortcuts()
         {
             InitializeComponent();
-
-            popoutAllowed = false;
         }
 
         private void btnNavigateToMyLists_Click(object sender, System.EventArgs e)

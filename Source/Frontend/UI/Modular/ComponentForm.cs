@@ -16,10 +16,10 @@ namespace RTCV.UI.Modular
         public Panel blockPanel { get; set; } = null;
 
         public bool undockedSizable { get; set; } = true;
-        public bool popoutAllowed { get; set; } = true;
+        public virtual bool PopoutAllowed { get; set; } = true;
         public ComponentFormTile ParentComponentFormTitle { get; set; } = null;
 
-        public ComponentForm() : base()
+        public ComponentForm()
         {
             logger = NLog.LogManager.GetLogger(this.GetType().ToString());
         }
@@ -167,7 +167,7 @@ namespace RTCV.UI.Modular
                 e = new MouseEventArgs(e.Button, e.Clicks, e.X + c.Location.X, e.Y + c.Location.Y, e.Delta);
             }
 
-            if (popoutAllowed && e.Button == MouseButtons.Right && (sender as ComponentForm).FormBorderStyle == FormBorderStyle.None)
+            if (PopoutAllowed && e.Button == MouseButtons.Right && (sender as ComponentForm).FormBorderStyle == FormBorderStyle.None)
             {
                 var locate = new Point(((Control)sender).Location.X + e.Location.X, ((Control)sender).Location.Y + e.Location.Y);
                 var columnsMenu = new ContextMenuStrip();
@@ -184,8 +184,7 @@ namespace RTCV.UI.Modular
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
-                this.RestoreToPreviousPanel();
-                return;
+                RestoreToPreviousPanel();
             }
         }
 

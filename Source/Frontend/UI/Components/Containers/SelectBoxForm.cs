@@ -11,6 +11,12 @@ namespace RTCV.UI
 
         private ComponentForm[] _childForms;
 
+        public override bool PopoutAllowed
+        {
+            get => ((ComponentForm)((dynamic)cbSelectBox.SelectedItem).value).PopoutAllowed;
+            set { }
+        }
+
         public SelectBoxForm(ComponentForm[] childForms)
         {
             InitializeComponent();
@@ -28,6 +34,9 @@ namespace RTCV.UI
 
         private void AnchorSelectedItemToPanel(object sender, EventArgs e)
         {
+            if (WindowState == FormWindowState.Minimized)
+                return;
+            
             try
             {
                 object selected = cbSelectBox.SelectedItem;
@@ -39,7 +48,12 @@ namespace RTCV.UI
                 }
                 else
                 {
-                    ((cbSelectBox.SelectedItem as dynamic)?.value as ComponentForm)?.AnchorToPanel(pnComponentForm);
+                    var cf = ((cbSelectBox.SelectedItem as dynamic)?.value as ComponentForm);
+                    cf?.AnchorToPanel(pnComponentForm);
+                    if (!cf.PopoutAllowed)
+                    {
+                        RestoreToPreviousPanel();
+                    }
                 }
 
             }

@@ -134,8 +134,8 @@ namespace RTCV.UI
                         tileForm.TopLevel = false;
                         targetForm.Controls.Add(tileForm);
                         tileForm.Location = getTileLocation(x, y);
-                        tileForm.childForm.Anchor = anchor;
-                        tileForm.Anchor = tileForm.childForm.Anchor;
+                        tileForm.ChildForm.Anchor = anchor;
+                        tileForm.Anchor = tileForm.ChildForm.Anchor;
 
                         tileForm.Show();
                     }

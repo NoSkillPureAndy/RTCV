@@ -38,7 +38,7 @@ namespace RTCV.UI
         {
             InitializeComponent();
 
-            popoutAllowed = true;
+            PopoutAllowed = true;
             undockedSizable = true;
 
             dgvStockpile.RowsAdded += (o, e) =>

@@ -15,7 +15,7 @@ namespace RTCV.UI
         public GlitchHarvesterIntensityForm()
         {
             InitializeComponent();
-            popoutAllowed = true;
+            PopoutAllowed = true;
 
             multiTB_Intensity.ValueChanged += (sender, args) => RtcCore.Intensity = multiTB_Intensity.Value;
         }

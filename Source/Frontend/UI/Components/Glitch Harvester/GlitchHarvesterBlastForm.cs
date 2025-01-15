@@ -69,7 +69,7 @@ namespace RTCV.UI
         {
             InitializeComponent();
 
-            popoutAllowed = true;
+            PopoutAllowed = true;
 
             //cbRenderType.SelectedIndex = 0;
 
