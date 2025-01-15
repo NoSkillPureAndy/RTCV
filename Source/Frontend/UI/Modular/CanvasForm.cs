@@ -189,6 +189,14 @@ namespace RTCV.UI
             {
                 extraForm.Show();
                 extraForm.Focus();
+                if (extraForm.Location.X < -30000)
+                {
+                    // when a window is minimized, it's location is set to -32000, -32000
+                    // if it's closed while minimized, it will maintain that location for some reason upon reopening
+                    extraForm.Location = new Point(0, 0);
+                    // we have to call loadTileForm again as well and i don't know why
+                    loadTileForm(extraForm, canvasGrid);
+                }
             }
         }
 
