@@ -1,4 +1,4 @@
-﻿namespace RTCV.UI
+﻿namespace RTCV.UI.Modular
 {
     partial class ComponentFormTile
     {
@@ -13,9 +13,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComponentFormTile));
             this.lbComponentFormName = new System.Windows.Forms.Label();
-            this.pnComponentFormHost = new RTCV.UI.ComponentPanel();
+            this.pnComponentFormHost = new ComponentPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.pnComponentFormHost.SuspendLayout();
             this.SuspendLayout();

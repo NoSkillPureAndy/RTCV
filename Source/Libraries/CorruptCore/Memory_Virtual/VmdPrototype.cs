@@ -74,26 +74,33 @@ namespace RTCV.CorruptCore
                 
                 int threads = (int)Math.Min(Environment.ProcessorCount - 2, end - start);
                 if (threads <= 0)
+                {
                     threads = 1;
-                
+                }
+
                 object lockObject = new object();
                 Parallel.For(0, threads, thread =>
                 {
                     List<long> pointerAddresses = new List<long>();
                     long size = (end - start) / threads;
-                    long beginning = size * thread + start;
+                    long beginning = (size * thread) + start;
                     long ending;
                     if (thread == threads - 1)
+                    {
                         ending = end;
+                    }
                     else
-                        ending = size * (thread + 1) - 1 + start;
+                    {
+                        ending = (size * (thread + 1)) - 1 + start;
+                    }
+
                     int ourAddresses = addresses + (int)beginning;
 
                     for (long i = beginning; i < ending; i++)
                     {
-                        if (!IsAddressInRanges(i, RemoveSingles, RemoveRanges))
+                        if (!IsAddressInRanges(i, this.RemoveSingles, this.RemoveRanges))
                         {
-                            if (PointerSpacer == 1 || ourAddresses % PointerSpacer == 0)
+                            if (this.PointerSpacer == 1 || ourAddresses % this.PointerSpacer == 0)
                             {
                                 //VMD.PointerDomains.Add(GenDomain);
                                 pointerAddresses.Add(i);
@@ -115,15 +122,15 @@ namespace RTCV.CorruptCore
                 addressCount += addresses;
             }
 
-            foreach (long single in AddSingles)
+            foreach (long single in this.AddSingles)
             {
                 //VMD.PointerDomains.Add(GenDomain);
                 VMD.PointerAddresses.Add(single);
                 addressCount++;
             }
 
-            VMD.CompactPointerDomains = new string[] { GenDomain };
-            VMD.CompactPointerAddresses = new long[][] { VMD.PointerAddresses.ToArray() };
+            VMD.CompactPointerDomains = new[] { this.GenDomain };
+            VMD.CompactPointerAddresses = new[] { VMD.PointerAddresses.ToArray() };
 
             VMD.Compact(true);
 

@@ -1,14 +1,11 @@
+using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
-using RTCV.Common;
+using System.Windows.Forms;
 
-namespace RTCV.UI
+namespace RTCV.UI.Modular
 {
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
-    using RTCV.UI.Modular;
-
-    #pragma warning disable CA2213 //Component designer classes generate their own Dispose method
+#pragma warning disable CA2213 //Component designer classes generate their own Dispose method
     public partial class ComponentFormTile : ColorizedForm, ITileForm
     {
         [DllImport("user32.dll")]
@@ -27,57 +24,65 @@ namespace RTCV.UI
 
         public ComponentFormTile()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         internal void SetComponentForm(Form childForm, int sizeX, int sizeY, bool displayHeader)
         {
-            ChildForm = childForm;
-            _sizeX = sizeX;
-            _sizeY = sizeY;
+            this.ChildForm = childForm;
+            this._sizeX = sizeX;
+            this._sizeY = sizeY;
 
             this.Size = new Size(
-                (_sizeX * CanvasForm.tileSize) + ((_sizeX - 1) * CanvasForm.spacerSize),
-                (_sizeY * CanvasForm.tileSize) + ((_sizeY - 1) * CanvasForm.spacerSize)
-                );
+                (this._sizeX * CanvasForm.tileSize) + ((this._sizeX - 1) * CanvasForm.spacerSize),
+                (this._sizeY * CanvasForm.tileSize) + ((this._sizeY - 1) * CanvasForm.spacerSize));
 
-            if (ChildForm is ComponentForm cf)
+            if (this.ChildForm is ComponentForm cf)
             {
-                cf.AnchorToPanel(pnComponentFormHost);
+                cf.AnchorToPanel(this.pnComponentFormHost);
                 cf.ParentComponentFormTitle = this;
             }
 
             if (displayHeader)
             {
-                lbComponentFormName.Text = ChildForm.Text; // replace that with the childform's text property
+                this.lbComponentFormName.Text = this.ChildForm.Text; // replace that with the childform's text property
             }
             else
             {
-                lbComponentFormName.Visible = false;
-                pnComponentFormHost.Location = new Point(0, 0);
-                pnComponentFormHost.Size = this.Size;
-                ChildForm.Size = this.Size;
+                this.lbComponentFormName.Visible = false;
+                this.pnComponentFormHost.Location = new Point(0, 0);
+                this.pnComponentFormHost.Size = this.Size;
+                this.ChildForm.Size = this.Size;
             }
         }
 
         public bool CanPopout { get; set; } = false;
-        public int TilesX { get => _sizeX; set => _sizeX = value; }
-        public int TilesY { get => _sizeY; set => _sizeY = value; }
+
+        public int TilesX
+        {
+            get => this._sizeX; set => this._sizeX = value;
+        }
+        public int TilesY
+        {
+            get => this._sizeY; set => this._sizeY = value;
+        }
         private Point _mouseDownAt = new Point(int.MinValue);
         
         private void OnFormTileMouseDown(object sender, MouseEventArgs e)
         {
-            Point p = new Point(e.X, e.Y - pnComponentFormHost.Location.Y);
+            Point p = new Point(e.X, e.Y - this.pnComponentFormHost.Location.Y);
             var ea = new MouseEventArgs(e.Button, e.Clicks, p.X, p.Y, e.Delta);
-            (ChildForm as ComponentForm)?.HandleMouseDown(ChildForm, ea);
+            (this.ChildForm as ComponentForm)?.HandleMouseDown(this.ChildForm, ea);
 
             if (e.Button != MouseButtons.Left)
+            {
                 return;
+            }
+
+            this._mouseDownAt = new Point(e.X, e.Y);
             
-            _mouseDownAt = new Point(e.X, e.Y);
             
-            
-            if (!((ComponentForm)ChildForm).PopoutAllowed)
+            if (!((ComponentForm)this.ChildForm).PopoutAllowed)
             {
                 ((Control)sender).Cursor = Cursors.No;
             }
@@ -85,7 +90,7 @@ namespace RTCV.UI
 
         private void OnFormTileMouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && !((ComponentForm)ChildForm).PopoutAllowed)
+            if (e.Button == MouseButtons.Left && !((ComponentForm)this.ChildForm).PopoutAllowed)
             {
                 ((Control)sender).Cursor = Cursors.Default;
             }
@@ -94,40 +99,45 @@ namespace RTCV.UI
         private void OnFormTileMouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
+            {
                 return;
-            var cf = (ComponentForm)ChildForm;
-            if (!cf.PopoutAllowed)
-                return;
+            }
 
-            Point p = new Point(Math.Abs(e.X - _mouseDownAt.X), Math.Abs(e.Y - _mouseDownAt.Y));
-            bool stillDocked = pnComponentFormHost.Controls.Contains(ChildForm);
-            if (p.X < DragPopoutThreshold && p.Y < DragPopoutThreshold && stillDocked)
+            var cf = (ComponentForm)this.ChildForm;
+            if (!cf.PopoutAllowed)
+            {
                 return;
+            }
+
+            Point p = new Point(Math.Abs(e.X - this._mouseDownAt.X), Math.Abs(e.Y - this._mouseDownAt.Y));
+            bool stillDocked = this.pnComponentFormHost.Controls.Contains(this.ChildForm);
+            if (p.X < DragPopoutThreshold && p.Y < DragPopoutThreshold && stillDocked)
+            {
+                return;
+            }
 
             if (stillDocked)
             {
                 cf.SwitchToWindow();
-                ChildForm.Location = PointToScreen(e.Location - new Size(_mouseDownAt));
+                this.ChildForm.Location = this.PointToScreen(e.Location - new Size(this._mouseDownAt));
                 ReleaseCapture();
-                DefWindowProc(ChildForm.Handle, WM_SYSCOMMAND, (UIntPtr)MOUSE_MOVE, IntPtr.Zero);
+                DefWindowProc(this.ChildForm.Handle, WM_SYSCOMMAND, (UIntPtr)MOUSE_MOVE, IntPtr.Zero);
             }
         }
 
         public void ReAnchorToPanel()
         {
-            var cf = (ChildForm as ComponentForm);
-
-            if (cf != null)
+            if (this.ChildForm is ComponentForm cf)
             {
-                cf.AnchorToPanel(pnComponentFormHost);
-                cf.Size = pnComponentFormHost.Size;
+                cf.AnchorToPanel(this.pnComponentFormHost);
+                cf.Size = this.pnComponentFormHost.Size;
                 this.Anchor = cf.Anchor;
             }
         }
 
         private void lbComponentFormName_MouseMove(object sender, MouseEventArgs e)
         {
-            OnFormTileMouseMove(sender, e);
+            this.OnFormTileMouseMove(sender, e);
         }
     }
 

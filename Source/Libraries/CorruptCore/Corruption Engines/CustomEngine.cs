@@ -309,7 +309,7 @@ namespace RTCV.CorruptCore
             }
             catch (Exception ex)
             {
-                throw new Exception("Custom Engine GenerateUnit Threw Up\n" + ex);
+                throw new Exception("Custom Engine GenerateUnit Threw Up", ex);
             }
         }
 

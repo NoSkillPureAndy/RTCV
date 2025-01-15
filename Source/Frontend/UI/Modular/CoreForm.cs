@@ -302,14 +302,14 @@ This message only appears once.";
         {
             if (Params.IsParamSet("SIMPLE_MODE"))
             {
-                SetDefaultGrid(DefaultGrids.simpleMode);
+                this.SetDefaultGrid(DefaultGrids.simpleMode);
                 DefaultGrids.simpleMode.LoadToMain();
                 SimpleModeForm smForm = S.GET<SimpleModeForm>();
                 smForm.EnteringSimpleMode();
             }
             else
             {
-                SetDefaultGrid(DefaultGrids.engineConfig);
+                this.SetDefaultGrid(DefaultGrids.engineConfig);
                 DefaultGrids.engineConfig.LoadToMain();
             }
         }
@@ -369,22 +369,33 @@ This message only appears once.";
 
         public void SetDefaultGrid(CanvasGrid grid, bool isExternal = false)
         {
-            if (PreviousGrids[1] == grid)
+            if (this.PreviousGrids[1] == grid)
+            {
                 return;
-            
+            }
+
             if (isExternal)
             {   
                 // we don't want to store two external grids in the history, that wouldn't make sense
-                if (ExternalIndex < 1)
-                    PreviousGrids[0] = PreviousGrids[1];
+                if (this.ExternalIndex < 1)
+                {
+                    this.PreviousGrids[0] = this.PreviousGrids[1];
+                }
                 else // if the last external form had any modules that should also be in the main form's grid, they need to be put back
-                    PreviousGrids[0].LoadToMain();
+                {
+                    this.PreviousGrids[0].LoadToMain();
+                }
             }
-            PreviousGrids[1] = grid;
+
+            this.PreviousGrids[1] = grid;
             if (isExternal)
-                ExternalIndex = 1;
+            {
+                this.ExternalIndex = 1;
+            }
             else
-                ExternalIndex--; //Loading a custom layout 2.1 billion times crashes RTCV
+            {
+                this.ExternalIndex--; //Loading a custom layout 2.1 billion times crashes RTCV
+            }
         }
 
         private void OnStartEasyModeClick(object sender, MouseEventArgs e)
@@ -717,12 +728,13 @@ This message only appears once.";
                 ContextMenuStrip columnsMenu = new ContextMenuStrip();
 
                 Point locate = e.GetMouseLocation(sender);
-                columnsMenu.Items.Add("Open Blast Editor", null, new EventHandler((ob, ev) =>
+                columnsMenu.Items.Add("Open Blast Editor", null, (ob, ev) =>
                 {
                     BlastEditorForm.OpenBlastEditor();
-                }));
+                });
 
-                var ghmain = columnsMenu.Items.Add("Open the Glitch Harvester to Main Window", null, (ob, ev) => Params.ToggleParam("GH_OPEN_MAIN")) as ToolStripMenuItem;
+                var ghmain = columnsMenu.Items.Add("Open the Glitch Harvester to Main Window", null, 
+                    (ob, ev) => Params.ToggleParam("GH_OPEN_MAIN")) as ToolStripMenuItem;
 
                 ghmain.Checked = Params.IsParamSet("GH_OPEN_MAIN");
 

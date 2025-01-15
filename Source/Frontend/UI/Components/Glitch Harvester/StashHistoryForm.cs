@@ -357,7 +357,7 @@ namespace RTCV.UI
             if (MessageBox.Show("Are you sure you want to clear the stash?", "Clear stash?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 StockpileManagerUISide.StashHistory.Clear();
-                RefreshStashHistory();
+                this.RefreshStashHistory();
 
                 //Force clean up
                 GC.Collect();
@@ -367,49 +367,61 @@ namespace RTCV.UI
 
         public void MoveSelectedStashUp(object sender, EventArgs e)
         {
-            if (lbStashHistory.SelectedIndex == -1)
+            if (this.lbStashHistory.SelectedIndex == -1)
             {
                 return;
             }
 
-            if (lbStashHistory.SelectedIndex == 0)
+            if (this.lbStashHistory.SelectedIndex == 0)
             {
-                lbStashHistory.ClearSelected();
-                if (!LoadWhenSelectedWithArrows)
-                    DontLoadSelectedStash = true;
-                lbStashHistory.SelectedIndex = lbStashHistory.Items.Count - 1;
+                this.lbStashHistory.ClearSelected();
+                if (!this.LoadWhenSelectedWithArrows)
+                {
+                    this.DontLoadSelectedStash = true;
+                }
+
+                this.lbStashHistory.SelectedIndex = this.lbStashHistory.Items.Count - 1;
             }
             else
             {
-                int newPos = lbStashHistory.SelectedIndex - 1;
-                lbStashHistory.ClearSelected();
-                if (!LoadWhenSelectedWithArrows)
-                    DontLoadSelectedStash = true;
-                lbStashHistory.SelectedIndex = newPos;
+                int newPos = this.lbStashHistory.SelectedIndex - 1;
+                this.lbStashHistory.ClearSelected();
+                if (!this.LoadWhenSelectedWithArrows)
+                {
+                    this.DontLoadSelectedStash = true;
+                }
+
+                this.lbStashHistory.SelectedIndex = newPos;
             }
         }
 
         public void MoveSelectedStashDown(object sender, EventArgs e)
         {
-            if (lbStashHistory.SelectedIndex == -1)
+            if (this.lbStashHistory.SelectedIndex == -1)
             {
                 return;
             }
 
-            if (lbStashHistory.SelectedIndex == lbStashHistory.Items.Count - 1)
+            if (this.lbStashHistory.SelectedIndex == this.lbStashHistory.Items.Count - 1)
             {
-                lbStashHistory.ClearSelected();
-                if (!LoadWhenSelectedWithArrows)
-                    DontLoadSelectedStash = true;
-                lbStashHistory.SelectedIndex = 0;
+                this.lbStashHistory.ClearSelected();
+                if (!this.LoadWhenSelectedWithArrows)
+                {
+                    this.DontLoadSelectedStash = true;
+                }
+
+                this.lbStashHistory.SelectedIndex = 0;
             }
             else
             {
-                int newPos = lbStashHistory.SelectedIndex + 1;
-                lbStashHistory.ClearSelected();
-                if (!LoadWhenSelectedWithArrows)
-                    DontLoadSelectedStash = true;
-                lbStashHistory.SelectedIndex = newPos;
+                int newPos = this.lbStashHistory.SelectedIndex + 1;
+                this.lbStashHistory.ClearSelected();
+                if (!this.LoadWhenSelectedWithArrows)
+                {
+                    this.DontLoadSelectedStash = true;
+                }
+
+                this.lbStashHistory.SelectedIndex = newPos;
             }
         }
     }

@@ -9,11 +9,11 @@ namespace RTCV.UI
         private new void HandleMouseDown(object s, MouseEventArgs e) => base.HandleMouseDown(s, e);
         private new void HandleFormClosing(object s, FormClosingEventArgs e) => base.HandleFormClosing(s, e);
 
-        private ComponentForm[] _childForms;
+        private readonly ComponentForm[] _childForms;
 
         public override bool PopoutAllowed
         {
-            get => ((ComponentForm)((dynamic)cbSelectBox.SelectedItem).value).PopoutAllowed;
+            get => ((ComponentForm)((dynamic)this.cbSelectBox.SelectedItem).value).PopoutAllowed;
             set { }
         }
 
@@ -21,60 +21,60 @@ namespace RTCV.UI
         {
             InitializeComponent();
 
-            _childForms = childForms ?? throw new ArgumentNullException(nameof(childForms));
+            this._childForms = childForms ?? throw new ArgumentNullException(nameof(childForms));
 
-            cbSelectBox.DisplayMember = "text";
-            cbSelectBox.ValueMember = "value";
+            this.cbSelectBox.DisplayMember = "text";
+            this.cbSelectBox.ValueMember = "value";
 
-            foreach (var item in _childForms)
+            foreach (var item in this._childForms)
             {
-                cbSelectBox.Items.Add(new { text = item.Text, value = item });
+                this.cbSelectBox.Items.Add(new { text = item.Text, value = item });
             }
         }
 
         private void AnchorSelectedItemToPanel(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
+            if (this.WindowState == FormWindowState.Minimized)
+            {
                 return;
-            
+            }
+
             try
             {
-                object selected = cbSelectBox.SelectedItem;
+                object selected = this.cbSelectBox.SelectedItem;
 
-                var asCF = (cbSelectBox.SelectedItem as ComponentForm);
-                if(asCF != null)
+                if (selected is ComponentForm asCf)
                 {
-                    asCF.AnchorToPanel(pnComponentForm);
+                    asCf.AnchorToPanel(this.pnComponentForm);
                 }
                 else
                 {
-                    var cf = ((cbSelectBox.SelectedItem as dynamic)?.value as ComponentForm);
-                    cf?.AnchorToPanel(pnComponentForm);
-                    if (!cf.PopoutAllowed)
+                    var cf = ((dynamic)selected)?.value as ComponentForm;
+                    cf?.AnchorToPanel(this.pnComponentForm);
+                    if (cf is { PopoutAllowed: false })
                     {
-                        RestoreToPreviousPanel();
+                        this.RestoreToPreviousPanel();
                     }
                 }
-
             }
             catch (Exception ex)
             {
-                //try
-                //{
-                //    (cbSelectBox.SelectedItem as ComponentForm)?.AnchorToPanel(pnComponentForm);
-                //}
-                //catch
-                //{
-                //    throw ex;
-                //}
+                /*try
+                {
+                    (cbSelectBox.SelectedItem as ComponentForm)?.AnchorToPanel(pnComponentForm);
+                }
+                catch
+                {
+                    throw;
+                }*/
 
-                throw ex;
+                throw;
             }
         }
 
         private void OnLoad(object sender, EventArgs e)
         {
-            cbSelectBox.SelectedIndex = 0;
+            this.cbSelectBox.SelectedIndex = 0;
         }
     }
 }

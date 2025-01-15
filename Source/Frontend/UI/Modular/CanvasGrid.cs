@@ -31,30 +31,30 @@ namespace RTCV.UI
 
         public CanvasGrid(int width, int height, int minWidth, int minHeight, string gridName)
         {
-            Width = width;
-            Height = height;
-            MinimumWidth = minWidth;
-            MinimumHeight = minHeight;
-            gridComponent = new Form[Width, Height];
-            gridComponentSize = new Size?[Width, Height];
-            gridComponentDisplayHeader = new bool?[Width, Height];
-            gridComponentAnchor = new AnchorStyles?[Width, Height];
-            GridName = gridName;
+            this.Width = width;
+            this.Height = height;
+            this.MinimumWidth = minWidth;
+            this.MinimumHeight = minHeight;
+            this.gridComponent = new Form[Width, Height];
+            this.gridComponentSize = new Size?[Width, Height];
+            this.gridComponentDisplayHeader = new bool?[Width, Height];
+            this.gridComponentAnchor = new AnchorStyles?[Width, Height];
+            this.GridName = gridName;
         }
 
         internal void SetTileForm(Form componentForm, int tilePosX, int tilePosY, int tileSizeX, int tileSizeY, bool displayHeader, AnchorStyles anchor = (AnchorStyles.Top | AnchorStyles.Left))
         {
             //removes tileForm position if already exists
-            for (int _x = 0; _x < Width; _x++)
+            for (int x = 0; x < this.Width; x++)
             {
-                for (int _y = 0; _y < Height; _y++)
+                for (int y = 0; y < this.Height; y++)
                 {
-                    if (gridComponent[_x, _y] == componentForm)
+                    if (this.gridComponent[x, y] == componentForm)
                     {
-                        gridComponent[_x, _y] = null;
-                        gridComponentSize[_x, _y] = null;
-                        gridComponentDisplayHeader[_x, _y] = null;
-                        gridComponentAnchor[_x, _y] = null;
+                        this.gridComponent[x, y] = null;
+                        this.gridComponentSize[x, y] = null;
+                        this.gridComponentDisplayHeader[x, y] = null;
+                        this.gridComponentAnchor[x, y] = null;
                     }
                 }
             }
@@ -254,7 +254,10 @@ namespace RTCV.UI
 
             var form = CanvasForm.GetExtraForm("External");
             if (form is null)
+            {
                 return;
+            }
+
             form.FormClosing -= RemoveExternalForm;
             form.FormClosing += RemoveExternalForm;
         }

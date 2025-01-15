@@ -97,10 +97,17 @@ namespace RTCV.UI.Modular
 
             this.Show();
 
+            // ReSharper disable ArrangeThisQualifier
             if (dockedMinimumSize.Width > 0 && dockedMinimumSize.Height > 0)
-                this.MinimumSize = new Size(dockedMinimumSize.Width + Width - ClientRectangle.Width, dockedMinimumSize.Height + Height - ClientRectangle.Height);
+            {
+                MinimumSize = new Size(dockedMinimumSize.Width + Width - ClientRectangle.Width, dockedMinimumSize.Height + Height - ClientRectangle.Height);
+            }
+
             if (dockedMaximumSize.Width > 0 && dockedMaximumSize.Height > 0)
-                this.MaximumSize = new Size(dockedMaximumSize.Width + Width - ClientRectangle.Width, dockedMaximumSize.Height + Height - ClientRectangle.Height);
+            {
+                MaximumSize = new Size(dockedMaximumSize.Width + Width - ClientRectangle.Width, dockedMaximumSize.Height + Height - ClientRectangle.Height);
+            }
+            // ReSharper enable ArrangeThisQualifier
         }
 
         public void RestoreToPreviousPanel()
@@ -167,14 +174,14 @@ namespace RTCV.UI.Modular
                 e = new MouseEventArgs(e.Button, e.Clicks, e.X + c.Location.X, e.Y + c.Location.Y, e.Delta);
             }
 
-            if (PopoutAllowed && e.Button == MouseButtons.Right && (sender as ComponentForm).FormBorderStyle == FormBorderStyle.None)
+            if (this.PopoutAllowed && e.Button == MouseButtons.Right && (sender as ComponentForm).FormBorderStyle == FormBorderStyle.None)
             {
                 var locate = new Point(((Control)sender).Location.X + e.Location.X, ((Control)sender).Location.Y + e.Location.Y);
                 var columnsMenu = new ContextMenuStrip();
-                columnsMenu.Items.Add("Detach to window", null, new EventHandler((ob, ev) =>
+                columnsMenu.Items.Add("Detach to window", null, (ob, ev) =>
                 {
-                    (sender as ComponentForm).SwitchToWindow();
-                }));
+                    (sender as ComponentForm)?.SwitchToWindow();
+                });
                 columnsMenu.Show(this, locate);
             }
         }
@@ -184,7 +191,7 @@ namespace RTCV.UI.Modular
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
-                RestoreToPreviousPanel();
+                this.RestoreToPreviousPanel();
             }
         }
 

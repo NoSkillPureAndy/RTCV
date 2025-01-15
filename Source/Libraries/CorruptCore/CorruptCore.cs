@@ -794,21 +794,21 @@ namespace RTCV.CorruptCore
             }
 
             //if emulator supports multithreaded access of the domains, disregard the emulation thread and just span threads...
-            var reminder = Intensity % (cpus - 1);
-            var splitintensity = (Intensity - reminder) / (cpus - 1);
+            var remainder = Intensity % (cpus - 1);
+            var splitintensity = (Intensity - remainder) / (cpus - 1);
             var tasks = new Task<BlastLayer>[cpus];
             for (var i = 0; i < cpus; i++)
             {
                 var requestedIntensity = splitintensity;
-                if (i == 0 && reminder != 0)
+                if (i == 0 && remainder != 0)
                 {
-                    requestedIntensity = reminder;
+                    requestedIntensity = remainder;
                 }
 
                 tasks[i] = Task.Factory.StartNew(() => GenerateBlastLayer(domains, requestedIntensity));
             }
 
-            Task.WaitAll(tasks);
+            Task.WhenAll(tasks).Wait();
 
             BlastLayer bl = tasks[0].Result ?? new BlastLayer();
 
@@ -822,8 +822,12 @@ namespace RTCV.CorruptCore
             
             for (int i = 0; i < bl.Layer.Count; i++)
             for (int j = i + 1; j < bl.Layer.Count; j++)
+            {
                 if (bl.Layer[i].Address == bl.Layer[j].Address && bl.Layer[i].Domain == bl.Layer[j].Domain)
+                {
                     bl.Layer.RemoveAt(j--);
+                }
+            }
 
             if (bl.Layer.Count == 0)
             {
