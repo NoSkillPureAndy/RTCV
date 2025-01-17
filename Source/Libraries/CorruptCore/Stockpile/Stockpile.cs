@@ -11,7 +11,7 @@ using RTCV.Common.Objects;
 using RTCV.CorruptCore.Exceptions;
 using RTCV.NetCore;
 
-namespace RTCV.CorruptCore.Stockpile
+namespace RTCV.CorruptCore
 {
     using Exception = System.Exception;
 

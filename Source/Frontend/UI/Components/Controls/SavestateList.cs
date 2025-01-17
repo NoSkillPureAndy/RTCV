@@ -9,7 +9,6 @@ namespace RTCV.UI.Components.Controls
     using System.IO;
     using System.Linq;
     using System.Windows.Forms;
-    using CorruptCore.Stockpile;
     using CorruptCore;
     using NetCore;
     using RTCV.Common;

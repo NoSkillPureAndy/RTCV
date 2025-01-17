@@ -6,12 +6,12 @@ using System.Linq;
 using System.Windows.Forms;
 using RTCV.NetCore;
 
-namespace RTCV.CorruptCore.Stockpile
+namespace RTCV.CorruptCore
 {
     public static class StockpileManagerUISide
     {
         //Object references
-        private static CorruptCore.Stockpile.Stockpile CurrentStockpile { get; set; }
+        private static Stockpile CurrentStockpile { get; set; }
 
         private static StashKey _lastStashKey = null;
         public static StashKey LastStashkey => _lastStashKey;
@@ -510,7 +510,7 @@ namespace RTCV.CorruptCore.Stockpile
 
         public static void ClearCurrentStockpile()
         {
-            CurrentStockpile = new CorruptCore.Stockpile.Stockpile();
+            CurrentStockpile = new Stockpile();
             StockpileChanged();
         }
 
@@ -519,7 +519,7 @@ namespace RTCV.CorruptCore.Stockpile
             return CurrentStockpile?.Filename ?? "";
         }
 
-        public static void SetCurrentStockpile(CorruptCore.Stockpile.Stockpile sks)
+        public static void SetCurrentStockpile(Stockpile sks)
         {
             CurrentStockpile = sks;
             StockpileChanged();

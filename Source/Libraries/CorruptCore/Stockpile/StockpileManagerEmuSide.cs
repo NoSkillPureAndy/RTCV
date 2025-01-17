@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using RTCV.CorruptCore.Extensions;
 using RTCV.NetCore;
 
-namespace RTCV.CorruptCore.Stockpile
+namespace RTCV.CorruptCore
 {
     public static class StockpileManagerEmuSide
     {
