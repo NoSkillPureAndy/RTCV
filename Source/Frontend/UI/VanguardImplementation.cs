@@ -1,3 +1,5 @@
+using RTCV.CorruptCore.Stockpile;
+
 namespace RTCV.UI
 {
     using System;
@@ -255,7 +257,7 @@ namespace RTCV.UI
                     }
 
                     //Push the VMDs since we store them out of spec
-                    var vmdProtos = MemoryDomains.VmdPool.Values.Cast<VirtualMemoryDomain>().Select(x => x.Proto).ToArray();
+                    var vmdProtos = MemoryDomains.VmdPool.Values.Select(x => x.Proto).ToArray();
                     LocalNetCoreRouter.Route(Endpoints.CorruptCore, Remote.PushVMDProtos, vmdProtos, true);
 
                     coreForm.Show();
@@ -274,15 +276,15 @@ namespace RTCV.UI
                     switch (coreForm.ExternalIndex)
                     {
                         case 1:
-                            coreForm.PreviousGrids[0].LoadToMain();
-                            coreForm.PreviousGrids[1].LoadToNewWindow("External");
+                            coreForm.PreviousGrids[0].LoadToMain(true);
+                            coreForm.PreviousGrids[1].LoadToNewWindow("External", false, true);
                             break;
                         case 0:
-                            coreForm.PreviousGrids[0].LoadToNewWindow("External");
-                            coreForm.PreviousGrids[1].LoadToMain();
+                            coreForm.PreviousGrids[0].LoadToNewWindow("External", false, true);
+                            coreForm.PreviousGrids[1].LoadToMain(true);
                             break;
                         default:
-                            coreForm.PreviousGrids[1].LoadToMain();
+                            coreForm.PreviousGrids[1].LoadToMain(true);
                             break;
                     }
                 }

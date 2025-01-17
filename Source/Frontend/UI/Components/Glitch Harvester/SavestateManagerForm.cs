@@ -1,4 +1,5 @@
 using System.IO.Compression;
+using RTCV.CorruptCore.Stockpile;
 
 namespace RTCV.UI
 {

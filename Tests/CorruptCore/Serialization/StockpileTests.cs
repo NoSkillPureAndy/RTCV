@@ -1,3 +1,5 @@
+using RTCV.CorruptCore.Stockpile;
+
 namespace Tests.CorruptCore.Serialization
 {
     using System.IO;

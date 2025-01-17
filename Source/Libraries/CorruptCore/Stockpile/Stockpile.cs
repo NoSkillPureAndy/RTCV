@@ -1,18 +1,18 @@
-namespace RTCV.CorruptCore
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Windows.Forms;
+using Ceras;
+using Newtonsoft.Json;
+using RTCV.Common.Objects;
+using RTCV.CorruptCore.Exceptions;
+using RTCV.NetCore;
+
+namespace RTCV.CorruptCore.Stockpile
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Diagnostics;
-    using System.IO;
-    using System.IO.Compression;
-    using System.Linq;
-    using System.Windows.Forms;
-    using Ceras;
-    using Newtonsoft.Json;
-    using RTCV.Common.Objects;
-    using RTCV.NetCore;
-    using RTCV.CorruptCore.Exceptions;
     using Exception = System.Exception;
 
     [Serializable]
@@ -24,10 +24,10 @@ namespace RTCV.CorruptCore
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         private List<StashKey> _stashKeys = new List<StashKey>();
-        public List<StashKey> StashKeys { get => _stashKeys; set => _stashKeys = value; }
+        public List<StashKey> StashKeys { get => this._stashKeys; set => this._stashKeys = value; }
 
         private string _filename;
-        public string Filename { get => _filename; set => _filename = value; }
+        public string Filename { get => this._filename; set => this._filename = value; }
 
         [JsonProperty]
         private string RtcVersion;
@@ -47,7 +47,7 @@ namespace RTCV.CorruptCore
 
             foreach (DataGridViewRow row in dgvStockpile.Rows)
             {
-                StashKeys.Add((StashKey)row.Cells[0].Value);
+                this.StashKeys.Add((StashKey)row.Cells[0].Value);
             }
         }
 
@@ -456,7 +456,7 @@ namespace RTCV.CorruptCore
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                 if (dr == DialogResult.OK)
                 {
-                    LocalNetCoreRouter.Route(NetCore.Endpoints.Vanguard, NetCore.Commands.Remote.CloseGame, true);
+                    LocalNetCoreRouter.Route(Endpoints.Vanguard, NetCore.Commands.Remote.CloseGame, true);
                 }
                 else
                 {

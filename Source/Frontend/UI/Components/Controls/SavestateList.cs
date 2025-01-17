@@ -1,3 +1,5 @@
+using RTCV.CorruptCore.Stockpile;
+
 namespace RTCV.UI.Components.Controls
 {
     using System;

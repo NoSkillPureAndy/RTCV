@@ -1,3 +1,5 @@
+using RTCV.UI.Modular;
+
 namespace RTCV.UI
 {
     using System;
@@ -71,14 +73,14 @@ namespace RTCV.UI
             componentForm.Anchor = anchor;
         }
 
-        internal void LoadToMain()
+        internal void LoadToMain(bool dontAnchor = false)
         {
-            CanvasForm.loadTileFormMain(this);
+            CanvasForm.loadTileFormMain(this, dontAnchor);
         }
 
-        internal void LoadToNewWindow(string GridID = null, bool silent = false)
+        internal void LoadToNewWindow(string gridId = null, bool silent = false, bool dontAnchor = false)
         {
-            CanvasForm.loadTileFormExtraWindow(this, GridID, silent);
+            CanvasForm.loadTileFormExtraWindow(this, gridId, silent, dontAnchor);
         }
 
         internal static FileInfo[] GetEnabledCustomLayouts()

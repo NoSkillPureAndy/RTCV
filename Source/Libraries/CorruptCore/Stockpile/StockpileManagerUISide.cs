@@ -1,17 +1,17 @@
-namespace RTCV.CorruptCore
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.IO;
-    using System.Linq;
-    using System.Windows.Forms;
-    using RTCV.NetCore;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using RTCV.NetCore;
 
+namespace RTCV.CorruptCore.Stockpile
+{
     public static class StockpileManagerUISide
     {
         //Object references
-        private static Stockpile CurrentStockpile { get; set; }
+        private static CorruptCore.Stockpile.Stockpile CurrentStockpile { get; set; }
 
         private static StashKey _lastStashKey = null;
         public static StashKey LastStashkey => _lastStashKey;
@@ -505,7 +505,7 @@ namespace RTCV.CorruptCore
 
         public static void ClearCurrentStockpile()
         {
-            CurrentStockpile = new Stockpile();
+            CurrentStockpile = new CorruptCore.Stockpile.Stockpile();
             StockpileChanged();
         }
 
@@ -514,7 +514,7 @@ namespace RTCV.CorruptCore
             return CurrentStockpile?.Filename ?? "";
         }
 
-        public static void SetCurrentStockpile(Stockpile sks)
+        public static void SetCurrentStockpile(CorruptCore.Stockpile.Stockpile sks)
         {
             CurrentStockpile = sks;
             StockpileChanged();

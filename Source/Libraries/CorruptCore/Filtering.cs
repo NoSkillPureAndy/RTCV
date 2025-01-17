@@ -45,7 +45,7 @@ namespace RTCV.CorruptCore
             return partial;
         }
 
-        internal static void LoadStockpileLists(Stockpile sks)
+        internal static void LoadStockpileLists(Stockpile.Stockpile sks)
         {
             var lists = LoadListsFromPaths(Directory.GetFiles(Path.Combine(RtcCore.workingDir, "SKS"), "*.limiter"));
 
@@ -402,7 +402,7 @@ namespace RTCV.CorruptCore
         /// </summary>
         /// <param name="sks"></param>
         /// <returns></returns>
-        internal static Dictionary<string, List<string>> GetAllLimiterListsFromStockpile(Stockpile sks)
+        internal static Dictionary<string, List<string>> GetAllLimiterListsFromStockpile(Stockpile.Stockpile sks)
         {
             sks.MissingLimiter = false;
 

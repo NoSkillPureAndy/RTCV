@@ -38,6 +38,8 @@ Applies for Store & should be editable
 Applies for Value & should be editable
  * byte[] Value */
 
+using RTCV.CorruptCore.Stockpile;
+
 namespace RTCV.UI
 {
     using System;

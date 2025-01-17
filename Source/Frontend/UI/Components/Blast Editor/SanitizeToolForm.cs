@@ -1,3 +1,5 @@
+using RTCV.CorruptCore.Stockpile;
+
 namespace RTCV.UI
 {
     using System;
@@ -258,7 +260,7 @@ namespace RTCV.UI
 
             if (check == null && lbSteps.Items.Count > 1)
             {
-                DialogResult dr = MessageBox.Show("Would you like to restore the Original BlastLayer in the Blest Editor?", "Leaving Sanitize Tool", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("Would you like to restore the Original BlastLayer in the Blast Editor?", "Leaving Sanitize Tool", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 switch (dr)
                 {

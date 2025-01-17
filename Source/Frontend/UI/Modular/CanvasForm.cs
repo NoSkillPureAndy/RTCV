@@ -113,7 +113,7 @@ namespace RTCV.UI
             }
         }
 
-        private static void loadTileForm(CanvasForm targetForm, CanvasGrid canvasGrid)
+        private static void loadTileForm(CanvasForm targetForm, CanvasGrid canvasGrid, bool dontAnchor = false)
         {
             targetForm.ResizeCanvas(canvasGrid);
 
@@ -121,8 +121,13 @@ namespace RTCV.UI
             {
                 for (int y = 0; y < canvasGrid.Height; y++)
                 {
-                    if (canvasGrid.gridComponent[x, y] != null)
+                    if (canvasGrid.gridComponent[x, y] is { } form)
                     {
+                        if (dontAnchor && form.Parent == null)
+                        {
+                            form.Show();
+                            continue;
+                        }
                         targetForm.Text = canvasGrid.GridName;
                         
                         bool displayHeader = canvasGrid.gridComponentDisplayHeader[x, y].HasValue ? canvasGrid.gridComponentDisplayHeader[x, y].Value : false;
@@ -148,7 +153,7 @@ namespace RTCV.UI
         //public void BlockView() => (this as IBlockable)?.BlockView();
         //public void UnblockView() => (this as IBlockable)?.UnblockView();
 
-        internal static void loadTileFormExtraWindow(CanvasGrid canvasGrid, string WindowHeader, bool silent = false)
+        internal static void loadTileFormExtraWindow(CanvasGrid canvasGrid, string WindowHeader, bool silent = false, bool dontAnchor = false)
         {
             if (allExtraForms.TryGetValue(WindowHeader, out var extraForm))
             {
@@ -172,7 +177,7 @@ namespace RTCV.UI
 
             UICore.registerFormEvents(extraForm);
             UICore.registerHotkeyBlacklistControls(extraForm);
-            loadTileForm(extraForm, canvasGrid);
+            loadTileForm(extraForm, canvasGrid, dontAnchor);
 
             if (canvasGrid.isResizable)
             {
@@ -195,15 +200,15 @@ namespace RTCV.UI
                     // if it's closed while minimized, it will maintain that location for some reason upon reopening
                     extraForm.Location = new Point(0, 0);
                     // we have to call loadTileForm again as well and i don't know why
-                    loadTileForm(extraForm, canvasGrid);
+                    loadTileForm(extraForm, canvasGrid, dontAnchor);
                 }
             }
         }
 
-        internal static void loadTileFormMain(CanvasGrid canvasGrid)
+        internal static void loadTileFormMain(CanvasGrid canvasGrid, bool dontAnchor = false)
         {
             clearMainTileForm();
-            loadTileForm(mainForm, canvasGrid);
+            loadTileForm(mainForm, canvasGrid, dontAnchor);
 
             if (mainForm.Parent is Form f)
             {
