@@ -488,6 +488,7 @@ namespace RTCV.CorruptCore
                 partial[RTCSPEC.CORE_INTENSITY] = 1L;
                 partial[RTCSPEC.CORE_ERRORDELAY] = 1L;
                 partial[RTCSPEC.CORE_RADIUS] = BlastRadius.SPREAD;
+                partial[RTCSPEC.CORE_CREATEINFINITEUNITS] = false;
 
                 partial[RTCSPEC.CORE_EXTRACTBLASTLAYER] = false;
                 partial[RTCSPEC.CORE_AUTOCORRUPT] = false;
