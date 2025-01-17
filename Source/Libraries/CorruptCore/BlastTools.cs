@@ -46,9 +46,12 @@ namespace RTCV.CorruptCore
                 }
             }
 
+            var rasterized = (BlastLayer)bl.Clone();
+            rasterized.RasterizeVMDs();
+
             using (FileStream fs = new FileStream(filename, FileMode.Create))
             {
-                JsonHelper.Serialize(bl, fs, Formatting.Indented);
+                JsonHelper.Serialize(rasterized, fs, Formatting.Indented);
             }
 
             LastBlastLayerSavePath = filename;
