@@ -1,22 +1,18 @@
-using RTCV.CorruptCore.Stockpile;
-
 namespace RTCV.UI.Components.Controls
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
     using System.Drawing.Design;
     using System.IO;
     using System.Linq;
     using System.Windows.Forms;
-    using System.Threading.Tasks;
-    using RTCV.CorruptCore;
-    using RTCV.NetCore;
+    using CorruptCore.Stockpile;
+    using CorruptCore;
+    using NetCore;
     using RTCV.Common;
-    using SlimDX.DirectWrite;
 
     public partial class SavestateList : UserControl
     {
