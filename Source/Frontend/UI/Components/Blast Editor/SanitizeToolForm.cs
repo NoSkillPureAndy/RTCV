@@ -330,7 +330,8 @@ namespace RTCV.UI
             newSk.BlastLayer = (BlastLayer)oldSk.BlastLayer.Clone();
             StockpileManagerUISide.StashHistory.Add(newSk);
 
-            S.GET<StashHistoryForm>().RefreshStashHistory();
+            var stash = S.GET<StashHistoryForm>();
+            stash.RefreshStashHistorySelectLast();
 
             //S.GET<StockpileManagerForm>().dgvStockpile.ClearSelection();
             //S.GET<StashHistoryForm>().lbStashHistory.ClearSelected();
