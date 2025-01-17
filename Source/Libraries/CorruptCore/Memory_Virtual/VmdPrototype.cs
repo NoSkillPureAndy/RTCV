@@ -77,8 +77,11 @@ namespace RTCV.CorruptCore
                 {
                     threads = 1;
                 }
+                
+                var orderedPointers = new List<long>[threads];
 
                 object lockObject = new object();
+                
                 Parallel.For(0, threads, thread =>
                 {
                     List<long> pointerAddresses = new List<long>();
@@ -96,7 +99,7 @@ namespace RTCV.CorruptCore
 
                     int ourAddresses = addresses + (int)beginning;
 
-                    for (long i = beginning; i < ending; i++)
+                    for (long i = beginning; i <= ending; i++)
                     {
                         if (!IsAddressInRanges(i, this.RemoveSingles, this.RemoveRanges))
                         {
@@ -116,9 +119,13 @@ namespace RTCV.CorruptCore
                     Interlocked.Add(ref addressCount, ourAddresses);
                     lock (lockObject)
                     {
-                        VMD.PointerAddresses.AddRange(pointerAddresses);
+                        orderedPointers[thread] = pointerAddresses;
                     }
                 });
+                foreach (List<long> pointers in orderedPointers)
+                {
+                    VMD.PointerAddresses.AddRange(pointers);
+                }
                 addressCount += addresses;
             }
 
